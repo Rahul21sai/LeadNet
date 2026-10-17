@@ -1,0 +1,29 @@
+node_modules/
+dist/
+.vite/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+# env / secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*service-account*.json
+*-credentials.json
+
+# firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# local tooling output
+.playwright-mcp/
+playwright-report/
+test-results/
+tmp/
+apps/api/eval/out/
+submission/out/

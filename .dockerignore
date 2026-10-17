@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+.git
+apps/web
+docs
+submission
+scripts
+*.md
+.env*
+**/.env*
+apps/api/eval/out

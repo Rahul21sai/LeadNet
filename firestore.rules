@@ -1,0 +1,37 @@
+rules_version = '2';
+
+// Browsers only ever READ. Every write goes through the Cloud Run API
+// (firebase-admin bypasses these rules), so no client write rule exists.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public civic record
+    match /issues/{issueId} {
+      allow read: if true;
+      match /events/{eventId} { allow read: if true; }
+      match /evidence/{evidenceId} { allow read: if true; }
+    }
+    match /wards/{wardId} { allow read: if true; }
+    match /ledger/{docId} { allow read: if true; }
+    match /leaders/{leaderId} { allow read: if true; }
+    match /projects/{projectId} { allow read: if true; }
+
+    // AI decision trail: public only once linked to a submitted report
+    match /aiRuns/{runId} {
+      allow read: if resource.data.public == true;
+    }
+
+    // Private: a citizen can read their own reports and profile
+    match /reports/{reportId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+    }
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Server-only scratch state
+    match /drafts/{draftId} { allow read, write: if false; }
+    match /supports/{supportId} { allow read, write: if false; }
+    match /votes/{voteId} { allow read, write: if false; }
+  }
+}

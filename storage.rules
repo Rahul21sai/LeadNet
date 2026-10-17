@@ -1,0 +1,19 @@
+rules_version = '2';
+
+// Uploads go through the API (which strips EXIF/GPS and re-encodes),
+// so clients can never write directly. Published evidence is world-readable;
+// raw drafts (including voice clips) are never readable.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /evidence/{issueId}/{file} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /drafts/{allPaths=**} {
+      allow read, write: if false;
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
