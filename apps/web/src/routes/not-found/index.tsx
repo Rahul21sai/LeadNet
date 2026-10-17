@@ -1,10 +1,6 @@
-/** Stub route — owned and replaced by the assigned build agent (see router.tsx). */
+import { Link } from 'react-router';
+import { PageHeading } from '../../components/ui/index.tsx';
+
 export function Component() {
-  return (
-    <section className="mx-auto max-w-[1200px] px-5 py-24">
-      <p className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink-3">LeadNet</p>
-      <h1 className="mt-2 text-[40px] font-semibold capitalize tracking-tight">not found</h1>
-      <p className="mt-3 text-ink-3">This screen is being built.</p>
-    </section>
-  );
+  return <div className="mx-auto max-w-[800px] px-5 py-24"><p className="mb-6 text-[13px] tabular-nums text-ink-3">404</p><PageHeading title="This page isn’t on the record." kn="ಈ ಪುಟ ಲಭ್ಯವಿಲ್ಲ." description="The link may have changed. The civic map is a good place to start." /><Link to="/map" className="mt-8 inline-flex min-h-12 items-center rounded-pill bg-primary px-6 text-[15px] font-medium text-on-primary">Open the civic map</Link></div>;
 }

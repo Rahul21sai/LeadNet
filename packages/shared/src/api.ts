@@ -33,7 +33,8 @@ export type Triage = z.infer<typeof zTriage>;
 
 /**
  * POST /api/v1/reports/draft  (multipart/form-data)
- *   fields: lat, lng, text? ; files: photo? (image/*, ≤ 8 MB), audio? (audio/*, ≤ 2 MB, ≤ 30 s)
+ *   fields: lat, lng, text?, demo? ("true" marks an illustrative demo report)
+ *   files: photo? (image/*, ≤ 8 MB), audio? (audio/*, ≤ 2 MB, ≤ 30 s)
  * At least one of photo / audio / text is required.
  */
 export interface DraftResponse {
@@ -86,6 +87,10 @@ export interface SupportResponse {
   supporterCount: number;
   alreadySupported: boolean;
 }
+
+/** POST /api/v1/issues/:id/follow — private saved record; does not add support or voting rights. */
+export const zFollow = z.object({ following: z.boolean() });
+export interface FollowResponse { following: boolean }
 
 /** POST /api/v1/issues/:id/transition — officer/admin. JSON body. */
 export const zTransition = z.object({

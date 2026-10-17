@@ -1,0 +1,21 @@
+{
+  "revision": "v4",
+  "slideCount": 14,
+  "pptxBytes": 1033010,
+  "pdfBytes": 1974292,
+  "descriptionCharacters": 781,
+  "pptxSha256": "41b5ab697402997c999780e1e3fde5e33fba7a0f9abf9be0be7026b60b354d57",
+  "pdfSha256": "87adba62dd987e949babe94602b34ca29af8e4e9da1834d458f9efb736917ac9",
+  "packageIntegrityFindings": 0,
+  "layoutFindings": 0,
+  "artifactToolReimportPassed": true,
+  "visualReview": "All14 PDF pages rendered with Poppler; modified pages4,9,11,12,13 inspected individually. Unchanged pages were reviewed in prior revision.",
+  "cloudStatus": "Cloud deployment and live model evaluation deferred by owner",
+  "limitations": [
+    "Team fields intentionally blank",
+    "Genuine UI screenshots blocked by saved browser policy",
+    "Public URLs pending",
+    "No live model quality or latency measurements",
+    "Image-page PDF; editable PPTX supplied"
+  ]
+}

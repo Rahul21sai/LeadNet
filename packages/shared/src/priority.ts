@@ -51,8 +51,9 @@ const round1 = (n: number) => Math.round(n * 10) / 10;
 
 export function computePriority(input: PriorityInput): PriorityResult {
   const meta = CATEGORY_META[input.category];
+  const hazards = [...new Set(input.hazards)];
   const severityValue = clamp01((input.severity - 1) / 4);
-  const hazardValue = clamp01(input.hazards.reduce((sum, h) => sum + HAZARD_META[h].weight, 0) / 0.5);
+  const hazardValue = clamp01(hazards.reduce((sum, h) => sum + HAZARD_META[h].weight, 0) / 0.5);
   const categoryValue = clamp01(meta.baseRisk);
   const supportValue = clamp01(Math.log2(1 + Math.max(0, input.supporters)) / Math.log2(1 + SUPPORT_SATURATION));
   const ageValue = clamp01(input.ageHours / meta.slaResolveHours);
@@ -64,7 +65,7 @@ export function computePriority(input: PriorityInput): PriorityResult {
       label: 'Safety hazards',
       weight: PRIORITY_WEIGHTS.hazards,
       value: hazardValue,
-      explain: input.hazards.length ? input.hazards.map((h) => HAZARD_META[h].en).join(', ') : 'No hazard flags',
+      explain: hazards.length ? hazards.map((h) => HAZARD_META[h].en).join(', ') : 'No hazard flags',
     },
     { key: 'category', label: 'Category risk', weight: PRIORITY_WEIGHTS.category, value: categoryValue, explain: `${meta.en} base risk ${meta.baseRisk}` },
     {

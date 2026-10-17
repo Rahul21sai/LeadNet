@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "samples": [
+    {
+      "id": "pothole-1",
+      "kind": "photo",
+      "sha256": "a8227375ca15995ec67ee5978b610f34bad114388417b777712ac9f625e34a5c",
+      "file": "/samples/photos/pothole-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Potholes_in_Bengaluru_road.jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "pothole-1-recrop",
+      "kind": "photo",
+      "sha256": "f826f858b9c90bcf75daffb5bcbd2ce47cf60119b830eb6ec598a8599b512e14",
+      "file": "/samples/photos/pothole-1-recrop.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Potholes_in_Bengaluru_road.jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "pothole-2",
+      "kind": "photo",
+      "sha256": "da40d0e9403874765302c00f46962e3d1a7e1b645dbf813ac5dfaaaf34f9e4f4",
+      "file": "/samples/photos/pothole-2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Roads_deformed_T_munnekollala_Bengaluru.jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "pothole-3-before",
+      "kind": "photo",
+      "sha256": "879ae8a8f682f78f5276fce942cfb1ce409683a829b94f9fd1bb14ddd6bec313",
+      "file": "/samples/photos/pothole-3-before.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Two_of_the_umpteen_potholes_in_Reform_Row.jpg",
+      "illustrative": true,
+      "photographedLocation": "Reform Row, Tottenham, London, UK"
+    },
+    {
+      "id": "pothole-3-after",
+      "kind": "photo",
+      "sha256": "2be1b5f9c482ede9340e0510afd98c243a00a617e3ec021fb20013b0eb6af6c8",
+      "file": "/samples/photos/pothole-3-after.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Reform_Row_-_Umpteen_Potholes_plugged.jpg",
+      "illustrative": true,
+      "photographedLocation": "Reform Row, Tottenham, London, UK"
+    },
+    {
+      "id": "road-elsewhere-1",
+      "kind": "photo",
+      "sha256": "c70e0e100040c4e61a14c18a4ad07f0310f9cdaee4986366e9161e30e7bf0b3c",
+      "file": "/samples/photos/road-elsewhere-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Savalanga_road,_Shivamogga,_Karnataka_(2026).jpg",
+      "illustrative": true,
+      "photographedLocation": "Shivamogga, Karnataka, India"
+    },
+    {
+      "id": "garbage-1",
+      "kind": "photo",
+      "sha256": "bda624b1cdba1b3221437f0c68ee40774b062c7f5eaa5d95a00cc17dc5eca451",
+      "file": "/samples/photos/garbage-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Garbage_and_a_cow.jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "garbage-1-closeup",
+      "kind": "photo",
+      "sha256": "623f80017ae4933437f93471e43d1a5ab0514f7e6340328d5b3abb2b1567bfe7",
+      "file": "/samples/photos/garbage-1-closeup.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Natural_Recycling.jpg",
+      "illustrative": true,
+      "photographedLocation": "Jayanagara, Bengaluru, India"
+    },
+    {
+      "id": "garbage-2",
+      "kind": "photo",
+      "sha256": "e390da4994fb1e10c5f8c790689f46ccaa37ba5f1772c36cfca1dd270447ab48",
+      "file": "/samples/photos/garbage-2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Garbage_issue_in_Vishwapriya_Nagar.jpg",
+      "illustrative": true,
+      "photographedLocation": "Vishwapriya Nagar, Bengaluru, India"
+    },
+    {
+      "id": "drainage-1",
+      "kind": "photo",
+      "sha256": "230a7a47579b98c9be368a8e0c9d09bbfab7296c8c8880a6cd992c6cae040a65",
+      "file": "/samples/photos/drainage-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Aadhaar_Bangalore_flood.jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "drainage-2",
+      "kind": "photo",
+      "sha256": "df1c5c4899c21d5c52ec9c55480a9cbb18adbae1d374bb31774008ee2aab7a23",
+      "file": "/samples/photos/drainage-2.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Open_sewer_(2731597018).jpg",
+      "illustrative": true,
+      "photographedLocation": "Pandharpur, Maharashtra, India"
+    },
+    {
+      "id": "footpath-1",
+      "kind": "photo",
+      "sha256": "bbfa47c951f6c1b858011785c0cf04b6ed3843d86a670908f994e538f774bf25",
+      "file": "/samples/photos/footpath-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Messy_sidewalk_(6627577717).jpg",
+      "illustrative": true,
+      "photographedLocation": "Bengaluru, India"
+    },
+    {
+      "id": "trees-1",
+      "kind": "photo",
+      "sha256": "2a79d0ec782e60d7a58f1c2fe154a2ffad4caac8bc5bd3da8f29f5608b81827b",
+      "file": "/samples/photos/trees-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:A_Fallen_Tree_in_Kulupwadi_Rd,_Borivali_(35520292).jpg",
+      "illustrative": true,
+      "photographedLocation": "Borivali, Mumbai, India"
+    },
+    {
+      "id": "streetlight-1",
+      "kind": "photo",
+      "sha256": "f93ec790e81cc37458a37aea12687617d397201c66bc8aa65a18d8c34e9722e0",
+      "file": "/samples/photos/streetlight-1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Tilting_street_light_-_17_August_2026.jpg",
+      "illustrative": true,
+      "photographedLocation": "Fairham, UK"
+    },
+    {
+      "id": "kn-pothole-mg-road",
+      "kind": "audio",
+      "sha256": "f9469755579ca2ac32131e689faff154a5aad93ae4efbba115b3bf12641c8548",
+      "file": "/samples/audio/kn-pothole-mg-road.mp3",
+      "source": "Google Translate text-to-speech (synthetic voice)",
+      "illustrative": true,
+      "synthetic": true
+    },
+    {
+      "id": "hi-garbage-kr-market",
+      "kind": "audio",
+      "sha256": "5b4e77acdd69927e32fc8d52cee5bdbe903bbbae44c5c03aa06ef0138b8f41de",
+      "file": "/samples/audio/hi-garbage-kr-market.mp3",
+      "source": "Google Translate text-to-speech (synthetic voice)",
+      "illustrative": true,
+      "synthetic": true
+    },
+    {
+      "id": "en-streetlight-indiranagar",
+      "kind": "audio",
+      "sha256": "3d71d95d12b03f115d04366b715ac9e723a3f8adbc1c6b1f24a02fa602e8b27b",
+      "file": "/samples/audio/en-streetlight-indiranagar.mp3",
+      "source": "Google Translate text-to-speech (synthetic voice)",
+      "illustrative": true,
+      "synthetic": true
+    }
+  ]
+}

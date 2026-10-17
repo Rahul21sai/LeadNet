@@ -1,0 +1,135 @@
+{
+  "wards": 369,
+  "corporations": 5,
+  "byCorporation": {
+    "central": 63,
+    "north": 72,
+    "east": 50,
+    "south": 72,
+    "west": 112
+  },
+  "invalidGeometries": 0,
+  "labelPointsOutside": 0,
+  "nameKnPresent": 369,
+  "maxDisplayAreaChangePercent": 0.9872,
+  "landmarks": [
+    {
+      "place": "MG Road",
+      "lat": 12.9756,
+      "lng": 77.6066,
+      "wardId": "w-central-25",
+      "ward": "Ashokanagar",
+      "corporation": "Bengaluru Central City Corporation"
+    },
+    {
+      "place": "Koramangala",
+      "lat": 12.9352,
+      "lng": 77.6245,
+      "wardId": "w-south-28",
+      "ward": "Kormangala East",
+      "corporation": "Bengaluru South City Corporation"
+    },
+    {
+      "place": "Indiranagar",
+      "lat": 12.9784,
+      "lng": 77.6408,
+      "wardId": "w-central-9",
+      "ward": "Hoysala Nagara Central",
+      "corporation": "Bengaluru Central City Corporation"
+    },
+    {
+      "place": "Jayanagar",
+      "lat": 12.925,
+      "lng": 77.5938,
+      "wardId": "w-south-8",
+      "ward": "Tilak Nagara",
+      "corporation": "Bengaluru South City Corporation"
+    },
+    {
+      "place": "Whitefield",
+      "lat": 12.9698,
+      "lng": 77.75,
+      "wardId": "w-east-39",
+      "ward": "Hagaduru",
+      "corporation": "Bengaluru East City Corporation"
+    },
+    {
+      "place": "Yelahanka",
+      "lat": 13.1007,
+      "lng": 77.5963,
+      "wardId": "w-north-1",
+      "ward": "Raja Kempegowda Ward",
+      "corporation": "Bengaluru North City Corporation"
+    },
+    {
+      "place": "Malleshwaram",
+      "lat": 13.0031,
+      "lng": 77.5643,
+      "wardId": "w-west-53",
+      "ward": "Malleshwaram",
+      "corporation": "Bengaluru West City Corporation"
+    },
+    {
+      "place": "HSR Layout",
+      "lat": 12.9116,
+      "lng": 77.6473,
+      "wardId": "w-south-71",
+      "ward": "Agara",
+      "corporation": "Bengaluru South City Corporation"
+    },
+    {
+      "place": "Hebbal",
+      "lat": 13.0358,
+      "lng": 77.597,
+      "wardId": "w-north-56",
+      "ward": "Hebbal",
+      "corporation": "Bengaluru North City Corporation"
+    },
+    {
+      "place": "KR Market",
+      "lat": 12.9634,
+      "lng": 77.577,
+      "wardId": "w-central-34",
+      "ward": "D.V Gundappa Ward",
+      "corporation": "Bengaluru Central City Corporation"
+    },
+    {
+      "place": "BTM Layout",
+      "lat": 12.9166,
+      "lng": 77.6101,
+      "wardId": "w-south-19",
+      "ward": "New Tavarekere",
+      "corporation": "Bengaluru South City Corporation"
+    },
+    {
+      "place": "Rajajinagar",
+      "lat": 12.9937,
+      "lng": 77.5544,
+      "wardId": "w-west-63",
+      "ward": "Rajajinagara",
+      "corporation": "Bengaluru West City Corporation"
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/api/data/wards.geojson",
+      "bytes": 2007710,
+      "sha256": "05468b1546fe705d728a343dde913ece94191785548545c9fcaacdcb3406800f"
+    },
+    {
+      "path": "apps/api/data/ward-labels.json",
+      "bytes": 16433,
+      "sha256": "b0e2ac81083ec584fb92b0bd8bdd36cfbd5cb34860e60310bf53524c3a6fb9e4"
+    },
+    {
+      "path": "apps/web/public/data/wards.geojson",
+      "bytes": 527619,
+      "sha256": "7764330e7807ae93960014cf3ba52818cb27e836f9600fd258d33eaeaa7aa092"
+    },
+    {
+      "path": "apps/web/public/data/corporations.geojson",
+      "bytes": 64298,
+      "sha256": "df37e3aede5ae0cb659954d8c47590d1e210fd2b2c142c4aa4a96847e86cd9bf"
+    }
+  ]
+}

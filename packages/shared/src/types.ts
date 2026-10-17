@@ -197,6 +197,8 @@ export interface UserDoc {
   wardIds: string[];
   createdAt: number;
   demoOfficer?: boolean;
+  /** Private saved records; following alone does not grant verification eligibility. */
+  followedIssueIds?: string[];
 }
 
 /** drafts/{draftId} — server-only scratch state between report steps (TTL 1h). */

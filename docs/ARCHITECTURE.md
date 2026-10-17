@@ -31,7 +31,7 @@ submission        Deck generator, description, video script.
 | **Triage** (photo + voice + text) | category ∈ enum, hazards ⊆ enum, severity 1–5, EN+KN wording, transcript, isCivicIssue | department, SLA, priority score, ward | zod schema; enums; `kn` fields ≥ 60% Kannada script; PII scrubbed; length caps | manual category picker, citizen text as title |
 | **Dedupe** | which code-supplied candidate (or none) is the same problem, with reasons | candidate set (same category, open, ≤150 m via geohash), distance, the merge itself (citizen-confirmed) | chosen id ∈ candidates; confidence ∈ [0,1] | "no match" |
 | **Evidence** | sameLocation, defectResolved (+confidences), photo quality, notes | gate decision (hold/pass), state transition, override counting | schema; booleans + confidences | hold for review (never auto-pass) |
-| **Brief / Ask** | wording only | every fact and number (ledger) | every number in the text ∈ computed facts; PII | template sentence from facts |
+| **Ask** | selects and orders relevant fact IDs from the code-supplied closed list | every complete bilingual fact sentence, including its label, value, unit and sample size | schema; valid distinct fact IDs; no model-authored numeric clauses | fixed set of code-rendered fact sentences |
 
 Each call: schema-constrained JSON (`responseSchema`) → verifier → one repair retry with error text → fallback.
 Each call writes `aiRuns/{id}` (model, prompt version, redacted input summary, output, checks, attempts, latency, tokens).
@@ -40,6 +40,8 @@ Each call writes `aiRuns/{id}` (model, prompt version, redacted input summary, o
 Public read: `issues` (+ `events`, `evidence` subcollections), `wards`, `ledger/city`, `leaders`, `projects`,
 `aiRuns` (only `public == true`). Owner read: `reports`, `users`. Server-only: `drafts`, `supports`, `votes`.
 All writes via the API (admin SDK). Timestamps are epoch ms. Types in `packages/shared/src/types.ts`.
+
+Private follows live in `users/{uid}.followedIssueIds`. Following saves a record but does not add support or verification eligibility. Public triage trails retain categorical observations only; original AI titles, summaries and voice transcripts remain private. Public duplicate trails omit unapproved free-text reasons. Photo objects start unpublished and become readable only after their evidence document commits.
 
 Key distinction (from the concept): a **report** is one citizen's submission; an **issue** is the real-world problem;
 a **project** is planned development work. Many reports → one issue; a project relates to many issues.

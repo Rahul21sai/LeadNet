@@ -1,10 +1,23 @@
-/** Stub route — owned and replaced by the assigned build agent (see router.tsx). */
+import { useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router';
+import { ArrowUpRight, List, Map as MapIcon, Search, X } from 'lucide-react';
+import { CATEGORIES, CATEGORY_META, STATUS_META, STATUSES } from '@leadnet/shared';
+import { CivicMap } from '../../components/map/CivicMap.tsx';
+import { DemoBadge, EmptyState, IssueCard, LoadingState } from '../../components/ui/index.tsx';
+import { useIssues, useWards } from '../../lib/data.ts';
+
 export function Component() {
-  return (
-    <section className="mx-auto max-w-[1200px] px-5 py-24">
-      <p className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink-3">LeadNet</p>
-      <h1 className="mt-2 text-[40px] font-semibold capitalize tracking-tight">map</h1>
-      <p className="mt-3 text-ink-3">This screen is being built.</p>
-    </section>
-  );
+  const [params] = useSearchParams();
+  const [ward, setWard] = useState(params.get('ward') ?? params.get('wardId') ?? ''); const [category, setCategory] = useState(''); const [status, setStatus] = useState('');
+  const [search, setSearch] = useState(''); const [selected, setSelected] = useState<string | null>(null); const [mobileList, setMobileList] = useState(false);
+  const issues = useIssues(); const wards = useWards();
+  const filtered = useMemo(() => issues.data.filter((i) => i.status !== 'duplicate' && (!ward || i.wardId === ward) && (!category || i.category === category) && (!status || i.status === status) && (!search || `${i.title.en} ${i.title.kn} ${i.wardName ?? ''}`.toLowerCase().includes(search.toLowerCase()))), [issues.data, ward, category, status, search]);
+  const selectedIssue = filtered.find((i) => i.id === selected);
+  return <section className="flex h-[calc(100dvh-76px)] min-h-[600px] flex-col">
+    <div className="flex flex-wrap items-center gap-3 border-b border-hairline bg-surface px-5 py-4 sm:px-10"><div className="mr-auto"><h1 className="text-xl font-semibold tracking-tight">The city, in view.</h1><p className="mt-0.5 text-xs text-ink-3"><span lang="kn">ನಮ್ಮ ನಗರದ ಸಮಸ್ಯೆಗಳು</span><span className="mx-2">/</span>{filtered.length} civic records</p></div><DemoBadge>Prototype</DemoBadge><button className="flex min-h-11 items-center gap-2 rounded-pill bg-fill px-4 text-sm lg:hidden" onClick={() => setMobileList(!mobileList)}>{mobileList ? <MapIcon size={16} /> : <List size={16} />}{mobileList ? 'Map' : 'List'}</button></div>
+    <div className="flex flex-wrap gap-2 border-b border-hairline bg-surface px-5 py-3 sm:px-10"><label className="flex min-h-11 flex-1 items-center gap-2 rounded-pill bg-fill px-4 sm:max-w-72"><Search size={16} className="shrink-0 text-ink-3" /><input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search issues or neighbourhoods" aria-label="Search issues" className="w-full min-w-0 bg-transparent text-xs" /></label><select aria-label="Filter by ward" value={ward} onChange={(e) => setWard(e.target.value)} className="min-h-11 max-w-44 rounded-pill border border-hairline bg-surface px-3 text-xs"><option value="">All wards</option>{wards.data.slice().sort((a,b) => a.name.en.localeCompare(b.name.en)).map((w) => <option value={w.id} key={w.id}>{w.name.en}</option>)}</select><select aria-label="Filter by category" value={category} onChange={(e) => setCategory(e.target.value)} className="min-h-11 max-w-44 rounded-pill border border-hairline bg-surface px-3 text-xs"><option value="">All categories</option>{CATEGORIES.map((c) => <option key={c} value={c}>{CATEGORY_META[c].en}</option>)}</select><select aria-label="Filter by status" value={status} onChange={(e) => setStatus(e.target.value)} className="min-h-11 max-w-44 rounded-pill border border-hairline bg-surface px-3 text-xs"><option value="">All statuses</option>{STATUSES.filter((s) => s !== 'duplicate').map((s) => <option key={s} value={s}>{STATUS_META[s].short}</option>)}</select></div>
+    <div className="relative flex min-h-0 flex-1"><aside className={`${mobileList ? 'block' : 'hidden'} w-full shrink-0 overflow-y-auto border-r border-hairline bg-surface px-5 lg:block lg:w-[380px]`} aria-label="Issue list">{issues.loading ? <LoadingState /> : issues.error ? <div className="py-6"><EmptyState title="Records are unavailable" description="The live civic record could not connect. Try again after the service is available." /></div> : filtered.length ? filtered.map((i) => <IssueCard key={i.id} issue={i} compact />) : <div className="py-6"><EmptyState title="No matching issues" description="Try another ward or clear your filters." /></div>}</aside><CivicMap issues={filtered} onSelect={setSelected} selectedId={selected} wardId={ward} className={`${mobileList ? 'hidden' : 'block'} min-h-0 flex-1 lg:block`} />
+      {selectedIssue && !mobileList && <div className="absolute bottom-12 left-4 right-16 rounded-lg border border-hairline bg-surface p-4 shadow-float lg:left-[400px] lg:right-auto lg:w-[340px]"><button onClick={() => setSelected(null)} aria-label="Close selected issue" className="absolute right-1 top-1 flex h-11 w-11 items-center justify-center text-ink-3"><X size={16} /></button><div className="pr-5"><IssueCard issue={selectedIssue} compact /></div><Link to={`/issue/${selectedIssue.id}`} className="mt-3 flex min-h-11 items-center justify-between text-sm text-link">Open public record<ArrowUpRight size={16} /></Link></div>}
+    </div>
+  </section>;
 }

@@ -11,7 +11,8 @@ const config = {
   authDomain: 'leadnet-blr.firebaseapp.com',
   projectId: 'leadnet-blr',
   storageBucket: 'leadnet-blr.firebasestorage.app',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID ?? 'REPLACE_AT_SETUP',
+  messagingSenderId: '782203647955',
+  appId: '1:782203647955:web:2b449545adda85c156a126',
 };
 
 export const firebaseApp = initializeApp(config);

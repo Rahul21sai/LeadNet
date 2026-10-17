@@ -6,7 +6,7 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     match /evidence/{issueId}/{file} {
-      allow read: if true;
+      allow read: if resource.metadata.published == 'true';
       allow write: if false;
     }
     match /drafts/{allPaths=**} {

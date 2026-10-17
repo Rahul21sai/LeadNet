@@ -1,0 +1,202 @@
+{
+  "mode": "dry-run",
+  "generatedAt": "2026-10-17T08:00:00.000Z",
+  "wards": 369,
+  "demoWards": 12,
+  "issues": 200,
+  "reports": 670,
+  "supporters": 3377,
+  "votes": 150,
+  "events": 1498,
+  "evidence": 286,
+  "leaders": 6,
+  "projects": 8,
+  "byStatus": {
+    "verified": 50,
+    "reported": 30,
+    "acknowledged": 30,
+    "in_progress": 34,
+    "resolved_pending_verification": 34,
+    "reopened": 16,
+    "rejected": 6
+  },
+  "byCategory": {
+    "footpath": 16,
+    "pothole": 60,
+    "garbage": 50,
+    "drainage": 24,
+    "streetlight": 24,
+    "water": 12,
+    "traffic": 6,
+    "trees": 8
+  },
+  "city": {
+    "reports": {
+      "value": 670,
+      "n": 670
+    },
+    "issues": {
+      "value": 194,
+      "n": 194
+    },
+    "duplicatesMerged": {
+      "value": 470,
+      "n": 670
+    },
+    "open": {
+      "value": 144,
+      "n": 194
+    },
+    "overdue": {
+      "value": 136,
+      "n": 144
+    },
+    "medianAckHours": {
+      "value": 27.3,
+      "n": 164
+    },
+    "claimed": {
+      "value": 100,
+      "n": 194
+    },
+    "verified": {
+      "value": 50,
+      "n": 100
+    },
+    "awaitingCheck": {
+      "value": 34,
+      "n": 100
+    },
+    "verifiedRate": {
+      "value": 50,
+      "n": 100
+    },
+    "unverifiedClaims": {
+      "value": 50,
+      "n": 100
+    },
+    "reopenRate": {
+      "value": 16,
+      "n": 100
+    },
+    "overrides": {
+      "value": 4,
+      "n": 100
+    },
+    "medianDaysToVerified": {
+      "value": 1.3,
+      "n": 50
+    }
+  },
+  "wardsStory": [
+    {
+      "wardId": "w-central-9",
+      "name": "Hoysala Nagara Central",
+      "issues": 22,
+      "claimed": 13,
+      "verified": 13,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-central-25",
+      "name": "Ashokanagar",
+      "issues": 22,
+      "claimed": 13,
+      "verified": 13,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-central-34",
+      "name": "D.V Gundappa Ward",
+      "issues": 9,
+      "claimed": 1,
+      "verified": 1,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-north-1",
+      "name": "Raja Kempegowda Ward",
+      "issues": 25,
+      "claimed": 17,
+      "verified": 1,
+      "verifiedRate": 5.9,
+      "reopenRate": 29.4
+    },
+    {
+      "wardId": "w-north-56",
+      "name": "Hebbal",
+      "issues": 10,
+      "claimed": 2,
+      "verified": 2,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-east-39",
+      "name": "Hagaduru",
+      "issues": 26,
+      "claimed": 18,
+      "verified": 1,
+      "verifiedRate": 5.6,
+      "reopenRate": 16.7
+    },
+    {
+      "wardId": "w-south-8",
+      "name": "Tilak Nagara",
+      "issues": 26,
+      "claimed": 18,
+      "verified": 1,
+      "verifiedRate": 5.6,
+      "reopenRate": 44.4
+    },
+    {
+      "wardId": "w-south-19",
+      "name": "New Tavarekere",
+      "issues": 8,
+      "claimed": 1,
+      "verified": 1,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-south-28",
+      "name": "Kormangala East",
+      "issues": 22,
+      "claimed": 14,
+      "verified": 14,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-south-71",
+      "name": "Agara",
+      "issues": 9,
+      "claimed": 1,
+      "verified": 1,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-west-53",
+      "name": "Malleshwaram",
+      "issues": 8,
+      "claimed": 1,
+      "verified": 1,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    },
+    {
+      "wardId": "w-west-63",
+      "name": "Rajajinagara",
+      "issues": 7,
+      "claimed": 1,
+      "verified": 1,
+      "verifiedRate": 100,
+      "reopenRate": 0
+    }
+  ],
+  "payloadSha256": "3ec084f0e4fd3c51ee0982034ed3e6e9b89dbe841d2fea21f264147300c2bfc1"
+}

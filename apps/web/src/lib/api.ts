@@ -1,4 +1,5 @@
 import { ensureSignedIn } from './auth.ts';
+import { isOfflineDemo } from './demo.ts';
 
 export class ApiError extends Error {
   constructor(
@@ -11,6 +12,7 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init: RequestInit & { auth?: boolean } = {}): Promise<T> {
+  if (isOfflineDemo) throw new ApiError(503, 'read_only_demo', 'This preview is read-only. Open the connected version to publish reports, act as an officer, or verify a fix.');
   const headers = new Headers(init.headers);
   if (init.auth !== false) {
     const user = await ensureSignedIn();

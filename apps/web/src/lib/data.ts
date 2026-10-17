@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { collection, doc, limit as qLimit, onSnapshot, orderBy, query, where, type QueryConstraint } from 'firebase/firestore';
-import type { EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, WardDoc } from '@leadnet/shared';
+import type { AiRunDoc, EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, UserDoc, WardDoc } from '@leadnet/shared';
 import { db } from './firebase.ts';
+import { isOfflineDemo, readDemo } from './demo.ts';
+import { useSession } from './auth.ts';
 
 /**
  * Realtime read hooks over public Firestore collections. Browsers never write
@@ -21,7 +23,13 @@ function useLiveQuery<T>(path: string | null, constraints: QueryConstraint[], de
       setState({ data: initial, loading: false, error: null });
       return;
     }
-    setState((s) => ({ ...s, loading: true }));
+    setState({ data: initial, loading: true, error: null });
+    if (isOfflineDemo) {
+      let active = true;
+      void readDemo<T[]>(path, deps).then((data) => { if (active) setState({ data, loading: false, error: null }); },
+        (error: Error) => { if (active) setState({ data: initial, loading: false, error }); });
+      return () => { active = false; };
+    }
     const q = query(collection(db, path), ...constraints);
     return onSnapshot(
       q,
@@ -40,7 +48,13 @@ function useLiveDoc<T>(path: string | null, deps: unknown[] = []): Live<T | null
       setState({ data: null, loading: false, error: null });
       return;
     }
-    setState((s) => ({ ...s, loading: true }));
+    setState({ data: null, loading: true, error: null });
+    if (isOfflineDemo) {
+      let active = true;
+      void readDemo<T | null>(path, deps).then((data) => { if (active) setState({ data, loading: false, error: null }); },
+        (error: Error) => { if (active) setState({ data: null, loading: false, error }); });
+      return () => { active = false; };
+    }
     return onSnapshot(
       doc(db, path),
       (snap) => setState({ data: snap.exists() ? ({ ...(snap.data() as T), id: snap.id } as T) : null, loading: false, error: null }),
@@ -74,6 +88,14 @@ export const useWard = (id: string | undefined) => useLiveDoc<WardDoc>(id ? `war
 export const useWards = () => useLiveQuery<WardDoc>('wards', [], []);
 export const useLeaders = () => useLiveQuery<LeaderDoc>('leaders', [], []);
 export const useLeader = (id: string | undefined) => useLiveDoc<LeaderDoc>(id ? `leaders/${id}` : null, [id]);
+export function useMyProfile(): Live<UserDoc | null> {
+  const { user } = useSession();
+  return useLiveDoc<UserDoc>(user && !isOfflineDemo ? `users/${user.uid}` : null, [user?.uid]);
+}
+export function useAiRuns(issueId: string | undefined): Live<AiRunDoc[]> {
+  return useLiveQuery<AiRunDoc>(issueId ? 'aiRuns' : null,
+    [where('issueId', '==', issueId ?? ''), where('public', '==', true)], [issueId]);
+}
 export const useProject = (id: string | undefined) => useLiveDoc<ProjectDoc>(id ? `projects/${id}` : null, [id]);
 
 export function useProjects(opts: { wardId?: string } = {}): Live<ProjectDoc[]> {

@@ -11,19 +11,28 @@ export interface Session {
 }
 
 let session: Session = { user: null, role: 'citizen', wardIds: [], ready: false };
+let sessionRevision = 0;
+let signingIn: Promise<User> | null = null;
 const listeners = new Set<() => void>();
 const emit = () => listeners.forEach((l) => l());
 
 onIdTokenChanged(auth, async (user) => {
+  const revision = ++sessionRevision;
   if (!user) {
     session = { user: null, role: 'citizen', wardIds: [], ready: true };
     emit();
     return;
   }
-  const token = await user.getIdTokenResult();
-  const role = (token.claims.role as Role | undefined) ?? 'citizen';
-  const wardIds = (token.claims.wardIds as string[] | undefined) ?? [];
-  session = { user, role, wardIds, ready: true };
+  try {
+    const token = await user.getIdTokenResult();
+    if (revision !== sessionRevision) return;
+    const role = ['citizen', 'officer', 'moderator', 'admin'].includes(String(token.claims.role)) ? token.claims.role as Role : 'citizen';
+    const wardIds = Array.isArray(token.claims.wardIds) ? token.claims.wardIds.filter((id): id is string => typeof id === 'string') : [];
+    session = { user, role, wardIds, ready: true };
+  } catch {
+    if (revision !== sessionRevision) return;
+    session = { user, role: 'citizen', wardIds: [], ready: true };
+  }
   emit();
 });
 
@@ -39,9 +48,10 @@ export function useSession(): Session {
 
 /** Every write needs a uid; citizens get a silent anonymous account on first action. */
 export async function ensureSignedIn(): Promise<User> {
+  await auth.authStateReady();
   if (auth.currentUser) return auth.currentUser;
-  const cred = await signInAnonymously(auth);
-  return cred.user;
+  signingIn ??= signInAnonymously(auth).then((cred) => cred.user).finally(() => { signingIn = null; });
+  return signingIn;
 }
 
 export async function signInWithGoogle() {

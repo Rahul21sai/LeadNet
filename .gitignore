@@ -26,4 +26,10 @@ playwright-report/
 test-results/
 tmp/
 apps/api/eval/out/
+apps/api/eval/results/
 submission/out/
+submission/.build/
+submission/.finalized/
+submission/.codex-finalizer/
+submission/renders/
+submission/*.pdf.validation.json

@@ -1,10 +1,17 @@
-/** Stub route — owned and replaced by the assigned build agent (see router.tsx). */
+import { useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router';
+import { Check, Copy, Printer, Share2 } from 'lucide-react';
+import { CATEGORY_META } from '@leadnet/shared';
+import { useIssue } from '../../lib/data.ts';
+import { formatDate } from '../../lib/format.ts';
+import { Button, DemoBadge, EmptyState, LoadingState, PageHeading, StatusPill } from '../../components/ui/index.tsx';
+
 export function Component() {
-  return (
-    <section className="mx-auto max-w-[1200px] px-5 py-24">
-      <p className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink-3">LeadNet</p>
-      <h1 className="mt-2 text-[40px] font-semibold capitalize tracking-tight">pass</h1>
-      <p className="mt-3 text-ink-3">This screen is being built.</p>
-    </section>
-  );
+  const { id } = useParams(); const { state } = useLocation(); const { data: issue, loading, error } = useIssue(id); const [message, setMessage] = useState('');
+  async function share() { try { const url = `${window.location.origin}/issue/${id}`; if (navigator.share) await navigator.share({ title: issue?.title.en ?? 'LeadNet Issue Pass', url }); else { await navigator.clipboard.writeText(url); setMessage('Issue link copied.'); } } catch { setMessage('Keep this page bookmarked to return to the record.'); } }
+  if (loading) return <LoadingState />;
+  if (!issue || error) return <div className="mx-auto max-w-xl px-5 py-20"><EmptyState title="Issue Pass unavailable." description={error?.message ?? 'Find the issue on the map and open its pass.'}><Link to="/map" className="text-link">Browse issues</Link></EmptyState></div>;
+  return <div className="mx-auto max-w-[900px] px-5 py-12 md:py-16"><PageHeading title={state?.justReported ? 'It’s on the record.' : 'Your Issue Pass.'} kn={state?.justReported ? 'ವರದಿ ದಾಖಲಾಗಿದೆ.' : 'ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ಪಾಸ್.'} description={state?.merged ? 'Your report joined an existing issue. Its history and your support are preserved.' : 'A shareable link to the evidence, the response, and the citizen check.'} />
+    <div className="mt-10 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_240px]"><div className="overflow-hidden rounded-xl border border-hairline bg-surface shadow-card"><div className="flex items-center justify-between border-b border-hairline px-6 py-5"><p className="text-[17px] font-semibold tracking-tight">LeadNet <span className="ml-2 text-[13px] font-normal text-ink-3">Issue Pass</span></p>{issue.isDemo && <DemoBadge />}</div>{issue.coverPhotoUrl && <img src={issue.coverPhotoUrl} alt="Reported issue" className="aspect-[16/9] w-full object-cover" />}<div className="p-6 md:p-8"><StatusPill status={issue.status} /><h2 className="mt-5 text-[28px] font-semibold leading-tight tracking-tight">{issue.title.en}</h2><p lang="kn" className="mt-3 text-[19px] text-ink-3">{issue.title.kn}</p><dl className="mt-7 grid grid-cols-2 gap-6 border-t border-hairline pt-6 text-[13px]"><div><dt className="text-ink-3">Issue reference</dt><dd className="mt-1 text-[21px] font-semibold tabular-nums">{issue.passCode}</dd></div><div><dt className="text-ink-3">Reported</dt><dd className="mt-2">{formatDate(issue.reportedAt)}</dd></div><div><dt className="text-ink-3">Ward</dt><dd className="mt-2">{issue.wardName ?? 'Not mapped'}</dd></div><div><dt className="text-ink-3">Category</dt><dd className="mt-2">{CATEGORY_META[issue.category].en}</dd></div></dl><Link to={`/issue/${issue.id}`} className="mt-8 flex min-h-12 items-center justify-center rounded-pill bg-primary px-5 text-[15px] font-medium text-on-primary">Open live issue record</Link></div><div className="border-t border-dashed border-hairline px-6 py-5 text-[12px] text-ink-3">Officials claim a fix. Citizens verify it. This pass always opens the latest public record.</div></div><aside className="space-y-4"><p className="text-[17px] font-medium">Keep the record close.</p><p className="text-[15px] text-ink-3">Bookmark this page in the browser you used to report. Citizen verification uses your signed-in session.</p><Button variant="secondary" className="w-full" onClick={share}><Share2 size={16} />Share issue</Button><Button variant="plain" className="w-full" onClick={async () => { try { await navigator.clipboard.writeText(window.location.href); setMessage('Pass link copied.'); } catch { setMessage('Copy the address from your browser to save this pass.'); } }}><Copy size={16} />Copy pass link</Button><Button variant="plain" className="w-full" onClick={() => window.print()}><Printer size={16} />Print pass</Button>{message && <p role="status" className="flex items-start gap-2 text-[13px] text-st-verified"><Check size={15} className="shrink-0" />{message}</p>}<Link to="/map" className="inline-flex min-h-11 items-center text-[13px] text-link">Back to the civic map</Link></aside></div>
+  </div>;
 }

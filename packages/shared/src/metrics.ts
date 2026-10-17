@@ -67,6 +67,7 @@ const ratio = (num: number, den: number): MetricValue => ({ value: den ? round1(
 export function computeLedger(all: readonly IssueFacts[], now: number): LedgerMetrics {
   const issues = all.filter((i) => i.status !== 'duplicate' && i.status !== 'rejected');
   const reports = all.reduce((s, i) => s + Math.max(1, i.reportCount), 0);
+  const duplicates = all.reduce((s, i) => s + Math.max(0, i.reportCount - 1) + (i.status === 'duplicate' ? 1 : 0), 0);
   const open = issues.filter((i) => OPEN.includes(i.status));
   const overdue = open.filter((i) => computeSla(i, now).overdue);
   const acked = issues.filter((i) => i.acknowledgedAt !== null);
@@ -79,7 +80,7 @@ export function computeLedger(all: readonly IssueFacts[], now: number): LedgerMe
   return {
     reports: { value: reports, n: reports },
     issues: { value: issues.length, n: issues.length },
-    duplicatesMerged: { value: reports - issues.length, n: reports },
+    duplicatesMerged: { value: duplicates, n: reports },
     open: { value: open.length, n: issues.length },
     overdue: { value: overdue.length, n: open.length },
     medianAckHours: { value: round1(median(acked.map((i) => (i.acknowledgedAt! - i.reportedAt) / HOUR))), n: acked.length },
@@ -111,7 +112,7 @@ export interface MetricDefinition {
 export const METRIC_DEFINITIONS: Record<MetricKey, MetricDefinition> = {
   reports: { key: 'reports', en: 'Citizen reports', kn: 'ನಾಗರಿಕ ವರದಿಗಳು', unit: '', betterWhen: 'neutral', definition: 'Every individual report submitted by a citizen, including ones merged into an existing issue.', formula: 'count(reports)' },
   issues: { key: 'issues', en: 'Unique issues', kn: 'ವಿಶಿಷ್ಟ ಸಮಸ್ಯೆಗಳು', unit: '', betterWhen: 'neutral', definition: 'Distinct real-world problems after duplicate reports are merged. Rejected and merged records are excluded.', formula: 'count(issues where status ∉ {duplicate, rejected})' },
-  duplicatesMerged: { key: 'duplicatesMerged', en: 'Duplicate reports merged', kn: 'ವಿಲೀನಗೊಂಡ ನಕಲು ವರದಿಗಳು', unit: '', betterWhen: 'neutral', definition: 'Reports that were attached to an issue that already existed instead of creating a new one.', formula: 'reports − unique issues' },
+  duplicatesMerged: { key: 'duplicatesMerged', en: 'Duplicate reports merged', kn: 'ವಿಲೀನಗೊಂಡ ನಕಲು ವರದಿಗಳು', unit: '', betterWhen: 'neutral', definition: 'Reports that were attached to an issue that already existed instead of creating a new one. Rejection is not a duplicate merge.', formula: 'sum(reportCount − 1) + count(duplicate records)' },
   open: { key: 'open', en: 'Open issues', kn: 'ಬಾಕಿ ಸಮಸ್ಯೆಗಳು', unit: '', betterWhen: 'lower', definition: 'Issues not yet verified fixed by citizens.', formula: 'count(status ∈ {reported, acknowledged, in progress, awaiting check, reopened})' },
   overdue: { key: 'overdue', en: 'Overdue', kn: 'ಗಡುವು ಮೀರಿದವು', unit: '', betterWhen: 'lower', definition: 'Open issues past their acknowledgement deadline (24 h) or their category resolution target.', formula: 'count(open where now > deadline)' },
   medianAckHours: { key: 'medianAckHours', en: 'Median time to acknowledge', kn: 'ಸ್ವೀಕಾರಕ್ಕೆ ಮಧ್ಯಮ ಸಮಯ', unit: 'h', betterWhen: 'lower', definition: 'Half of acknowledged issues were acknowledged faster than this.', formula: 'median(acknowledgedAt − reportedAt)' },

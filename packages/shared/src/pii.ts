@@ -43,5 +43,7 @@ export function isKannada(text: string, threshold = 0.6): boolean {
 
 /** Every number appearing in `text` (used to check a narrative only cites computed facts). */
 export function extractNumbers(text: string): number[] {
-  return (text.match(/-?\d+(?:[.,]\d+)?/g) ?? []).map((n) => Number(n.replace(',', '.'))).filter(Number.isFinite);
+  const normalized = text.replace(/[೦-೯]/g, (digit) => String(digit.charCodeAt(0) - 0x0ce6));
+  return (normalized.match(/-?\d+(?:,\d{2,3})*(?:\.\d+)?/g) ?? [])
+    .map((n) => Number(n.replaceAll(',', ''))).filter(Number.isFinite);
 }

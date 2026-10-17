@@ -44,7 +44,7 @@ with Gemini doing the parts only a model can do, and deterministic code owning e
 
 ## Should ship if time allows
 - Fictional leader profiles + development project tracker (milestones planned vs actual, linked issues), labelled demo.
-- "Ask LeadNet" — question → code-computed facts → Gemini wording → number-grounding verifier.
+- "Ask LeadNet" — question → code-computed facts → Gemini selects relevant fact IDs → code renders complete labelled bilingual facts.
 - Face / number-plate blur before publishing photos.
 - Gemini-written ward brief (narrative verified to cite only computed numbers).
 - Dark mode polish.
