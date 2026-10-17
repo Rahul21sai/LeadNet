@@ -36,9 +36,9 @@ export function TopNav() {
   const toggle = () => { const next = document.documentElement.dataset.theme !== 'dark'; setDark(next); setTheme(next ? 'dark' : 'light'); };
   return (
     <LayoutGroup id="primary-navigation"><header className="civic-topnav sticky top-0 z-50 border-b border-hairline bg-surface">
-      <nav className="mx-auto flex h-[76px] max-w-[1440px] items-center gap-3 px-5 text-[13px] sm:px-10 lg:gap-6" aria-label="Primary">
+      <nav className="mx-auto flex h-16 max-w-[1360px] items-center gap-3 px-5 text-[13px] sm:px-8 lg:gap-6" aria-label="Primary">
         <NavLink to="/" onClick={() => setOpen(false)} className="flex min-h-11 items-center gap-2.5 text-xl font-semibold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary"><MapPin size={18} strokeWidth={2} /></span>LeadNet<span className="hidden border-l border-hairline pl-4 text-xs font-normal tracking-normal text-ink-3 xl:inline">Bengaluru, on the record.</span>
+          <span className="civic-brand-mark flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary"><MapPin size={18} strokeWidth={2} /></span>LeadNet<span className="hidden border-l border-hairline pl-4 text-xs font-normal tracking-normal text-ink-3 xl:inline">Bengaluru, on the record.</span>
         </NavLink>
         <div className="hidden flex-1 items-center justify-center gap-1 text-ink-3 lg:flex">
           {LINKS.map((l) => (

@@ -6,7 +6,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 
 | Check | Result |
 |---|---|
-| `npm test` | 75 tests pass in 9 files, including spatial geometry checks |
+| `npm test` | 87 tests pass in 11 files, including spatial geometry, local atlas, reused-cluster and claim-scoped evidence checks |
 | `npm run typecheck` | Shared, API and web pass |
 | `npm run build` | Web and API production builds pass |
 | `node --test scripts/geo/geo.test.mjs` | 3 tests pass |
@@ -29,11 +29,15 @@ The source template's download instructions and blank slide were omitted. The re
 
 ## Spatial interface follow-up
 
-The owner approved the Apple-style spatial city direction. The local design adds a layered city model from all 369 ward polygons, selectable source-record pins, status filters, rotation and overhead controls, a lifecycle walkthrough, category filtering, a 2D/3D MapLibre explorer, responsive navigation motion and an optional depth comparison in the ledger. Shared metrics remain authoritative; column height is only a visual scale. Displayed numbers crossfade between actual recorded values.
+The owner approved the Apple-style spatial city direction. The first pass added a layered city model from all 369 ward polygons, selectable source-record pins, status filters, rotation and overhead controls, responsive navigation motion and an optional depth comparison in the ledger. The owner then supplied rendered screenshots showing excessive height/whitespace and a blank explorer; the second pass is specified in `DESIGN_REFRESH.md`.
 
-The new geometry tests preserve all 375 source rings, including holes, and check geographic aspect correction, north orientation, finite projection and interior labels. Existing dependencies suffice. Backend logic, credentials, Firebase settings and API contracts were not changed. All-workspace typecheck and both production builds pass. The latest web build includes the final copy and accessible control labels.
+The current design has a compact complete city model with attached record selection, a 64px header, refined light/charcoal materials, an actual issue's interactive photo comparison/timeline/citizen tally, varied category previews and a compact ledger comparison. The explorer is a definite-height map/list workspace with an inline local ward style and SVG fallback; no remote street, tile, glyph or building service is required. Source review found and fixed stale reused cluster markers and keyboard focus loss after mobile selection. Home and full issue photo comparisons both select the current claim's evidence; they never relabel an older claim's resolution as current.
 
-Browser access was retried only after the owner confirmed enabling the origin. The tool still returned a saved-policy denial; no alternate browser route was attempted. The new design has static review and automated validation, not a rendered 390px/1440px, light/dark or console sign-off. Source details are in `SPATIAL_DESIGN.md`.
+The geometry tests preserve all 375 source rings, including holes, and check geographic aspect correction, north orientation, finite projection and interior labels. Added tests validate MapLibre's installed style schema, exact ward extents, record identity/coordinates, invalid coordinates, reused cluster metadata, varied preview selection and current-claim evidence. Final `npm test` passes 87 tests in 11 files; all-workspace typecheck and both production builds pass. Changed normal text, link and status token pairings against the secondary materials were calculated at >=4.5:1. The separate design reviewer also projected the actual ward vertices through sampled camera rotations to check the reduced scene's ground bounds. These are source/calculation checks, not rendered screenshots.
+
+Existing dependencies suffice. Backend logic, credentials, Firebase settings, domain contracts and API paths were not changed.
+
+Browser access was retried after the owner confirmed enabling the origin, supplied an explicit Allow screenshot and restarted the system. The reboot stopped both development services; these were restored on the original local address. The restored tab was an internal error document; a documented fresh-tab recovery on the same browser and approved HTTP URL still received an explicit saved/managed-policy denial. No alternate browser surface, raw CDP or screenshot workaround was used. The new design has user-supplied before screenshots, static review and automated validation, not a rendered 390px/1440px, light/dark or console sign-off. Source details are in `SPATIAL_DESIGN.md`.
 
 ## Limits and remaining work
 

@@ -10,11 +10,11 @@ refined by the design-system owner. Components never use raw hex.
 ## Colour
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| canvas | #f5f5f7 | #000000 | page background |
-| surface / surface-2 | #ffffff / #fbfbfd | #1c1c1e / #2c2c2e | cards, sheets |
-| ink / ink-2 / ink-3 / ink-4 | #1d1d1f / #424245 / #6e6e73 / #86868b | #f5f5f7 / #d2d2d7 / #a1a1a6 / #86868b | text tiers (ink-4 = non-essential only) |
+| canvas | #f2f4f7 | #101419 | page background |
+| surface / surface-2 | #ffffff / #e9eef4 | #191f26 / #222a33 | cards, sheets |
+| ink / ink-2 / ink-3 / ink-4 | #17212b / #394957 / #596978 / #86868b | #f2f5f8 / #d1dae4 / #a6b3c2 / #86868b | text tiers (ink-4 = non-essential only) |
 | hairline | 10% black | 12% white | 0.5–1 px separators |
-| primary / on-primary | #1d1d1f / #fff | #f5f5f7 / #1d1d1f | primary buttons (ink pill) |
+| primary / on-primary | #17212b / #fff | #f2f5f8 / #17212b | primary buttons (ink pill) |
 | link, focus | #0066cc, #0071e3 | #2997ff, #0a84ff | links, focus ring |
 
 **Status palette** (text colour ≥ 4.5:1 on surface; `-tint` for pill backgrounds):
@@ -25,7 +25,7 @@ refined by the design-system owner. Components never use raw hex.
 Inter Variable (Latin) + Noto Sans Kannada Variable (Kannada), both OFL. SF Pro is not licensed for web use.
 | Role | Size / line / weight / tracking |
 |---|---|
-| Display (hero) | 56–80 px / 1.05 / 600 / −0.03em |
+| Display (hero) | 44–64 px / 1.06 / 600 / −0.055em |
 | Title 1 | 40 px / 1.1 / 600 / −0.025em |
 | Title 2 | 28 px / 1.15 / 600 / −0.02em |
 | Title 3 | 21 px / 1.25 / 600 / −0.015em |
@@ -41,7 +41,7 @@ Elevation is rare: cards are separated by surface contrast and hairlines first; 
 `shadow-float` for sheets and popovers only.
 
 ## Materials
-`.material-chrome` (frosted, 72% surface + saturate(180%) blur(20px)) is used **only for chrome that floats over the map**:
+`.material-chrome` (frosted, 85% surface + saturate(180%) blur(20px)) is used **only for chrome that floats over the map**:
 top nav, map filter bar, map sheet header, tab bar. Never behind body text blocks. Solid fallback when backdrop-filter is
 unsupported and under `prefers-reduced-transparency`.
 

@@ -62,6 +62,7 @@ The intended deployment is Firebase Hosting plus a Node.js Cloud Run service in 
 - [Architecture and HTTP/data contracts](docs/ARCHITECTURE.md)
 - [Visual system](docs/DESIGN_SYSTEM.md)
 - [Spatial city interface direction](docs/SPATIAL_DESIGN.md)
+- [Screenshot-led design refinement](docs/DESIGN_REFRESH.md)
 - [Ward provenance and geometry validation](docs/research/wards.md)
 - [Media provenance](apps/web/public/samples/CREDITS.md)
 - [Recovered handoff and implementation scope](docs/CONTINUATION.md)
