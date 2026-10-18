@@ -1,23 +1,25 @@
 # Share LeadNet with the team on Vercel
 
-This is a frontend demonstration before the connected Google Cloud application is deployed. The root `vercel.json` builds only the web workspace and explicitly enables `VITE_DEMO_MODE=1`. No Google Cloud, Gemini, Firebase or email credentials are required for this demonstration.
+This is a frontend demonstration before the connected Google Cloud application is deployed. Both Vercel configurations build only the web workspace and explicitly enable `VITE_DEMO_MODE=1`. No Google Cloud, Gemini, Firebase or email credentials are required for this demonstration.
 
 ## Deploy from GitHub
 
 1. Sign in at [Vercel](https://vercel.com/new) and import `Rahul21sai/LeadNet`.
-2. Leave **Root Directory** at the repository root. Do not change it to `apps/web`: the build needs the root lockfile and shared workspace.
-3. Use **Other** for Framework Preset and **22.x** for Node.js. The checked-in configuration supplies install/build/output settings:
+2. If Vercel detects multiple applications, select **Import single project** next to **web (Vite)**. Keep its **Root Directory** at `apps/web`.
+3. Use **Vite** for Framework Preset and **22.x** for Node.js. If shown, enable **Include source files outside of the Root Directory in the Build Step** so `packages/shared` and the workspace lockfile remain available. The app-local `apps/web/vercel.json` supplies install/build/output settings:
 
    | Setting | Value |
    |---|---|
    | Install Command | `npm ci` |
-   | Build Command | `VITE_DEMO_MODE=1 npm run build -w @leadnet/web` |
-   | Output Directory | `apps/web/dist` |
+   | Build Command | `VITE_DEMO_MODE=1 npm run build` |
+   | Output Directory | `dist` |
 
 4. Leave Environment Variables empty for this demo and deploy `main`.
 5. Share the resulting HTTPS URL. Your laptop can be turned off after deployment. If Vercel protects the deployment, grant teammates access through Vercel's sharing/access controls.
 
-No Vercel deployment has been created by preparing these files. This checkout has no installed Vercel CLI or linked Vercel project. The source configuration is ready for the account-owned import above.
+Output paths are relative to the selected project root. With `apps/web` selected, `dist` means `apps/web/dist` in the repository. Do not use `apps/web/dist` as the output setting for this app-root import. For an existing repository-root import, the separate root `vercel.json` retains the workspace build command and `apps/web/dist` output; use **Other** as its preset. The two configurations support the two import flows without moving source files.
+
+No Vercel deployment has been created by preparing these files. This checkout has no installed Vercel CLI or linked Vercel project. For agent-assisted linking, environment management, deployment and logs, installing the official CLI with `npm i -g vercel` is strongly recommended. Complete `vercel login` in your account, then verify the intended project before deploying. The GitHub import above does not require the CLI.
 
 ## What teammates can try
 
