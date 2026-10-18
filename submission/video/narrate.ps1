@@ -1,7 +1,8 @@
 param(
     [string]$PlanPath = (Join-Path $PSScriptRoot '..\video-notes\scene-plan.json'),
     [string]$Voice = 'Microsoft Mark',
-    [int]$Rate = 0
+    [int]$Rate = 0,
+    [string[]]$SceneIds = @()
 )
 
 $ErrorActionPreference = 'Stop'
@@ -44,8 +45,19 @@ function Get-WaveSeconds([string]$FilePath) {
 }
 
 $timings = @()
+$existingTimings = @{}
+$timingFile = Join-Path $PSScriptRoot 'narration-timings.json'
+if ($SceneIds.Count -gt 0 -and (Test-Path -LiteralPath $timingFile)) {
+    $previous = Get-Content -LiteralPath $timingFile -Raw -Encoding utf8 | ConvertFrom-Json
+    foreach ($item in $previous.scenes) { $existingTimings[$item.id] = $item }
+}
 try {
     foreach ($scene in $plan.scenes) {
+        if ($SceneIds.Count -gt 0 -and $scene.id -notin $SceneIds) {
+            if (!$existingTimings.ContainsKey($scene.id)) { throw "Missing retained narration timing: $($scene.id)" }
+            $timings += $existingTimings[$scene.id]
+            continue
+        }
         $path = Join-Path $audioDir ($scene.id + '.wav')
         $sceneRate = $Rate
         $budget = [double]$scene.end - [double]$scene.start - 0.8

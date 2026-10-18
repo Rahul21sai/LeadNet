@@ -82,20 +82,20 @@ function note(number, paragraphs, citations) {
 const team = deck.resolve(sourceRecords[0].elements.find((element) => element.text).id);
 team.text.replace('Team name: ', `Team name: ${registeredTeam.registeredTeamName}`);
 team.text.replace('Team leader name: ', `Team leader name: ${registeredTeam.members.find((member) => member.role === 'Leader').name}`);
-team.text.replace('Problem Statement: ', 'Problem Statement: [Owner to fill]');
+team.text.replace('Problem Statement: ', `Problem Statement: ${registeredTeam.problemStatementSelection}`);
 text(deck.slides.items[0], 'registered-team-members', `Team members: ${registeredTeam.members.filter((member) => member.role !== 'Leader').map((member) => member.name).join('; ')}`, 121, 478, 790, 30, 20);
-note(1, [`Registered team: ${registeredTeam.registeredTeamName}. Product: Namma Civic. ${registeredTeam.members.map((member) => `${member.name} (${member.role})`).join('; ')}. Names match the owner-supplied portal screenshot exactly; email addresses are omitted. Proposed challenge: Sustainability & Social Impact. The exact problem-statement selection remains the owner's placeholder.`,], 'Source: owner-supplied Hack2Skill portal roster screenshot and owner confirmation of the registered team name, 18 October 2026; submission/team.json.');
+note(1, [`Registered team: ${registeredTeam.registeredTeamName}. Product: Namma Civic. ${registeredTeam.members.map((member) => `${member.name} (${member.role})`).join('; ')}. Names match the owner-supplied portal screenshot exactly; email addresses are omitted.`, `Selected problem statement: ${registeredTeam.problemStatementSelection}. ${registeredTeam.selectionSource}`, `Challenge description: ${registeredTeam.challengeDescription}`, `Project problem statement: ${registeredTeam.projectProblemStatement}`], 'Source: owner-supplied Hack2Skill portal roster screenshot, registered team confirmation and selected challenge, 18 October 2026; submission/team.json.');
 note(2, ['The original template download/edit instructions are retained unchanged.'], 'Source: prescribed AI Builder Cup submission template.');
 
 {
   const s = deck.slides.items[2];
   text(s, 'product-name', 'Namma Civic', 52, 142, 640, 56, 40, { bold: true });
   text(s, 'idea', 'Citizens verify the fix', 52, 211, 750, 48, 31);
-  text(s, 'problem', 'A closed complaint alone does not show whether a street was repaired. Namma Civic keeps the report, evidence, official claim and citizen verdict in one public record.', 52, 277, 800, 90, 23);
-  rule(s, 392);
-  text(s, 'three-facts', 'Photo + voice reporting     Real ward assignment     Public outcome ledger', 52, 416, 856, 35, 20, { bold: true });
-  text(s, 'scope', 'Bengaluru prototype | Independent demonstration; no government endorsement', 52, 470, 856, 28, 15, { color: colors.muted });
-  note(3, ['Namma Civic helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.'], `${sources.product}\n${sources.wards}`);
+  text(s, 'problem', registeredTeam.projectProblemStatement, 52, 277, 856, 124, 22);
+  rule(s, 414);
+  text(s, 'three-facts', 'Photo + voice reporting     Real ward assignment     Public outcome ledger', 52, 438, 856, 35, 20, { bold: true });
+  text(s, 'scope', 'Bengaluru prototype. Independent demonstration. No government endorsement.', 52, 484, 856, 28, 15, { color: colors.muted });
+  note(3, [`Selected challenge: ${registeredTeam.problemStatementSelection}`, `Challenge description: ${registeredTeam.challengeDescription}`, `Project problem statement: ${registeredTeam.projectProblemStatement}`, 'Namma Civic applies this challenge to accessible local reporting, community participation and an evidence-backed public civic record. The connected report-to-verification workflow is implemented in source. The live Firebase Hosting frontend is a device-only demonstration, with no live Gemini or connected backend.'], `${sources.product}\n${sources.wards}\nSource: submission/team.json; submission/status.json; deploy/frontend/FIREBASE.md.`);
 }
 {
   const s = deck.slides.items[3]; titleOnly(4, 'Opportunities');
@@ -119,7 +119,7 @@ note(2, ['The original template download/edit instructions are retained unchange
   ];
   features.forEach(([heading, body], index) => { const x = index % 2 ? 500 : 52, y = 149 + Math.floor(index / 2) * 110; text(s, `feature-${index}`, heading, x, y, 398, 32, 21, { bold: true }); text(s, `feature-body-${index}`, body, x, y + 40, 398, 58, 18); });
   text(s, 'readiness', status.featureStatus.replace('. Connected', '.\nConnected'), 52, 479, 856, 36, 12.5, { color: colors.muted });
-  note(5, [status.featureStatus, 'Feature architecture and source are implemented. A rendered UI review and live cloud/AI verification remain separate checks. Fictional leaders and projects are labelled demonstration records.'], sources.product);
+  note(5, [status.featureStatus, status.testStatus, 'Connected feature architecture and source are implemented. Firebase Hosting Spark serves the device-only demonstration. Connected API mutations and live Gemini remain unavailable. Fictional leaders and projects are labelled demonstration records.'], `${sources.product}\nSource: submission/status.json; deploy/frontend/FIREBASE.md.`);
 }
 {
   const s = deck.slides.items[5];
@@ -156,62 +156,63 @@ const mapPng = await sharp(Buffer.from(mapSvg)).png().toBuffer(); await fs.write
 {
   const s = deck.slides.items[7];
   const node = (name,label,sub,x,y,w) => { rect(s,name,x,y,w,94,'#FFFFFF',colors.ink);text(s,`${name}-label`,label,x+12,y+12,w-24,28,21,{bold:true});text(s,`${name}-sub`,sub,x+12,y+47,w-24,40,16); };
-  node('browser','Citizen / officer web','React + Firebase Hosting',52,164,230);
-  node('api','Cloud Run API','Hono + firebase-admin',345,164,250);
-  node('data','Firestore + Storage','Records, photos, AI audit',660,164,248);
+  node('browser','Citizen / officer web','Firebase Hosting Spark\nLive device demo',52,164,230);
+  node('api','Cloud Run API','Hono + firebase-admin\nNot deployed',345,164,250);
+  node('data','Firestore + Storage','Connected source only\nNot deployed',660,164,248);
   for (const x of [294,608]) s.shapes.add({geometry:'rightArrow',position:{left:x,top:199,width:36,height:20},fill:colors.ink,line:{fill:colors.ink,width:0}});
-  node('identity','Firebase Auth','Identity and demo roles',52,327,230);
-  node('ai','Gemini on Vertex AI','Draft, select, observe',345,327,250);
-  node('core','Deterministic core','In-process rules + verifiers',660,327,248);
+  node('identity','Firebase Auth','Connected identity path\nUnused by device demo',52,327,230);
+  node('ai','Gemini on Vertex AI','Draft, select, observe\nNo live invocation',345,327,250);
+  node('core','Deterministic core','Rules + verifiers in source',660,327,248);
   s.shapes.add({geometry:'upArrow',position:{left:155,top:278,width:20,height:30},fill:colors.ink,line:{fill:colors.ink,width:0}});
   s.shapes.add({geometry:'downArrow',position:{left:460,top:278,width:20,height:30},fill:colors.ink,line:{fill:colors.ink,width:0}});
-  text(s,'architecture-note','API owns all writes. Browser reads are read-only. Schema checks, one repair retry, then a safe fallback.',52,455,856,42,19);
-  note(8, ['This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. The public Vercel prototype is accessible in device-only demo mode. The owner plans Google Cloud deployment separately; live cloud services and model evaluation remain unverified.', 'For Ask Namma Civic, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.'], sources.product);
+  text(s,'architecture-note','Live: Firebase Hosting Spark frontend only. Backend and Gemini are unavailable.\nTarget: API writes, schema checks, one repair retry, then a safe fallback.',52,446,856,60,18);
+  note(8, ['This diagram combines the deployed static frontend with the implemented connected target architecture. Firebase Hosting Spark serves the device-only SPA at https://leadnet-blr.web.app/. It was deployed on 18 October 2026 with billing disabled and no API rewrite. Cloud Run and the connected backend remain undeployed. Gemini on Vertex AI has not been invoked or evaluated live. Device posts and interactions remain in each browser.', 'In the future connected design, Admin SDK owns mutations. Vertex uses a service account, not browser API keys. For Ask Namma Civic, Gemini selects closed fact keys and code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service. Static Firebase Hosting alone does not establish the challenge requirement to use a Google AI service.'], `${sources.product}\nSource: submission/status.json; deploy/frontend/FIREBASE.md; firebase.frontend.json.`);
 }
 {
   const s = deck.slides.items[8];
-  const rows = [['Interface','React 19, TypeScript, Vite, Tailwind, Motion, MapLibre'],['Google services','Firebase Hosting / Auth / Storage; Firestore; Cloud Run'],['AI integration','Gemini on Vertex AI; schema and task verifiers'],['API and domain','Node.js, Hono, firebase-admin, shared deterministic rules'],['Privacy','API-only writes, EXIF removal, PII scrub, private citizen audio'],['Evidence','Original reports, append-only events, source attribution, demo labels']];
+  const rows = [['Interface','React 19, TypeScript, Vite, Tailwind, Motion, MapLibre'],['Google services','Firebase Hosting Spark is live. Connected services are source only.'],['AI integration','Gemini on Vertex AI + verifiers in source. Live AI unavailable.'],['API and domain','Node.js, Hono, firebase-admin, shared deterministic rules'],['Privacy','API-only writes, EXIF removal, PII scrub, private citizen audio'],['Evidence','Original reports, append-only events, source attribution, demo labels']];
   rows.forEach(([a,b],i)=>{const y=151+i*53;text(s,`tech-a-${i}`,a,52,y,196,34,19,{bold:true});text(s,`tech-b-${i}`,b,262,y,646,40,18);if(i<rows.length-1)rect(s,`tech-line-${i}`,52,y+42,856,1,colors.rule,colors.rule);});
-  note(9,['The stack is present in the codebase. Service integration code is distinct from successful cloud deployment or a measured live model evaluation.'],sources.product);
+  note(9,['Firebase Hosting Spark is the deployed Google service for the frontend. Auth, Storage, Firestore and Cloud Run are part of the connected source architecture, not a working connected deployment. Gemini integration and verifiers are implemented in source, but live Google AI behavior has not been established. The device demo stores new activity in the browser.'],`${sources.product}\nSource: submission/status.json; deploy/frontend/FIREBASE.md.`);
 }
 {
   const s = deck.slides.items[9];
-  text(s,'cost-head','Cloud cost has not been measured',52,150,856,52,29,{bold:true});
-  const drivers=[['Cloud Run','CPU, memory, requests and warm-instance time'],['Vertex Gemini','Input/output tokens and media processing'],['Firestore','Reads, writes, indexes and retention'],['Storage','Evidence size, downloads and retention']];
-  drivers.forEach(([a,b],i)=>{const y=230+i*48;text(s,`cost-label-${i}`,a,52,y,200,32,20,{bold:true});text(s,`cost-copy-${i}`,b,270,y,630,38,19);});
-  text(s,'cost-plan','Cloud spending and alert setup are deferred. A $25 alert is planned; it is not a spending cap. No measured monthly cost is claimed.',52,445,856,62,18,{color:colors.muted});
-  note(10,['No cloud invoice, capacity benchmark or pricing estimate is claimed. The owner plans Google Cloud deployment separately; cloud spending and alert configuration are unverified. Cost drivers are architecture facts, not quoted prices.'],sources.product);
+  text(s,'cost-head','Firebase Hosting Spark frontend',52,150,856,52,29,{bold:true});
+  text(s,'cost-current','Billing is unlinked. The static frontend uses Spark quotas.',52,207,856,34,20);
+  const drivers=[['Future Cloud Run','CPU, memory, requests and warm-instance time'],['Future Gemini','Input/output tokens and media processing'],['Future Firestore','Reads, writes, indexes and retention'],['Future Storage','Evidence size, downloads and retention']];
+  drivers.forEach(([a,b],i)=>{const y=260+i*43;text(s,`cost-label-${i}`,a,52,y,200,32,19,{bold:true});text(s,`cost-copy-${i}`,b,270,y,630,38,19);});
+  text(s,'cost-plan','No paid backend is deployed or authorized. Spark quota limits apply. Future service costs need separate approval; no monthly cost measurement is claimed.',52,445,856,62,18,{color:colors.muted});
+  note(10,['The owner selected Firebase Hosting Spark with no billing/card. Project billing is unlinked. Cloud Run, the connected backend and Gemini were not deployed. No measured cloud invoice, capacity benchmark or monthly pricing estimate is claimed. The listed future cost drivers are architecture facts, not quoted prices. Paid resources need new owner approval.'],`${sources.product}\nSource: submission/status.json; docs/DEPLOYMENT.md; deploy/frontend/FIREBASE.md.`);
 }
 {
   const s = deck.slides.items[10];
   text(s,'snapshot-status','Actual browser capture pending',52,157,856,52,30,{bold:true});
-  text(s,'snapshot-truth','No illustration is presented as a product screenshot. The local interface needs a rendered review before these two captures can be added.',52,230,836,82,23);
+  text(s,'snapshot-truth','The Firebase frontend is live. Verified product captures have not yet been selected for this deck. Illustrations are not presented as screenshots.',52,230,836,82,23);
   rule(s,342);
   text(s,'capture-a','Required capture 1',52,370,400,30,18,{bold:true});
   text(s,'capture-a-copy','Homepage and ward map\nInclude the visible demo-data label',52,410,400,72,20);
   text(s,'capture-b','Required capture 2',500,370,400,30,18,{bold:true});
   text(s,'capture-b-copy','Issue evidence and officer workflow\nUse the verified deployed build',500,410,400,72,20);
-  note(11,['This template section remains an explicit readiness gap. Genuine product screenshots are not included in this revision. No fake screenshot was substituted. Add verified product captures from the public prototype and rerender this deck before submitting.'],sources.media);
+  note(11,['This template section remains a readiness gap. Firebase Hosting is live and browser layouts have been reviewed, but genuine product screenshots are not included in this deck revision. Existing archival capture sources remain unchanged. Add selected verified product captures and rerender before submitting.'],`${sources.media}\nSource: submission/status.json.`);
 }
 {
   const s = deck.slides.items[11];
-  const checks=[['Ward dataset',`${validation.wards} wards; 5 corporations; all representative points inside polygons`],['Seed integrity',`${summary.issues} demo histories replay; ${summary.events} events; deterministic output hash`],['Media integrity','14 JPEGs without EXIF/XMP/IPTC; 17 sample fingerprints match'],['Code checks',status.testStatus]];
+  const checks=[['Ward dataset',`${validation.wards} wards; 5 corporations; all representative points inside polygons`],['Seed integrity',`${summary.issues} demo histories replay; ${summary.events} events; deterministic output hash`],['Media integrity','14 JPEGs without EXIF/XMP/IPTC; 17 sample fingerprints match'],['Code + Hosting','Typecheck and 9 HTTP tests pass. Live routes, media and layouts verified.']];
   checks.forEach(([a,b],i)=>{const y=149+i*54;text(s,`test-label-${i}`,a,52,y,196,34,19,{bold:true});text(s,`test-value-${i}`,b,264,y,642,43,18);});
   rule(s,375);
-  text(s,'benchmark-pending',`${status.cloudStatus}\nNo live quality or latency results`,52,394,856,108,21,{color:colors.red,bold:true});
-  note(12,['The figures on this slide are local integrity checks, not live model benchmarks. The owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified. No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is fabricated.'],`${sources.seed}\n${sources.wards}\n${sources.media}\nStatus: submission/status.json`);
+  text(s,'benchmark-pending','Firebase Hosting Spark is live. Billing is disabled.\nCloud Run, backend and Gemini remain unavailable.\nNo live AI quality or latency results are claimed.',52,394,856,108,21,{color:colors.red,bold:true});
+  note(12,['The figures describe local integrity checks and deployed frontend verification, not live model benchmarks.', status.testStatus, status.cloudStatus, 'No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is claimed. Hosting a static frontend does not establish the Google AI service requirement.'],`${sources.seed}\n${sources.wards}\n${sources.media}\nStatus: submission/status.json`);
 }
 {
   const s = deck.slides.items[12];
-  const roadmap=[['Google Cloud deployment','Deploy Google Cloud separately, then verify connected services and live model behavior. The public Vercel build currently runs in device-only demo mode.'],['First pilot','Work with one ward or resident group; obtain consent, define moderation and review disputed closures with humans.'],['Later development','Complaint-system integrations, notifications, privacy blurring, real official identity checks and larger-scale analytics.']];
+  const roadmap=[['Connected backend','Firebase Hosting Spark is live. Cloud Run, backend and Gemini need separate approval, deployment and live verification.'],['First pilot','Work with one ward or resident group; obtain consent, define moderation and review disputed closures with humans.'],['Later development','Complaint-system integrations, notifications, privacy blurring, real official identity checks and larger-scale analytics.']];
   roadmap.forEach(([a,b],i)=>{const y=151+i*111;text(s,`future-head-${i}`,a,52,y,225,55,23,{bold:true});text(s,`future-body-${i}`,b,300,y,600,85,20);});
-  note(13,['Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.'],sources.product);
+  note(13,['The frontend is deployed to Firebase Hosting Spark. The connected backend and live Gemini remain unavailable, and paid deployment requires new owner approval. Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets are not actual officials or public spending.'],`${sources.product}\nSource: submission/status.json; docs/DEPLOYMENT.md.`);
 }
 {
   const s = deck.slides.items[13]; titleOnly(14,'Provide links to your:');
-  [['GitHub public repository',status.repositoryUrl||'[Owner: publish approved repository and paste URL]'],['Demo video (3-4 minutes)',status.videoUrl||'[Owner: record, upload and paste public video URL]'],['Public prototype (device-only demo)',status.productUrl||'[Owner: add verified public product URL]']].forEach(([label,value],i)=>{const y=155+i*96;text(s,`link-label-${i}`,label,52,y,850,30,21,{bold:true});text(s,`link-value-${i}`,value,52,y+38,850,42,18,{color:colors.muted});});
+  [['GitHub public repository',status.repositoryUrl||'[Owner: publish approved repository and paste URL]'],['Demo video (3-4 minutes)',status.videoUrl||'[Owner: upload MP4 and paste public video URL]'],['Public prototype (Firebase device demo)',status.productUrl||'[Owner: add verified public product URL]']].forEach(([label,value],i)=>{const y=155+i*96;text(s,`link-label-${i}`,label,52,y,850,30,21,{bold:true});text(s,`link-value-${i}`,value,52,y+38,850,42,18,{color:colors.muted});});
   text(s,'link-check','All three links must open without account access during evaluation.',52,474,856,24,17);
-  note(14,[`The public repository link is retained. The Vercel product URL ${status.productUrl} was opened successfully in the managed browser and showed Namma Civic in local device-only demo mode. This access check does not establish connected Google Cloud integration. Only the public video URL remains pending. The owner-supplied current submission requirement is a 3-4 minute video. No video upload or contest submission is implied by this deck.`], 'Source: prescribed template; owner-supplied prototype URL, managed-browser access check and current video requirement, 18 October 2026; current status in submission/status.json.');
+  note(14,[`The public repository link is retained. The Firebase Hosting product URL ${status.productUrl} serves Namma Civic in device-only demo mode, deployed on Spark on 18 October 2026. Current Hosting route, media and browser checks are recorded in submission/status.json. This frontend deployment does not establish connected backend operation or live Google AI use. The public video URL remains pending. The owner-supplied current submission requirement is a 3-4 minute video. No video upload or contest submission is implied by this deck.`], 'Source: prescribed template; owner-supplied current video requirement; submission/status.json; deploy/frontend/FIREBASE.md, 18 October 2026.');
 }
 note(15,['Original blank template slide omitted from final delivery.'], 'Source: prescribed AI Builder Cup submission template.');
 note(16,['Original closing artwork retained unchanged.'], 'Source: prescribed AI Builder Cup submission template.');
@@ -224,7 +225,7 @@ const finalContent=content.filter((entry)=>!/^## Slide (2|15)\n/.test(entry)).ma
   const visible=written.records[index].elements.filter((element)=>element.text?.trim()).map((element)=>element.text.trim()).join('\n\n');
   return `${title}\n\n### Slide copy\n\n${visible}\n\n### Presenter notes and sources\n\n${entry.replace(/^## Slide \d+\n\n/,'')}`;
 });
-await fs.writeFile(path.join(OUT,'content.md'),`# Namma Civic submission deck\n\nReview snapshot. Registered team: ${registeredTeam.registeredTeamName}. The roster is confirmed from the owner-supplied portal screenshot. Public prototype: ${status.productUrl} (managed-browser access verified; device-only demo mode). Public repository: ${status.repositoryUrl}. ${status.cloudStatus} The exact problem-statement selection, public video URL, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.\n\n${finalContent.join('\n\n')}`);
+await fs.writeFile(path.join(OUT,'content.md'),`# Namma Civic submission deck\n\nReview snapshot. Registered team: ${registeredTeam.registeredTeamName}. The roster is confirmed from the owner-supplied portal screenshot. Selected problem statement: ${registeredTeam.problemStatementSelection}. ${registeredTeam.selectionSource} Public prototype: ${status.productUrl} (Firebase Hosting Spark, device-only demo). Public repository: ${status.repositoryUrl}. ${status.cloudStatus} The public video URL, selected genuine screenshots and measured live AI results remain incomplete. Static Hosting alone does not establish the Google AI service requirement. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.\n\n${finalContent.join('\n\n')}`);
 
 for (const [index, slide] of deck.slides.items.entries()) {
   const stem = `slide-${String(index+1).padStart(2,'0')}`;
@@ -247,7 +248,17 @@ const finalized=await finalizePresentation({ workspaceDir:OUT,candidatePath:cand
   verifyArtifactToolImport:true,receiptPath:path.join(BUILD,`validation-${REVISION}.json`),
 });
 console.log('Finalizer',JSON.stringify(finalized));
-await fs.copyFile(finalPath,path.join(OUT,'Namma-Civic-AI-Builder-Cup.pptx'));
+let officeLockPresent = false;
+try { await fs.access(path.join(OUT,'~$Namma-Civic-AI-Builder-Cup.pptx')); officeLockPresent = true; } catch (error) { if (error.code !== 'ENOENT') throw error; }
+let deliveredPptx = path.join(OUT,officeLockPresent ? 'Namma-Civic-AI-Builder-Cup-updated.pptx' : 'Namma-Civic-AI-Builder-Cup.pptx');
+try { await fs.copyFile(finalPath,deliveredPptx); }
+catch (error) {
+  if (!['EBUSY','EACCES','EPERM'].includes(error.code) || officeLockPresent) throw error;
+  deliveredPptx = path.join(OUT,'Namma-Civic-AI-Builder-Cup-updated.pptx');
+  await fs.copyFile(finalPath,deliveredPptx);
+}
+await fs.writeFile(path.join(BUILD,`artifacts-${REVISION}.json`),JSON.stringify({ revision:REVISION, pptx:deliveredPptx, pdf:path.join(OUT,'Namma-Civic-AI-Builder-Cup.pdf'), officeLockPresent },null,2)+'\n');
+console.log('Editable deck',deliveredPptx);
 const pdf=spawnSync(path.join(RUNTIME,'python/python.exe'),[path.join(OUT,'render-pdf.py'),RENDER_DIR,path.join(OUT,'Namma-Civic-AI-Builder-Cup.pdf'),'14'],{encoding:'utf8'});
 console.log(pdf.stdout);if(pdf.status!==0)throw new Error(pdf.stderr||'PDF assembly failed');
 process.exitCode=0;

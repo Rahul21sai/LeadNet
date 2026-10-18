@@ -6,13 +6,14 @@ Namma Civic by Tri-Fusion • target 3:35 • English • 1920×1080 • H.264 M
 
 - The product is Namma Civic, the registered team is Tri-Fusion, and the three portal names are preserved.
 - The video must explain the civic problem, demonstrate working functionality, describe the architecture and Google services, and remain between 3 and 4 minutes.
-- The current product is a cost-conscious demonstration. Full-scale rollout is future work. The owner plans to deploy Google Cloud separately.
+- Selected challenge: Sustainability & Social Impact. Residents need accessible reporting and a visible path from a local observation to an evidence-backed, citizen-verified outcome.
+- The current product is a cost-conscious demonstration. The frontend is live on Firebase Hosting Spark at https://leadnet-blr.web.app/ with billing disabled. Connected backend and live Gemini deployment remain future work.
 
 ## Proposed production decisions
 
 - A narrated product walkthrough with about 99 seconds of genuine captured app screens and 116 seconds of problem, architecture, safeguards and team explanation.
 - Keep the warm editorial product palette and use official Google icons already included in the repo. Do not include personal emails.
-- The static demo is labelled browser-local; connected Google services are described as implemented integration architecture until actual live evidence exists.
+- The static demo is labelled browser-local. Firebase Hosting is described as live; other Google services are described as implemented integration architecture until actual live evidence exists.
 - Use a free local voice and local rendering unless the owner explicitly chooses a paid provider.
 
 ## Scene sequence
@@ -28,7 +29,8 @@ Namma Civic by Tri-Fusion • target 3:35 • English • 1920×1080 • H.264 M
 
 ## Production status
 
-- Public demo URL supplied by owner: https://lead-net-6639-eta.vercel.app/. Browser access to this public origin succeeded; ten genuine source captures are verified. The localhost origin remains blocked and is not used.
+- Current public demo URL: https://leadnet-blr.web.app/. Firebase Hosting release, route/media checks and public browser smoke checks passed on 18 October 2026; see `../../deploy/frontend/VERIFICATION.md`.
+- The ten genuine screen sources were captured from https://lead-net-6639-eta.vercel.app/ before the Firebase release. Their source URLs/hashes remain unchanged. The localhost origin remains blocked and is not used.
 - Owner approved free local HyperFrames tooling and its required browser/encoder downloads. No paid media or cloud rendering.
 - Owner approved the narrated preview; final 215-second MP4 exported and independently verified. Public video upload remains owner-controlled.
 

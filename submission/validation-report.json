@@ -1,41 +1,119 @@
 {
-  "revision": "team-v3",
+  "revision": "firebase-theme-v5",
   "productName": "Namma Civic",
   "registeredTeamName": "Tri-Fusion",
+  "problemStatementSelection": "Sustainability & Social Impact",
+  "exactChallengeDescriptionInSpeakerNotes": true,
+  "exactProjectProblemStatementInVisibleSlideAndNotes": true,
   "slideCount": 14,
-  "pptxBytes": 1033783,
-  "pdfBytes": 2061006,
+  "pptxPath": "Namma-Civic-AI-Builder-Cup-updated.pptx",
+  "pdfPath": "Namma-Civic-AI-Builder-Cup.pdf",
+  "pptxBytes": 1035975,
+  "pdfBytes": 2158146,
   "pdfUnder5MB": true,
-  "descriptionCharacters": 844,
-  "pptxSha256": "f3d8b10db3a69ab0ebd4615b8a3de87dd236e5287ad6499d4fe3fab7db35f4cb",
-  "pdfSha256": "a8bb9202852383fa74d9583b5fd2f78c782a2ad1b4776316df9359e452ce2e9c",
-  "teamSha256": "83038bdc64617ef56d047e67878a362389e6b9e1e6de6cb7779f2d608ca9863f",
+  "descriptionCharacters": 804,
+  "pptxSha256": "e1cdc7f944ba8297b6975de88e660f6a926eb4d363b0fa4f5edd3d944561b4a8",
+  "pdfSha256": "498583361ec616d16934395625905906626272fd0586ebe35fc47cd2afd76e57",
+  "teamSha256": "6835f6bab4f210ce403c96c01401b0e0556b93cecf30a584b99496d312951c82",
+  "statusSha256": "a32c514bb1ad163f6adf65b5cb0ac5236f60b32d1e8eae18fbf0a08c678baf07",
   "packageIntegrityFindings": 0,
   "layoutFindings": 0,
   "artifactToolReimportPassed": true,
+  "nativeTextRunCount": 158,
   "exactRosterInNativeSlideText": true,
-  "emailAddressesFoundInPptxXmlAndPublicTeamCollateral": 0,
-  "visualReview": "Slides 4, 11, 12 and 13 visually changed and were inspected individually at full size. Ten other slide renders, including the complete team slide and closing artwork, are pixel-identical to team-v2. All final PDF pages rendered with Poppler; the contact sheet was reviewed and changed pages checked individually. Template logos, credits and artwork are preserved.",
-  "validationImages": [
-    "renders/team-v3/slide-01.png",
-    "renders/team-v3/slide-04.png",
-    "renders/team-v3/slide-11.png",
-    "renders/team-v3/slide-12.png",
-    "renders/team-v3/slide-13.png",
-    ".build/pdf-team-v3/contact-sheet.jpg"
-  ],
-  "cloudStatus": "Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified.",
-  "videoRequirement": "3-4 minutes, from owner-supplied current submission instructions",
-  "limitations": [
-    "Exact problem-statement selection remains an owner placeholder",
-    "Genuine UI screenshots are not included in this revision",
-    "Public video URL pending",
-    "Live Google Cloud services and model quality or latency measurements unverified",
-    "Image-page PDF; editable PPTX supplied",
-    "Native PowerPoint execution not verified"
-  ],
-  "productUrl": "https://lead-net-6639-eta.vercel.app/",
+  "emailAddressesFoundInPptxXml": 0,
+  "productUrl": "https://leadnet-blr.web.app/",
   "repositoryUrl": "https://github.com/Rahul21sai/LeadNet",
+  "productUrlInNativeSlideText": true,
+  "productUrlClickableInPdf": true,
+  "pdfLinksSlide": 13,
+  "pdfLinkAnnotations": [
+    {
+      "uri": "https://github.com/Rahul21sai/LeadNet",
+      "rect": [
+        39.0,
+        228.75,
+        676.5,
+        260.25
+      ]
+    },
+    {
+      "uri": "https://leadnet-blr.web.app/",
+      "rect": [
+        39.0,
+        84.75,
+        676.5,
+        116.25
+      ]
+    }
+  ],
+  "pdfMetadataUpdated": true,
+  "cloudStatus": "Frontend deployed to Firebase Hosting Spark in leadnet-blr on 18 October 2026. Project billing remains disabled. Cloud Run, connected backend and live Gemini were not deployed or verified.",
+  "googleAiRequirementEstablished": false,
+  "videoRequirement": "3-4 minutes, from owner-supplied current submission instructions",
   "videoUrlPending": true,
-  "productUrlInNativeSlideText": true
+  "officeLockFilePreserved": true,
+  "originalPptxPreserved": true,
+  "updatedEditableCopyProvided": true,
+  "unchangedSlidesPixelIdenticalToTeamV3": [
+    3,
+    5,
+    6,
+    14
+  ],
+  "visualReview": "Every final slide render inspected at full size. Revised title, exact problem statement, service status, cost, benchmark and links fit without overflow. Final PDF rendered with Poppler, contact sheet reviewed, and pages 1, 2 and 13 checked individually. Required template logos, team roster and closing artwork preserved.",
+  "visualReviewCompleted": true,
+  "validationImages": [
+    "renders/firebase-theme-v5/slide-01.png",
+    "renders/firebase-theme-v5/slide-02.png",
+    "renders/firebase-theme-v5/slide-03.png",
+    "renders/firebase-theme-v5/slide-04.png",
+    "renders/firebase-theme-v5/slide-05.png",
+    "renders/firebase-theme-v5/slide-06.png",
+    "renders/firebase-theme-v5/slide-07.png",
+    "renders/firebase-theme-v5/slide-08.png",
+    "renders/firebase-theme-v5/slide-09.png",
+    "renders/firebase-theme-v5/slide-10.png",
+    "renders/firebase-theme-v5/slide-11.png",
+    "renders/firebase-theme-v5/slide-12.png",
+    "renders/firebase-theme-v5/slide-13.png",
+    "renders/firebase-theme-v5/slide-14.png",
+    ".build/pdf-firebase-theme-v5/contact-sheet.jpg",
+    ".build/pdf-firebase-theme-v5/page-01.png",
+    ".build/pdf-firebase-theme-v5/page-02.png",
+    ".build/pdf-firebase-theme-v5/page-13.png"
+  ],
+  "templateFontDiagnostics": "Importer emitted the source template's embedded-font family/subfamily mismatch diagnostics. Font policy, package import and visual rendering passed; native PowerPoint font execution remains unverified.",
+  "builderExecutionDiagnostics": {
+    "reportedExitCode": 1,
+    "completionMessageReached": true,
+    "completedSteps": [
+      "All 14 slide renders",
+      "PPTX finalization with zero package and layout findings",
+      "Artifact-tool PPTX reimport",
+      "Editable output copy",
+      "PDF assembly and URI annotation checks"
+    ],
+    "independentArtifactValidationExitCode": 0,
+    "minimalReproduction": {
+      "artifactToolImportThenProcessExit0": 0,
+      "artifactToolPptxImportAndOneSlideRenderThenProcessExit0": 1,
+      "caughtTerminationException": false,
+      "errorStderr": false,
+      "processExitFunctionIdentityChanged": false,
+      "exitCodeBeforeTermination": "undefined"
+    },
+    "diagnosis": "Activating the artifact-tool slide renderer changes process termination behavior. The same native process.exit(0) returns code 0 after module import alone and code 1 after importing the PPTX and rendering one slide. No application exception or error stderr explains the exit. This isolates the failure boundary to renderer/native teardown; the exact internal handler is unconfirmed.",
+    "handling": "No exit override or forced-success workaround was added. Heavy probes stopped while video rendering continued. Delivered firebase-theme-v5 artifacts retain their validated hashes. The builder command is not reported as a successful process run.",
+    "reproductionScript": ".build/diagnose-builder-exit.mjs"
+  },
+  "limitations": [
+    "Genuine product screenshots have not been selected for the deck",
+    "Public video URL pending",
+    "Connected backend, Cloud Run and live Gemini unavailable",
+    "Google AI service requirement not established by the static Hosting deployment",
+    "Image-page PDF; editable PPTX supplied separately",
+    "Native PowerPoint execution not verified",
+    "Builder reports exit 1 during renderer teardown after completing validated outputs"
+  ]
 }

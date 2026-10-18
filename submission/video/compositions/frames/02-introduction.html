@@ -6,6 +6,7 @@
       <h1 data-hf-id="hf-es1h" class="p02-title"><span data-hf-id="hf-kc6p" class="p02-name-1">Namma</span> <span data-hf-id="hf-jo5k" class="p02-name-2">Civic</span><span data-hf-id="hf-ed88" class="p02-title-dot">.</span></h1>
       <div data-hf-id="hf-lxjj" class="p02-tagline"><span data-hf-id="hf-xf10" class="p02-tag-1">A civic record.</span><br data-hf-id="hf-x5px"/><span data-hf-id="hf-n9up" class="p02-tag-2">Kept open.</span></div>
       <div data-hf-id="hf-0kvr" class="p02-location"><span data-hf-id="hf-kuwd" class="p02-location-dot"></span>BENGALURU PROTOTYPE</div>
+      <div data-hf-id="hf-vjn2" class="p02-theme"><span data-hf-id="hf-0vhx">SELECTED THEME</span> Sustainability &amp; Social Impact</div>
       <div data-hf-id="hf-f5ea" class="p02-map-card">
         <div data-hf-id="hf-2vq7" class="p02-map-kicker">LOCAL BY DESIGN</div>
         <svg data-hf-id="hf-82s6" class="p02-ward-map" viewBox="0 0 500 350" aria-label="Schematic ward cells, not geographic boundaries">
@@ -44,6 +45,8 @@
     #scene-02-introduction .p02-tagline span { display: inline-block; }
     #scene-02-introduction .p02-tag-2 { color: #596978; }
     #scene-02-introduction .p02-location { position: absolute; left: 112px; top: 552px; display: flex; align-items: center; gap: 12px; border: 1px solid #d7d4ce; border-radius: 999px; padding: 12px 19px; font-size: 17px; letter-spacing: 1.2px; font-weight: 600; }
+    #scene-02-introduction .p02-theme { position: absolute; left: 112px; top: 619px; max-width: 1080px; font-size: 25px; line-height: 34px; color: #17212b; }
+    #scene-02-introduction .p02-theme span { font-size: 14px; letter-spacing: 1.8px; color: #a8492d; font-weight: 650; margin-right: 14px; }
     #scene-02-introduction .p02-location-dot { width: 8px; height: 8px; border-radius: 50%; background: #a8492d; }
     #scene-02-introduction .p02-map-card { position: absolute; right: 112px; top: 148px; width: 508px; height: 447px; border: 1px solid #d7d4ce; border-radius: 18px; background: #ffffff; overflow: hidden; }
     #scene-02-introduction .p02-map-kicker { position: absolute; left: 28px; top: 24px; font-size: 15px; line-height: 23px; font-weight: 650; letter-spacing: 1.5px; color: #596978; }
@@ -85,6 +88,7 @@
       });
       tl.fromTo(q(".p02-camera"), { x: 0 }, { x: 8, duration: 14, ease: "none" }, 0);
       arrive(".p02-team", .05, 40, .14);
+      arrive(".p02-theme", .6, 25, .2);
       arrive(".p02-name-1", .1, 80, .2);
       arrive(".p02-name-2", .3, 70, .18);
       arrive(".p02-title-dot", .45, 42, .12);

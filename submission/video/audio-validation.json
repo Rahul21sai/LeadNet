@@ -1,56 +1,81 @@
 {
   "offlineVoice": "Microsoft Mark",
+  "sourcePlanSha256": "90afc2119d0e437f62242b5c81de5d7bcb0f58c0e8ebf0b911de9f1b33e01b11",
   "allSceneWindowsFit": true,
   "clippedSamples": 0,
-  "manualListeningReview": "Pending owner playback in Studio",
+  "manualListeningReview": "Revised narration regenerated locally; signal measured; final decoded export review pending",
   "scenes": [
     {
       "id": "01-problem",
       "durationSeconds": 15.2795,
-      "peakDbfs": -3.16,
-      "rmsDbfs": -21.11
+      "peakDbfs": -3.155,
+      "rmsDbfs": -21.11,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "02-introduction",
-      "durationSeconds": 12.9471,
-      "peakDbfs": -2.48,
-      "rmsDbfs": -20.69
+      "durationSeconds": 12.9999,
+      "peakDbfs": -3.814,
+      "rmsDbfs": -20.861,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "03-capture",
       "durationSeconds": 27.9945,
-      "peakDbfs": -2.35,
-      "rmsDbfs": -20.74
+      "peakDbfs": -2.353,
+      "rmsDbfs": -20.744,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "04-community",
       "durationSeconds": 21.4545,
       "peakDbfs": -2.32,
-      "rmsDbfs": -20.66
+      "rmsDbfs": -20.659,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "05-accountability",
       "durationSeconds": 29.4495,
-      "peakDbfs": -4.23,
-      "rmsDbfs": -20.69
+      "peakDbfs": -4.233,
+      "rmsDbfs": -20.692,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "06-google",
-      "durationSeconds": 47.4184,
-      "peakDbfs": -2.76,
-      "rmsDbfs": -20.55
+      "durationSeconds": 47.5582,
+      "peakDbfs": -1.311,
+      "rmsDbfs": -20.643,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "07-next",
-      "durationSeconds": 19.5195,
-      "peakDbfs": -3.41,
-      "rmsDbfs": -20.81
+      "durationSeconds": 19.8495,
+      "peakDbfs": -3.412,
+      "rmsDbfs": -20.877,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     },
     {
       "id": "08-team",
       "durationSeconds": 9.6068,
-      "peakDbfs": -2.88,
-      "rmsDbfs": -20.62
+      "peakDbfs": -2.883,
+      "rmsDbfs": -20.619,
+      "clippedSamples": 0,
+      "voice": "Microsoft Mark",
+      "fitsWindow": true
     }
   ]
 }

@@ -29,16 +29,18 @@ FFPROBE = FFMPEG.with_name("ffprobe.exe")
 EXPECTED_SECONDS = 215.0
 EXPECTED_FPS = 24
 EXPECTED_FRAMES = 5160
+TIMING_FILE = ROOT / "narration-timings.json"
+timing_data = json.loads(TIMING_FILE.read_text(encoding="utf-8-sig"))
 SCENES = [
-    {"id": "01-problem", "start": 0.0, "end": 18.0, "voice_start": 0.4, "voice_duration": 15.2795},
-    {"id": "02-introduction", "start": 18.0, "end": 32.0, "voice_start": 18.4, "voice_duration": 12.9471},
-    {"id": "03-capture", "start": 32.0, "end": 67.0, "voice_start": 32.4, "voice_duration": 27.9945},
-    {"id": "04-community", "start": 67.0, "end": 98.0, "voice_start": 67.4, "voice_duration": 21.4545},
-    {"id": "05-accountability", "start": 98.0, "end": 131.0, "voice_start": 98.4, "voice_duration": 29.4495},
-    {"id": "06-google", "start": 131.0, "end": 183.0, "voice_start": 131.4, "voice_duration": 47.4184},
-    {"id": "07-next", "start": 183.0, "end": 204.0, "voice_start": 183.4, "voice_duration": 19.5195},
-    {"id": "08-team", "start": 204.0, "end": 215.0, "voice_start": 204.4, "voice_duration": 9.6068},
+    {"id": scene["id"], "start": float(scene["sceneStart"]), "end": float(scene["sceneEnd"]),
+     "voice_start": float(scene["start"]), "voice_duration": float(scene["duration"])}
+    for scene in timing_data["scenes"]
 ]
+if len(SCENES) != 8 or SCENES[0]["start"] != 0 or SCENES[-1]["end"] != EXPECTED_SECONDS:
+    raise ValueError("Expected the current eight-scene, 215-second narration timing manifest.")
+for scene in SCENES:
+    if not scene["start"] <= scene["voice_start"] < scene["voice_start"] + scene["voice_duration"] <= scene["end"]:
+        raise ValueError(f"Narration exceeds its scene: {scene['id']}")
 
 
 def sha256(path: Path) -> str:
@@ -162,6 +164,8 @@ def main() -> int:
     initial_stat = source.stat()
     report = {
         "input": str(source), "started_at_utc": stamp, "input_bytes": initial_stat.st_size,
+        "narration_timing_sha256": sha256(TIMING_FILE),
+        "narration_source_plan_sha256": timing_data.get("sourceSha256"),
         "expected": {"duration_seconds": EXPECTED_SECONDS, "fps": EXPECTED_FPS, "frames": EXPECTED_FRAMES, "width": 1920, "height": 1080},
         "checks": [], "warnings": [], "manual_visual_review": "pending", "artifacts": {},
     }
@@ -272,7 +276,7 @@ def main() -> int:
         "Manual visual review remains pending until the decoded PNGs are inspected.", "",
         f"Input SHA-256: `{report.get('input_sha256', 'unavailable')}`.",
         "No browser or composition snapshot was used as export evidence.", "",
-        "Content truth must be checked manually: screenshots demonstrate the public device sandbox; they do not establish live Google deployment or model verification.", "",
+        "Content truth must be checked manually: Firebase Hosting Spark serves the live static frontend; screenshots remain historical device-sandbox captures and do not establish connected backend or Vertex/Gemini verification.", "",
     ]
     for item in report["checks"]:
         if not item["passed"]:

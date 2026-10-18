@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" role="img" aria-labelledby="title desc">
   <title id="title">Namma Civic system architecture with official Google Cloud and Firebase product icons</title>
-  <desc id="desc">Connected target: React SPA on Firebase Hosting calls the Hono API on Cloud Run, which uses Firebase Authentication, Firestore, Cloud Storage and bounded Vertex AI Gemini. Application code determines civic and connection outcomes. A separate configured Vercel demonstration uses fictional records and device storage. Deployment and video runtime are unverified.</desc>
+  <desc id="desc">Connected target: React SPA on Firebase Hosting calls the Hono API on Cloud Run, which uses Firebase Authentication, Firestore, Cloud Storage and bounded Vertex AI Gemini. Application code determines civic and connection outcomes. The static device-only frontend is live on Firebase Hosting Spark, verified 18 October 2026. Connected backend and Vertex/Gemini services remain undeployed and unverified.</desc>
   <defs>
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8" />
@@ -18,7 +18,7 @@
   <text x="540" y="86" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#5f6368" text-anchor="start">System architecture</text>
   <text x="80" y="127" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#5f6368" text-anchor="start">Civic accountability, local community and consent-based connections</text>
   <text x="2470" y="77" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#5f6368" text-anchor="end">18 OCT 2026</text>
-  <text x="2470" y="111" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="end">Source architecture • deployment unverified</text>
+  <text x="2470" y="111" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="end">Live frontend • connected backend undeployed</text>
   <rect x="640" y="165" width="1840" height="895" rx="18" fill="#f8fafd" stroke="#c6dafc" stroke-width="2" />
   <text x="680" y="216" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600" fill="#1a73e8" text-anchor="start">Google Cloud + Firebase</text>
   <text x="2440" y="216" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#5f6368" text-anchor="end">CONNECTED TARGET</text>
@@ -264,9 +264,9 @@
   <text x="680" y="1039" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">All mutations and private connection reads pass through the API. Code determines civic outcomes.</text>
   <text x="680" y="1102" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#5f6368" text-anchor="start">Optional user-reviewed outreach: API → Resend email  |  Browser → X composer</text>
   <rect x="80" y="1160" width="2400" height="180" rx="14" fill="#f8f9fa" stroke="#c9cdd3" stroke-width="2" stroke-dasharray="9 7" />
-  <text x="112" y="1206" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="600" fill="#202124" text-anchor="start">Vercel static demo configuration</text>
+  <text x="112" y="1206" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="600" fill="#202124" text-anchor="start">Firebase Hosting Spark demo — LIVE</text>
   <text x="112" y="1244" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">VITE_DEMO_MODE=1</text>
-  <text x="112" y="1280" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Browser-only activity; no deployed Cloud API</text>
+  <text x="112" y="1280" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Verified 18 Oct 2026; browser-only; no connected API</text>
   <line x1="750" y1="1190" x2="750" y2="1307" stroke="#dadce0" stroke-width="2" />
   <text x="795" y="1208" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="start">Bundled assets</text>
   <text x="795" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Real ward geometry + fictional city records</text>
@@ -275,6 +275,6 @@
   <text x="1645" y="1208" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="start">Device storage</text>
   <text x="1645" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">IndexedDB: captured media and community posts</text>
   <text x="1645" y="1282" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">localStorage: connection requests and preferences</text>
-  <text x="80" y="1393" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#5f6368" text-anchor="start">Product artwork: official Google Cloud icon library + Firebase brand assets. Diagram reflects implemented source, not verified deployment.</text>
+  <text x="80" y="1393" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#5f6368" text-anchor="start">Product artwork: official Google Cloud icon library + Firebase brand assets. Frontend live; backend diagram reflects source architecture, not deployed services.</text>
   <text x="2480" y="1393" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#5f6368" text-anchor="end">Namma Civic</text>
 </svg>

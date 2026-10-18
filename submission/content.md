@@ -1,6 +1,6 @@
 # Namma Civic submission deck
 
-Review snapshot. Registered team: Tri-Fusion. The roster is confirmed from the owner-supplied portal screenshot. Public prototype: https://lead-net-6639-eta.vercel.app/ (managed-browser access verified; device-only demo mode). Public repository: https://github.com/Rahul21sai/LeadNet. Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified. The exact problem-statement selection, public video URL, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.
+Review snapshot. Registered team: Tri-Fusion. The roster is confirmed from the owner-supplied portal screenshot. Selected problem statement: Sustainability & Social Impact. Owner selected Sustainability & Social Impact for the submission materials on 18 October 2026; this does not confirm a portal selection or eligibility. Public prototype: https://leadnet-blr.web.app/ (Firebase Hosting Spark, device-only demo). Public repository: https://github.com/Rahul21sai/LeadNet. Frontend deployed to Firebase Hosting Spark in leadnet-blr on 18 October 2026. Project billing remains disabled. Cloud Run, connected backend and live Gemini were not deployed or verified. The public video URL, selected genuine screenshots and measured live AI results remain incomplete. Static Hosting alone does not establish the Google AI service requirement. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.
 
 ## Slide 1 (source 1)
 
@@ -10,15 +10,21 @@ Team Details
 
 Team name: Tri-Fusion
 Team leader name: Vudumula Naga sai Rahul
-Problem Statement: [Owner to fill]
+Problem Statement: Sustainability & Social Impact
 
 Team members: Mohammed Mudasser; Abubakr Siddique M
 
 ### Presenter notes and sources
 
-Registered team: Tri-Fusion. Product: Namma Civic. Vudumula Naga sai Rahul (Leader); Mohammed Mudasser (Member); Abubakr Siddique M (Member). Names match the owner-supplied portal screenshot exactly; email addresses are omitted. Proposed challenge: Sustainability & Social Impact. The exact problem-statement selection remains the owner's placeholder.
+Registered team: Tri-Fusion. Product: Namma Civic. Vudumula Naga sai Rahul (Leader); Mohammed Mudasser (Member); Abubakr Siddique M (Member). Names match the owner-supplied portal screenshot exactly; email addresses are omitted.
 
-Source: owner-supplied Hack2Skill portal roster screenshot and owner confirmation of the registered team name, 18 October 2026; submission/team.json.
+Selected problem statement: Sustainability & Social Impact. Owner selected Sustainability & Social Impact for the submission materials on 18 October 2026; this does not confirm a portal selection or eligibility.
+
+Challenge description: Build an AI-powered solution that addresses a meaningful environmental or societal challenge. Solutions may focus on improving resource efficiency, increasing accessibility, strengthening resilience, supporting communities, or enabling more informed and sustainable decision-making.
+
+Project problem statement: Residents struggle to turn everyday civic problems into clear, actionable reports and to track whether a fix actually happened. Namma Civic connects accessible local reporting, community discussion, evidence-backed responses and citizen verification in one public record.
+
+Source: owner-supplied Hack2Skill portal roster screenshot, registered team confirmation and selected challenge, 18 October 2026; submission/team.json.
 
 ## Slide 2 (source 3)
 
@@ -30,18 +36,25 @@ Namma Civic
 
 Citizens verify the fix
 
-A closed complaint alone does not show whether a street was repaired. Namma Civic keeps the report, evidence, official claim and citizen verdict in one public record.
+Residents struggle to turn everyday civic problems into clear, actionable reports and to track whether a fix actually happened. Namma Civic connects accessible local reporting, community discussion, evidence-backed responses and citizen verification in one public record.
 
 Photo + voice reporting     Real ward assignment     Public outcome ledger
 
-Bengaluru prototype | Independent demonstration; no government endorsement
+Bengaluru prototype. Independent demonstration. No government endorsement.
 
 ### Presenter notes and sources
 
-Namma Civic helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.
+Selected challenge: Sustainability & Social Impact
+
+Challenge description: Build an AI-powered solution that addresses a meaningful environmental or societal challenge. Solutions may focus on improving resource efficiency, increasing accessibility, strengthening resilience, supporting communities, or enabling more informed and sustainable decision-making.
+
+Project problem statement: Residents struggle to turn everyday civic problems into clear, actionable reports and to track whether a fix actually happened. Namma Civic connects accessible local reporting, community discussion, evidence-backed responses and citizen verification in one public record.
+
+Namma Civic applies this challenge to accessible local reporting, community participation and an evidence-backed public civic record. The connected report-to-verification workflow is implemented in source. The live Firebase Hosting frontend is a device-only demonstration, with no live Gemini or connected backend.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
 Source: docs/research/wards.md; apps/api/data/validation.json. GBA December 2025 final delimitation via https://data.opencity.in/dataset/gba-wards-delimitation-2025 (metadata licence: Other (Public Domain)), official GBA GeoServer Kannada cross-check. 369 cleaned polygons, 5 corporations; source differences documented.
+Source: submission/team.json; submission/status.json; deploy/frontend/FIREBASE.md.
 
 ## Slide 3 (source 4)
 
@@ -103,16 +116,18 @@ Outcome ledger
 
 Claimed versus verified, SLA and reopen metrics with definitions.
 
-Public Vercel device-only demonstration is accessible.
-Connected source is implemented; live Google Cloud integration remains unverified.
+Public Firebase Hosting device-only demonstration is accessible. Posts and interactions stay in each browser; connected backend features remain unavailable.
 
 ### Presenter notes and sources
 
-Public Vercel device-only demonstration is accessible. Connected source is implemented; live Google Cloud integration remains unverified.
+Public Firebase Hosting device-only demonstration is accessible. Posts and interactions stay in each browser; connected backend features remain unavailable.
 
-Feature architecture and source are implemented. A rendered UI review and live cloud/AI verification remain separate checks. Fictional leaders and projects are labelled demonstration records.
+All-workspace typecheck and nine static-server tests pass. Live Hosting routes, 369 wards and sample media verified. Community, People, map, issue and ledger layouts checked at 390px and 1440px in both themes.
+
+Connected feature architecture and source are implemented. Firebase Hosting Spark serves the device-only demonstration. Connected API mutations and live Gemini remain unavailable. Fictional leaders and projects are labelled demonstration records.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
+Source: submission/status.json; deploy/frontend/FIREBASE.md.
 
 ## Slide 5 (source 6)
 
@@ -192,37 +207,44 @@ Architecture diagram of the proposed solution
 
 Citizen / officer web
 
-React + Firebase Hosting
+Firebase Hosting Spark
+Live device demo
 
 Cloud Run API
 
 Hono + firebase-admin
+Not deployed
 
 Firestore + Storage
 
-Records, photos, AI audit
+Connected source only
+Not deployed
 
 Firebase Auth
 
-Identity and demo roles
+Connected identity path
+Unused by device demo
 
 Gemini on Vertex AI
 
 Draft, select, observe
+No live invocation
 
 Deterministic core
 
-In-process rules + verifiers
+Rules + verifiers in source
 
-API owns all writes. Browser reads are read-only. Schema checks, one repair retry, then a safe fallback.
+Live: Firebase Hosting Spark frontend only. Backend and Gemini are unavailable.
+Target: API writes, schema checks, one repair retry, then a safe fallback.
 
 ### Presenter notes and sources
 
-This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. The public Vercel prototype is accessible in device-only demo mode. The owner plans Google Cloud deployment separately; live cloud services and model evaluation remain unverified.
+This diagram combines the deployed static frontend with the implemented connected target architecture. Firebase Hosting Spark serves the device-only SPA at https://leadnet-blr.web.app/. It was deployed on 18 October 2026 with billing disabled and no API rewrite. Cloud Run and the connected backend remain undeployed. Gemini on Vertex AI has not been invoked or evaluated live. Device posts and interactions remain in each browser.
 
-For Ask Namma Civic, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.
+In the future connected design, Admin SDK owns mutations. Vertex uses a service account, not browser API keys. For Ask Namma Civic, Gemini selects closed fact keys and code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service. Static Firebase Hosting alone does not establish the challenge requirement to use a Google AI service.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
+Source: submission/status.json; deploy/frontend/FIREBASE.md; firebase.frontend.json.
 
 ## Slide 8 (source 9)
 
@@ -236,11 +258,11 @@ React 19, TypeScript, Vite, Tailwind, Motion, MapLibre
 
 Google services
 
-Firebase Hosting / Auth / Storage; Firestore; Cloud Run
+Firebase Hosting Spark is live. Connected services are source only.
 
 AI integration
 
-Gemini on Vertex AI; schema and task verifiers
+Gemini on Vertex AI + verifiers in source. Live AI unavailable.
 
 API and domain
 
@@ -256,9 +278,10 @@ Original reports, append-only events, source attribution, demo labels
 
 ### Presenter notes and sources
 
-The stack is present in the codebase. Service integration code is distinct from successful cloud deployment or a measured live model evaluation.
+Firebase Hosting Spark is the deployed Google service for the frontend. Auth, Storage, Firestore and Cloud Run are part of the connected source architecture, not a working connected deployment. Gemini integration and verifiers are implemented in source, but live Google AI behavior has not been established. The device demo stores new activity in the browser.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
+Source: submission/status.json; deploy/frontend/FIREBASE.md.
 
 ## Slide 9 (source 10)
 
@@ -266,31 +289,34 @@ Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/state
 
 Estimated implementation cost (optional)
 
-Cloud cost has not been measured
+Firebase Hosting Spark frontend
 
-Cloud Run
+Billing is unlinked. The static frontend uses Spark quotas.
+
+Future Cloud Run
 
 CPU, memory, requests and warm-instance time
 
-Vertex Gemini
+Future Gemini
 
 Input/output tokens and media processing
 
-Firestore
+Future Firestore
 
 Reads, writes, indexes and retention
 
-Storage
+Future Storage
 
 Evidence size, downloads and retention
 
-Cloud spending and alert setup are deferred. A $25 alert is planned; it is not a spending cap. No measured monthly cost is claimed.
+No paid backend is deployed or authorized. Spark quota limits apply. Future service costs need separate approval; no monthly cost measurement is claimed.
 
 ### Presenter notes and sources
 
-No cloud invoice, capacity benchmark or pricing estimate is claimed. The owner plans Google Cloud deployment separately; cloud spending and alert configuration are unverified. Cost drivers are architecture facts, not quoted prices.
+The owner selected Firebase Hosting Spark with no billing/card. Project billing is unlinked. Cloud Run, the connected backend and Gemini were not deployed. No measured cloud invoice, capacity benchmark or monthly pricing estimate is claimed. The listed future cost drivers are architecture facts, not quoted prices. Paid resources need new owner approval.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
+Source: submission/status.json; docs/DEPLOYMENT.md; deploy/frontend/FIREBASE.md.
 
 ## Slide 10 (source 11)
 
@@ -300,7 +326,7 @@ Snapshots of the prototype
 
 Actual browser capture pending
 
-No illustration is presented as a product screenshot. The local interface needs a rendered review before these two captures can be added.
+The Firebase frontend is live. Verified product captures have not yet been selected for this deck. Illustrations are not presented as screenshots.
 
 Required capture 1
 
@@ -314,9 +340,10 @@ Use the verified deployed build
 
 ### Presenter notes and sources
 
-This template section remains an explicit readiness gap. Genuine product screenshots are not included in this revision. No fake screenshot was substituted. Add verified product captures from the public prototype and rerender this deck before submitting.
+This template section remains a readiness gap. Firebase Hosting is live and browser layouts have been reviewed, but genuine product screenshots are not included in this deck revision. Existing archival capture sources remain unchanged. Add selected verified product captures and rerender before submitting.
 
 Source: docs/research/media.md and apps/web/public/samples/CREDITS.md. Licensed photographs are illustrations; synthetic audio is labelled. No generated screenshot is presented as the product.
+Source: submission/status.json.
 
 ## Slide 11 (source 12)
 
@@ -336,16 +363,23 @@ Media integrity
 
 14 JPEGs without EXIF/XMP/IPTC; 17 sample fingerprints match
 
-Code checks
+Code + Hosting
 
-Automated contract tests pass; all-workspace typecheck and web/API builds pass; 11 offline AI safety checks pass
+Typecheck and 9 HTTP tests pass. Live routes, media and layouts verified.
 
-Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified.
-No live quality or latency results
+Firebase Hosting Spark is live. Billing is disabled.
+Cloud Run, backend and Gemini remain unavailable.
+No live AI quality or latency results are claimed.
 
 ### Presenter notes and sources
 
-The figures on this slide are local integrity checks, not live model benchmarks. The owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified. No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is fabricated.
+The figures describe local integrity checks and deployed frontend verification, not live model benchmarks.
+
+All-workspace typecheck and nine static-server tests pass. Live Hosting routes, 369 wards and sample media verified. Community, People, map, issue and ledger layouts checked at 390px and 1440px in both themes.
+
+Frontend deployed to Firebase Hosting Spark in leadnet-blr on 18 October 2026. Project billing remains disabled. Cloud Run, connected backend and live Gemini were not deployed or verified.
+
+No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is claimed. Hosting a static frontend does not establish the Google AI service requirement.
 
 Source: apps/api/data/demo-seed-summary.json and apps/web/public/data/demo-city.json, generated by a deterministic dry run at 2026-10-17T08:00Z. Every issue, person, vote, budget and outcome is fictional demo data. No civic performance claim is made.
 Source: docs/research/wards.md; apps/api/data/validation.json. GBA December 2025 final delimitation via https://data.opencity.in/dataset/gba-wards-delimitation-2025 (metadata licence: Other (Public Domain)), official GBA GeoServer Kannada cross-check. 369 cleaned polygons, 5 corporations; source differences documented.
@@ -358,9 +392,9 @@ Status: submission/status.json
 
 Additional Details/Future Development (if any)
 
-Google Cloud deployment
+Connected backend
 
-Deploy Google Cloud separately, then verify connected services and live model behavior. The public Vercel build currently runs in device-only demo mode.
+Firebase Hosting Spark is live. Cloud Run, backend and Gemini need separate approval, deployment and live verification.
 
 First pilot
 
@@ -372,9 +406,10 @@ Complaint-system integrations, notifications, privacy blurring, real official id
 
 ### Presenter notes and sources
 
-Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.
+The frontend is deployed to Firebase Hosting Spark. The connected backend and live Gemini remain unavailable, and paid deployment requires new owner approval. Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets are not actual officials or public spending.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
+Source: submission/status.json; docs/DEPLOYMENT.md.
 
 ## Slide 13 (source 14)
 
@@ -388,19 +423,19 @@ https://github.com/Rahul21sai/LeadNet
 
 Demo video (3-4 minutes)
 
-[Owner: record, upload and paste public video URL]
+[Owner: upload MP4 and paste public video URL]
 
-Public prototype (device-only demo)
+Public prototype (Firebase device demo)
 
-https://lead-net-6639-eta.vercel.app/
+https://leadnet-blr.web.app/
 
 All three links must open without account access during evaluation.
 
 ### Presenter notes and sources
 
-The public repository link is retained. The Vercel product URL https://lead-net-6639-eta.vercel.app/ was opened successfully in the managed browser and showed Namma Civic in local device-only demo mode. This access check does not establish connected Google Cloud integration. Only the public video URL remains pending. The owner-supplied current submission requirement is a 3-4 minute video. No video upload or contest submission is implied by this deck.
+The public repository link is retained. The Firebase Hosting product URL https://leadnet-blr.web.app/ serves Namma Civic in device-only demo mode, deployed on Spark on 18 October 2026. Current Hosting route, media and browser checks are recorded in submission/status.json. This frontend deployment does not establish connected backend operation or live Google AI use. The public video URL remains pending. The owner-supplied current submission requirement is a 3-4 minute video. No video upload or contest submission is implied by this deck.
 
-Source: prescribed template; owner-supplied prototype URL, managed-browser access check and current video requirement, 18 October 2026; current status in submission/status.json.
+Source: prescribed template; owner-supplied current video requirement; submission/status.json; deploy/frontend/FIREBASE.md, 18 October 2026.
 
 ## Slide 14 (source 16)
 

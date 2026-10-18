@@ -15,7 +15,5 @@
     "composeTop": "02a-composer-top.png",
     "composeLocation": "02b-composer-location.png"
   },
-  "finalRenderApproved": true,
-  "finalMp4": "output/Namma-Civic-Tri-Fusion-Demo.mp4",
-  "finalDurationSeconds": 215
+  "finalRenderApproved": true
 }

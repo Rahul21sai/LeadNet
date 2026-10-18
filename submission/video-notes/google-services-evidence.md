@@ -1,15 +1,15 @@
 # Google-services and recording evidence
 
-Read-only source audit, 18 October 2026. No credentials were opened, no cloud/network mutations were made, and no local browser automation was attempted. This audit does not establish rendered behavior or a live deployment.
+Source audit updated after the Firebase Hosting frontend release on 18 October 2026. Deployment evidence is recorded in `deploy/frontend/VERIFICATION.md`: the public site at https://leadnet-blr.web.app/ passed live route/media and rendered browser smoke checks, and project billing remains disabled. This evidence establishes the static frontend, not a connected backend or live AI.
 
 ## Current claim boundary
 
 - Both Vercel configurations force `VITE_DEMO_MODE=1`: `vercel.json:5`, `apps/web/vercel.json:5`.
 - This flag loads bundled data instead of Firestore snapshots: `apps/web/src/lib/demo.ts:3-8`, `apps/web/src/lib/data.ts:48-55` and `73-79`.
 - Canonical API mutations are blocked in the static demo: `apps/web/src/lib/api.ts:14-17`. The only permitted exceptions are public community capability/representative reads; the static Vercel deployment has no API proxy, and the UI handles those being unavailable.
-- The deployment guide explicitly calls this a frontend demonstration before the connected Google Cloud application is deployed: `docs/VERCEL_PREVIEW.md:3`.
+- The selected Firebase configuration, `firebase.frontend.json`, publishes the demo build without a backend rewrite. `deploy/frontend/FIREBASE.md` documents the current static Google-hosted demonstration.
 - The repository records local verification, not live Firebase transactions/rules, Vertex quality/latency, Docker operation or deployed behavior: `docs/VERIFICATION.md:92-97`. Recorded test counts are prior evidence; this audit did not rerun them.
-- No `.vercel/project.json`, nested Vercel project link, or actual `vercel.app` deployment URL was found in the inspected checkout. `leadnet-blr.web.app` is the architecture target (`docs/ARCHITECTURE.md:8`), not proof it is serving this application.
+- Firebase Hosting at https://leadnet-blr.web.app/ is now live. Vercel remains the historical source of the genuine screenshots; source capture URLs and hashes must not be rewritten as Firebase captures.
 
 ## Service roles supported by source
 
@@ -20,9 +20,9 @@ Read-only source audit, 18 October 2026. No credentials were opened, no cloud/ne
 | Cloud Storage for Firebase | Evidence/media objects start unpublished; server photo re-encoding strips metadata; rules allow published photos and deny draft reads/client writes | `apps/api/src/services/media.ts:26-46,52-55`; `storage.rules:3-20` | “The media adapter stores sanitized evidence in Cloud Storage for Firebase and keeps raw drafts private.” |
 | Cloud Run | Node 22/Hono API container, authenticated mutations and deterministic workflow logic | `Dockerfile:1-34`; `apps/api/src/server.ts:1-8`; `firebase.json:6` | “The API is packaged for Cloud Run in Mumbai; deployment is pending owner verification.” |
 | Vertex AI / Gemini | SDK adapter receives multimodal inputs and schema-constrained output; task verifier, one repair retry, deterministic fallback and `aiRuns` logging | `apps/api/src/ai/client.ts:19-30`; `apps/api/src/ai/runner.ts:23-51`; `apps/api/src/services/context.ts:16-17` | “Gemini is integrated through Vertex AI for bounded suggestions and observations. Code validates its output and controls civic decisions.” |
-| Firebase Hosting | Static SPA assets and `/api/**` rewrite to the Cloud Run service | `firebase.json:2-7`; `docs/DEPLOYMENT.md:28-31` | “The Google Cloud deployment target uses Firebase Hosting in front of Cloud Run.” |
+| Firebase Hosting | Live static SPA frontend on Spark; explicit SPA rewrites, actual API/missing-file 404s | `firebase.frontend.json`; `deploy/frontend/VERIFICATION.md` | “The frontend is live on Firebase Hosting Spark. The connected API and Gemini remain unavailable.” |
 
-Do not say that Vercel is using these Google backends. It serves the device-only demo. Do not read a model name from configuration as evidence of model availability. The deployment runbook requires a real accepted response with token/latency evidence (`docs/DEPLOYMENT.md:29`).
+Do not say that either static frontend is using these Google backends. Both serve the device-only demo. Do not read a model name from configuration as evidence of model availability. The connected deployment runbook requires a real accepted response with token/latency evidence. The supplied contest rules require Google AI or an eligible agentic platform as well as Google hosting; the live AI requirement is not established by this frontend release.
 
 ## Strongest recordable prototype flow
 
@@ -47,9 +47,9 @@ Do not click these as if live in the static preview: `/report` submit, officer s
 
 “The outcome ledger keeps claimed fixes separate from verified outcomes and shows definitions and sample sizes. It is calculated by code, rather than invented by an AI model.”
 
-“The implemented Google Cloud architecture uses Firebase Authentication, Firestore, Cloud Storage for Firebase, a Hono API packaged for Cloud Run, and Gemini through Vertex AI. Firebase Hosting is configured to serve the SPA and route API requests to Cloud Run. Live deployment and model validation are the next owner-run steps.”
+“Namma Civic addresses Sustainability & Social Impact through accessible local reporting and citizen-verifiable civic outcomes. The frontend is live on Firebase Hosting Spark. The connected source includes Firebase Authentication, Firestore, Cloud Storage, a Hono API packaged for Cloud Run, and Gemini through Vertex AI. These backend services and live model quality remain unverified; they are not enabled in this public demo.”
 
-After deployment and evidence capture, replace the final sentence only with facts actually verified on that deployment. A successful CLI deployment by itself is insufficient (`docs/DEPLOYMENT.md:50-52`).
+Only replace service limitations after actual workflow evidence exists. A successful frontend release does not establish a working model or connected civic workflow.
 
 ## Focused validation before recording
 
@@ -62,6 +62,6 @@ After deployment and evidence capture, replace the final sentence only with fact
 
 ## Minimal-spend connected validation, only when owner deploys
 
-Follow `docs/DEPLOYMENT.md:18-31` first: inspect existing resources and intended billing rather than recreating them. Use its min-instances 0, max-instances 2 and bounded instance settings. A budget alert is not a spending cap. Avoid repeated model calls; one deliberate accepted triage/evidence sample plus the existing offline harness is a useful initial check, not a quality benchmark.
+The owner's current choice is no billing or paid deployment. Any connected validation that requires billing or paid resources needs new approval; follow `docs/DEPLOYMENT.md` only within that later scope. A budget alert is not a spending cap. Avoid repeated model calls; one deliberate accepted triage/evidence sample plus the offline harness is an initial check, not a quality benchmark.
 
 For any recorded live claim, capture the real service revision, successful authenticated workflow, accepted non-fallback Vertex output (`attempts > 0`, `fallbackUsed == false`, non-null usage when returned), correctly persisted public/private documents, and one visible Firestore-driven update. Verify rules, real photo reads, privacy and citizen eligibility before describing the application as connected or deployed. Record the sample size and limits. No live service verification was performed in this audit.

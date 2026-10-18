@@ -1,13 +1,19 @@
 {
   "status": "rendered_and_verified",
+  "revision": "Selected Sustainability & Social Impact theme; live Firebase Hosting Spark frontend URL/status",
+  "problemStatementSelection": "Sustainability & Social Impact",
   "declaredDurationSeconds": 215,
   "actualMp4DurationSeconds": 215,
   "scenes": 8,
   "syntheticNarration": "Offline Microsoft Mark; no network TTS",
   "sourceOrigin": "https://lead-net-6639-eta.vercel.app/",
+  "sourceOriginRole": "Historical genuine capture source, 18 October 2026",
+  "prototypeUrl": "https://leadnet-blr.web.app/",
   "genuineSourceCaptures": 10,
   "successfulMutationOrLiveAiRecording": false,
-  "liveGoogleServicesVerified": false,
+  "firebaseHostingFrontendVerified": true,
+  "firebaseHostingVerificationSource": "Owner deployment and route/media/browser validation recorded in ../status.json; Firebase Hosting Spark, leadnet-blr, 18 October 2026",
+  "connectedBackendAndLiveAiVerified": false,
   "checks": {
     "ok": true,
     "browserSkipped": false,
@@ -17,24 +23,23 @@
     "motionErrors": 0,
     "motionSamples": 300,
     "contrastErrors": 0,
-    "applicationTypecheck": "Passed all workspaces on the final source checkout"
+    "contrastChecks": 66,
+    "informationalLayoutFindings": 6
   },
   "audio": {
     "allWindowsFit": true,
-    "clippedSamples": 0,
-    "manualListening": "Owner approved narrated preview; exported audio was measured in all eight narration regions. No separate full pronunciation listening pass."
+    "clippedSampleFraction": 0.0,
+    "allEightNarrationRegionsAudible": true,
+    "globalRmsDbfs": -21.432,
+    "globalPeakDbfs": -1.304,
+    "manualListening": "Signal measured in every region; no complete pronunciation listening pass"
   },
   "finalRenderApproved": true,
+  "approvalSource": "Owner requested this theme/Firebase revision and authorized final re-export; existing export approval persists",
   "mp4Path": "output/Namma-Civic-Tri-Fusion-Demo.mp4",
-  "sourcePlanSha256": "b5bf3012d4e915b2f0cb98540b1aac801c9953d13d10b71ac1cabb1296b92e39",
-  "limits": [
-    "Narrated genuine-screen walkthrough; no successful post creation, request sending, voting or live Gemini generation was recorded.",
-    "Caption phrase times are estimated from measured scene narration and require listening review.",
-    "Cloud deployment remains separate from the public device-only Vercel demonstration."
-  ],
-  "approvalSource": "Owner explicitly approved final MP4 export in this chat on 18 October 2026",
-  "mp4Bytes": 26157705,
-  "mp4Sha256": "fa34671d5dba03de2532d555d0c8966e66b14863a8d3f3f018ae256c3ce8e702",
+  "mp4Bytes": 26207038,
+  "mp4Sha256": "ea9f48ba7f2f98b0c7e9ad3fcba6826bd18d59674cc458d1fee350513a9ddbfa",
+  "sourcePlanSha256": "90afc2119d0e437f62242b5c81de5d7bcb0f58c0e8ebf0b911de9f1b33e01b11",
   "export": {
     "width": 1920,
     "height": 1080,
@@ -47,6 +52,26 @@
     "decodedSamplesInspected": 24,
     "fullSizeMidpointsInspected": 8
   },
-  "visualReview": "Actual MP4 decoded contact sheet and all eight full-size midpoint frames inspected; no material rendering defects. Sampling does not constitute full real-time playback.",
-  "independentReport": "output/final-review/validation.json"
+  "render": {
+    "tool": "Hyperframes 0.8.171",
+    "workers": 1,
+    "captureMode": "drawelement",
+    "gpu": "hardware",
+    "elapsedSeconds": 564,
+    "quality": "looks (standard)"
+  },
+  "usage": {
+    "status": "unknown",
+    "reason": "no_subscription_login",
+    "paidServicesUsed": false,
+    "cloudRenderingUsed": false
+  },
+  "visualReview": "All24 actual MP4 sampled frames and eight full-size midpoints inspected; no material defects. Parent independently approved changed decoded scenes and contact sheet.",
+  "independentReport": "output/final-review/validation.json",
+  "limits": [
+    "Genuine historical-screen walkthrough; no successful post creation, connection request, citizen vote or live Gemini generation was recorded.",
+    "Caption phrase times are estimated from measured narration; no full real-time playback or independent transcription.",
+    "Only Firebase Hosting Spark static frontend is live; connected backend and live AI remain undeployed and unverified."
+  ],
+  "verifiedAtUtc": "2026-10-18T16:11:51.265867+00:00"
 }

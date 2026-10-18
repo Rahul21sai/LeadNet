@@ -1,13 +1,17 @@
 # Namma Civic — Tri-Fusion | AI Builder Cup prototype demonstration
 
-Namma Civic keeps local civic problems visible through community discussion, repair evidence and citizen verification.
+Selected theme: Sustainability & Social Impact.
 
-Try the device-only public demonstration: https://lead-net-6639-eta.vercel.app/
+Residents struggle to turn everyday civic problems into actionable reports and track whether a fix happened. Namma Civic connects accessible local reporting, community discussion, evidence-backed responses and citizen verification in one public record, supporting communities and informed civic decisions.
+
+Try the device-only public demonstration: https://leadnet-blr.web.app/
 Source: https://github.com/Rahul21sai/LeadNet
 
 Team Tri-Fusion: Vudumula Naga sai Rahul (Leader), Mohammed Mudasser and Abubakr Siddique M.
 
-This narrated walkthrough uses genuine captures of the deployed Vercel demonstration. Its city examples, histories, profiles and totals are fictional. Device activity stays in that browser. The connected backend is implemented for Firebase Authentication, Firestore, Cloud Storage, Cloud Run and Vertex AI/Gemini, with Firebase Hosting as the web-hosting target. Live Google Cloud integration is not verified in this recording; no live Gemini result, successful post publication, connection request or citizen vote is presented as recorded. No government endorsement or response is implied.
+Firebase Hosting serves the static frontend on the Spark plan; public access was verified on 18 October 2026. Posts and interactions stay in each browser. The connected backend, Cloud Run, Firestore, Cloud Storage and Vertex AI/Gemini remain undeployed and unverified. Their diagram shows the integration architecture, not services used by the live demonstration.
+
+This revised 3:35 narrated walkthrough retains genuine stills captured on 18 October 2026 from the earlier Vercel demonstration at https://lead-net-6639-eta.vercel.app/. City examples, histories, profiles and totals are fictional. No live Gemini result, successful post publication, connection request or citizen vote is presented as recorded. No government endorsement, official response or measured societal impact is implied.
 
 ## Illustration and artwork credits
 
@@ -18,4 +22,4 @@ This narrated walkthrough uses genuine captures of the deployed Vercel demonstra
 - Official Google Cloud/Firebase artwork identifies architecture components; no endorsement is implied. Sources: https://cloud.google.com/icons and https://firebase.google.com/brand-guidelines .
 - Inter is used under SIL OFL; EB Garamond is embedded from Google Fonts. Narration is synthetic, generated locally with Microsoft Mark.
 
-Keep these attributions with the uploaded video. Replace service-status wording only after verifying an actual connected deployment.
+Keep these attributions with the uploaded video. Update service-status wording only after verifying the relevant deployment.
