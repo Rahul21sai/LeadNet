@@ -1,4 +1,4 @@
-# Share LeadNet with the team on Vercel
+# Share Namma Civic with the team on Vercel
 
 This is a frontend demonstration before the connected Google Cloud application is deployed. Both Vercel configurations build only the web workspace and explicitly enable `VITE_DEMO_MODE=1`. No Google Cloud, Gemini, Firebase or email credentials are required for this demonstration.
 

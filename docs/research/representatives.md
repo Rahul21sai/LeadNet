@@ -1,6 +1,6 @@
 # Bengaluru representative contact directory
 
-Checked on **18 October 2026**. This directory contains real public office contacts. It is separate from LeadNet's fictional demonstration leaders, issue authors, budgets and outcomes. No party preference, endorsement or claim of a representative's involvement in a demonstration issue is implied.
+Checked on **18 October 2026**. This directory contains real public office contacts. It is separate from Namma Civic's fictional demonstration leaders, issue authors, budgets and outcomes. No party preference, endorsement or claim of a representative's involvement in a demonstration issue is implied.
 
 ## Matching method and limits
 
@@ -8,7 +8,7 @@ The existing API assigns coordinates to the bundled GBA ward polygon. Every one 
 
 This is a **ward-attribute reference match**, not point-in-polygon matching against official Assembly or Parliamentary constituency boundaries. Ward attributes and geolocation accuracy may be imperfect, especially at edges. Show the method, official source links, date and a request to check the constituency before sending. Unknown/out-of-coverage locations must return no match. A contact's publication does not establish that the mailbox accepts mail, is monitored, or will respond. Civic service complaints can also require the municipal authority; MLA/MP contacts are awareness/escalation options, not an assertion of municipal operational responsibility.
 
-Location from a browser capture is the device's reported position at capture time. An imported image without trusted capture metadata cannot be said to have been photographed at the device's current location. LeadNet's public upload pipeline strips EXIF/GPS; any location the user chooses to publish must be confirmed separately.
+Location from a browser capture is the device's reported position at capture time. An imported image without trusted capture metadata cannot be said to have been photographed at the device's current location. Namma Civic's public upload pipeline strips EXIF/GPS; any location the user chooses to publish must be confirmed separately.
 
 ## Primary sources
 
@@ -18,7 +18,7 @@ Location from a browser capture is the device's reported position at capture tim
 | [Karnataka Assembly: Sixteenth Assembly Who's Who](https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf) | Public `@karnataka.gov.in` constituency mailboxes on each member's profile. English email text was extracted from the PDF; no address was generated from a naming pattern. Per-contact links include the physical PDF page. |
 | [Election Commission: Delimitation Order 2008](https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf#page=208) | Karnataka Schedule XIV, Table B, printed pages 207-208 (physical PDF pages 208-209). Lists the Assembly segments of Bangalore Rural, North, Central, South and Chikkballapur. It is used only for the AC-to-PC relationship, not as a replacement for current municipal boundaries. |
 | [Digital Sansad: 18th Lok Sabha member directory](https://sansad.in/ls/members) | Sitting member names, constituencies and `@mpls.sansad.in` public office email addresses. The site's public endpoint `https://sansad.in/api_ls/member?loksabha=18&size=543&page=1` was read and filtered to `status: Sitting`, Karnataka and the five mapped constituencies. Per-contact source links point to their public biographies. |
-| [LeadNet ward provenance](wards.md) | GBA 2025 ward polygons and assembly attributes, via OpenCity, plus documented spelling/source limitations. |
+| [Namma Civic ward provenance](wards.md) | GBA 2025 ward polygons and assembly attributes, via OpenCity, plus documented spelling/source limitations. |
 
 ## Assembly coverage
 
@@ -78,4 +78,4 @@ All 28 distinct Assembly labels present in the shipped ward data have a source-b
 
 The live [Anthropic home page](https://www.anthropic.com/) and its [published CSS](https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/css/ant-brand.shared.67f55a9666b2ae2332f5f893.fa6b3aa41.min.css) were inspected on the checked date. The current CSS declares **Anthropic Sans**, **Anthropic Serif** and **Anthropic Mono**, with website-hosted WOFF2 files. Some legacy classes still mention Tiempos Text. The current first-party CSS therefore does not support claiming that Styrene/Copernicus are the exact current site fonts.
 
-No public redistribution or independent application-use license for the custom Anthropic fonts was verified. A readable asset URL is not a reuse license. No proprietary font files were downloaded, copied, installed or linked by this research. LeadNet can use a clearly described **Anthropic-inspired** warm editorial treatment with the already available Inter and system Georgia fallbacks; using the exact custom fonts requires an appropriate license or written permission.
+No public redistribution or independent application-use license for the custom Anthropic fonts was verified. A readable asset URL is not a reuse license. No proprietary font files were downloaded, copied, installed or linked by this research. Namma Civic can use a clearly described **Anthropic-inspired** warm editorial treatment with the already available Inter and system Georgia fallbacks; using the exact custom fonts requires an appropriate license or written permission.

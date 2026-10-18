@@ -82,18 +82,18 @@ const team = deck.resolve(sourceRecords[0].elements.find((element) => element.te
 team.text.replace('Team name: ', 'Team name: [Owner to fill]');
 team.text.replace('Team leader name: ', 'Team leader name: [Owner to fill]');
 team.text.replace('Problem Statement: ', 'Problem Statement: [Owner to fill]');
-note(1, ['Team details remain placeholders at the owner\'s explicit request. Product: LeadNet. Proposed challenge: Sustainability & Social Impact. Confirm registered team roster before submission.'], 'Source: explicit owner approval in the recovered session, 17 October 2026.');
+note(1, ['Team details remain placeholders at the owner\'s explicit request. Product: Namma Civic. Proposed challenge: Sustainability & Social Impact. Confirm registered team roster before submission.'], 'Source: explicit owner approval in the recovered session, 17 October 2026.');
 note(2, ['The original template download/edit instructions are retained unchanged.'], 'Source: prescribed AI Builder Cup submission template.');
 
 {
   const s = deck.slides.items[2];
-  text(s, 'product-name', 'LeadNet', 52, 142, 640, 56, 40, { bold: true });
+  text(s, 'product-name', 'Namma Civic', 52, 142, 640, 56, 40, { bold: true });
   text(s, 'idea', 'Citizens verify the fix', 52, 211, 750, 48, 31);
-  text(s, 'problem', 'A closed complaint alone does not show whether a street was repaired. LeadNet keeps the report, evidence, official claim and citizen verdict in one public record.', 52, 277, 800, 90, 23);
+  text(s, 'problem', 'A closed complaint alone does not show whether a street was repaired. Namma Civic keeps the report, evidence, official claim and citizen verdict in one public record.', 52, 277, 800, 90, 23);
   rule(s, 392);
   text(s, 'three-facts', 'Photo + voice reporting     Real ward assignment     Public outcome ledger', 52, 416, 856, 35, 20, { bold: true });
   text(s, 'scope', 'Bengaluru prototype | Independent demonstration; no government endorsement', 52, 470, 856, 28, 15, { color: colors.muted });
-  note(3, ['LeadNet helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.'], `${sources.product}\n${sources.wards}`);
+  note(3, ['Namma Civic helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.'], `${sources.product}\n${sources.wards}`);
 }
 {
   const s = deck.slides.items[3]; titleOnly(4, 'Opportunities');
@@ -164,7 +164,7 @@ const mapPng = await sharp(Buffer.from(mapSvg)).png().toBuffer(); await fs.write
   s.shapes.add({geometry:'upArrow',position:{left:155,top:278,width:20,height:30},fill:colors.ink,line:{fill:colors.ink,width:0}});
   s.shapes.add({geometry:'downArrow',position:{left:460,top:278,width:20,height:30},fill:colors.ink,line:{fill:colors.ink,width:0}});
   text(s,'architecture-note','API owns all writes. Browser reads are read-only. Schema checks, one repair retry, then a safe fallback.',52,455,856,42,19);
-  note(8, ['This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. Cloud deployment and live model evaluation are deferred by owner; the current review continues locally.', 'For Ask LeadNet, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.'], sources.product);
+  note(8, ['This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. Cloud deployment and live model evaluation are deferred by owner; the current review continues locally.', 'For Ask Namma Civic, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.'], sources.product);
 }
 {
   const s = deck.slides.items[8];
@@ -203,7 +203,7 @@ const mapPng = await sharp(Buffer.from(mapSvg)).png().toBuffer(); await fs.write
   const s = deck.slides.items[12];
   const roadmap=[['Deferred cloud work','Owner chose to continue locally. Deployment, live model evaluation and public-link checks resume only when requested.'],['First pilot','Work with one ward or resident group; obtain consent, define moderation and review disputed closures with humans.'],['Later development','Complaint-system integrations, notifications, privacy blurring, real official identity checks and larger-scale analytics.']];
   roadmap.forEach(([a,b],i)=>{const y=151+i*111;text(s,`future-head-${i}`,a,52,y,225,55,23,{bold:true});text(s,`future-body-${i}`,b,300,y,600,85,20);});
-  note(13,['Government integrations and real official verification are roadmap items. LeadNet is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.'],sources.product);
+  note(13,['Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.'],sources.product);
 }
 {
   const s = deck.slides.items[13]; titleOnly(14,'Provide links to your:');
@@ -222,7 +222,7 @@ const finalContent=content.filter((entry)=>!/^## Slide (2|15)\n/.test(entry)).ma
   const visible=written.records[index].elements.filter((element)=>element.text?.trim()).map((element)=>element.text.trim()).join('\n\n');
   return `${title}\n\n### Slide copy\n\n${visible}\n\n### Presenter notes and sources\n\n${entry.replace(/^## Slide \d+\n\n/,'')}`;
 });
-await fs.writeFile(path.join(OUT,'content.md'),`# LeadNet submission deck\n\nLocal review snapshot. Cloud deployment and live model evaluation are deferred by owner. Team details, public links, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.\n\n${finalContent.join('\n\n')}`);
+await fs.writeFile(path.join(OUT,'content.md'),`# Namma Civic submission deck\n\nLocal review snapshot. Cloud deployment and live model evaluation are deferred by owner. Team details, public links, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.\n\n${finalContent.join('\n\n')}`);
 
 for (const [index, slide] of deck.slides.items.entries()) {
   const stem = `slide-${String(index+1).padStart(2,'0')}`;
@@ -233,7 +233,7 @@ for (const [index, slide] of deck.slides.items.entries()) {
 }
 const candidate = path.join(BUILD,`candidate-${REVISION}.pptx`);
 await (await PresentationFile.exportPptx(deck)).save(candidate);
-const finalPath = path.join(OUT,'.finalized',REVISION,'LeadNet-AI-Builder-Cup.pptx');
+const finalPath = path.join(OUT,'.finalized',REVISION,'Namma-Civic-AI-Builder-Cup.pptx');
 await fs.mkdir(path.dirname(finalPath),{recursive:true});
 const finalized=await finalizePresentation({ workspaceDir:OUT,candidatePath:candidate,finalPath,
   explicitTotalSlideCount:14,requiredNativeTableOwnerSlides:[],requiredNativeChartOwnerSlides:[],
@@ -245,8 +245,8 @@ const finalized=await finalizePresentation({ workspaceDir:OUT,candidatePath:cand
   verifyArtifactToolImport:true,receiptPath:path.join(BUILD,`validation-${REVISION}.json`),
 });
 console.log('Finalizer',JSON.stringify(finalized));
-await fs.copyFile(finalPath,path.join(OUT,'LeadNet-AI-Builder-Cup.pptx'));
-const pdf=spawnSync(path.join(RUNTIME,'python/python.exe'),[path.join(OUT,'render-pdf.py'),RENDER_DIR,path.join(OUT,'LeadNet-AI-Builder-Cup.pdf'),'14'],{encoding:'utf8'});
+await fs.copyFile(finalPath,path.join(OUT,'Namma-Civic-AI-Builder-Cup.pptx'));
+const pdf=spawnSync(path.join(RUNTIME,'python/python.exe'),[path.join(OUT,'render-pdf.py'),RENDER_DIR,path.join(OUT,'Namma-Civic-AI-Builder-Cup.pdf'),'14'],{encoding:'utf8'});
 console.log(pdf.stdout);if(pdf.status!==0)throw new Error(pdf.stderr||'PDF assembly failed');
 process.exitCode=0;
 console.log('Deck complete',REVISION);

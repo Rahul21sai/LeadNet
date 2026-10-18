@@ -1,4 +1,4 @@
-# Bengaluru ward geography used by LeadNet
+# Bengaluru ward geography used by Namma Civic
 
 Snapshot: 17 October 2026. Geographic records are real reference data. Issue records, project budgets, people and outcome statistics in the demonstration are fictional.
 
@@ -43,7 +43,7 @@ Local input files and their SHA-256 manifest remain outside the repository in `D
 
 Ward properties: `{ id, number, name_en, name_kn, zone, corporation, assembly }`. Display properties add `{ lx, ly }` and optional `aka` (semicolon-delimited sourced aliases). `corporation` is the full official English label. API labels are `{ [wardId]: { lat, lng } }`.
 
-Attribution: **Ward boundaries: Greater Bengaluru Authority (2025 delimitation), via OpenCity.** Tiles need their own provider/OpenStreetMap attribution. LeadNet is an independent prototype; GBA endorsement is not implied.
+Attribution: **Ward boundaries: Greater Bengaluru Authority (2025 delimitation), via OpenCity.** Tiles need their own provider/OpenStreetMap attribution. Namma Civic is an independent prototype; GBA endorsement is not implied.
 
 ## Landmark checks
 

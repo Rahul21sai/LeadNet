@@ -1,4 +1,4 @@
-# LeadNet deployment runbook
+# Namma Civic deployment runbook
 
 Deployment was authorized in the recovered session for `leadnet-blr`, on the owner's billing, with an approximately $10–15/month prototype target and a $25 budget alert. Do not select a different billing account or expand that scope silently. Never print tokens or commit credentials.
 

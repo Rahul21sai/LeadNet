@@ -1,4 +1,4 @@
-# LeadNet interface refinement
+# Namma Civic interface refinement
 
 The owner supplied seven screenshots and requested a stronger hackathon presentation on 17 October 2026. This refines the approved Apple-style spatial city; credentials and cloud work remain deferred.
 

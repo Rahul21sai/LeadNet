@@ -1,4 +1,4 @@
-# LeadNet — Design System: "Civic Record"
+# Namma Civic — Design System: "Civic Record"
 
 Art direction: **warm editorial community × spatial civic record**. The owner expanded the product into a social experience on 18 October 2026; the community feed is now the home screen, with the earlier city presentation at `/city`.
 Neutral surfaces and ink actions; a clay accent identifies community actions and the **civic status palette retains its own meanings**. The signature element is

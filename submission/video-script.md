@@ -1,4 +1,4 @@
-# LeadNet demo recording script
+# Namma Civic demo recording script
 
 Target: **2 minutes 45 seconds**, English. This is a recording plan, not a completed video.
 
@@ -12,7 +12,7 @@ The supplied template asks for a three-minute video; the pasted submission form 
 
 **Say:**
 
-“LeadNet helps Bengaluru residents keep civic work on the record. An official can claim a repair, but citizens verify it. We keep the report, the evidence and the citizen verdict together, then publish the gap between what was claimed and what was confirmed.”
+“Namma Civic helps Bengaluru residents keep civic work on the record. An official can claim a repair, but citizens verify it. We keep the report, the evidence and the citizen verdict together, then publish the gap between what was claimed and what was confirmed.”
 
 ## 00:20-00:50 | Report by photo and voice
 
@@ -60,7 +60,7 @@ The supplied template asks for a three-minute video; the pasted submission form 
 
 **Say:**
 
-“Firebase serves the interface and identity. Firestore keeps the record, Cloud Run owns mutations, and Gemini assists within checked boundaries. LeadNet makes civic outcomes inspectable.”
+“Firebase serves the interface and identity. Firestore keeps the record, Cloud Run owns mutations, and Gemini assists within checked boundaries. Namma Civic makes civic outcomes inspectable.”
 
 ## Recording notes
 

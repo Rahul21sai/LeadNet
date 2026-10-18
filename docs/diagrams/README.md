@@ -1,4 +1,6 @@
-# LeadNet Google Cloud architecture
+# Namma Civic Google Cloud architecture
+
+Diagram filenames retain the original `leadnet-` prefix so existing repository links remain valid. All visible product branding uses Namma Civic.
 
 - `leadnet-google-cloud-architecture.svg`: self-contained editable vector diagram, 2560 × 1440.
 - `leadnet-google-cloud-architecture.png`: presentation export, 3840 × 2160.
@@ -38,4 +40,4 @@ const sharp = require('sharp');
 })().catch(console.error);
 ```
 
-Both exports were visually inspected. XML parsing, unique IDs and image dimensions were checked. This is validation of the generated diagram only, not rendered application QA or cloud deployment verification.
+Both exports were visually inspected. The 60 px Arial-bold title measures 375 px, and the subtitle starts at x=540 with an 85 px gap. XML parsing, unique IDs and image dimensions were checked. This is validation of the generated diagram only, not rendered application QA or cloud deployment verification.

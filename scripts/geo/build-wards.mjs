@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Build LeadNet's ward datasets from the GBA 2025 delimitation KML.
+// Build Namma Civic's ward datasets from the GBA 2025 delimitation KML.
 //
 //   node scripts/geo/build-wards.mjs \
 //     --wards <gba_369_wards_*.kml> --corporations <gba_five_corporations_*.kml> \

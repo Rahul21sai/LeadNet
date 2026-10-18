@@ -77,7 +77,7 @@ async function privatePhoto(file: File): Promise<File> {
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.9));
     if (!blob) throw new Error('The photo could not be prepared for device storage. Choose a different photo.');
-    return new File([blob], 'leadnet-device-photo.jpg', { type: 'image/jpeg' });
+    return new File([blob], 'namma-civic-device-photo.jpg', { type: 'image/jpeg' });
   } finally { image.close(); }
 }
 function deviceDatabase(): Promise<IDBDatabase> {

@@ -1,8 +1,10 @@
-# LeadNet
+# Namma Civic
 
 **Bengaluru, on the record.** Citizens share local issues, discuss nearby problems, and prepare reviewed messages to their elected representatives. Civic reports retain their evidence trail and citizen-verified outcomes; social reactions do not decide whether a fix is verified.
 
 This is an AI Builder Cup prototype. Demonstration issues, leader personas, projects, votes and outcomes are fictional. The separate representative contact directory contains 28 real MLAs and five MPs with officially published contact addresses, checked on 18 October 2026. Ward geography is real, attributed GBA reference data. Licensed photographs are illustrations and do not prove that a particular incident occurred at a demo pin.
+
+Namma Civic is the product's display brand. The `LeadNet` repository name, `@leadnet/*` packages and existing `leadnet` cloud identifiers are retained for compatibility.
 
 ## Community capture and outreach
 
@@ -52,7 +54,7 @@ On restrictive Windows sandboxes, Vite/Vitest config bundling can fail while tra
 
 Gemini proposes category, hazard enums, severity enums and bilingual wording; compares only code-selected duplicate candidates; and describes evidence photos. Zod plus task-specific checks validate every response. One repair is allowed, followed by a deterministic fallback. Every call creates an AI trail. Raw voice transcripts and clips stay private.
 
-Shared TypeScript computes ward routing, priority, SLAs, allowed status changes, evidence gates, citizen quorum and every metric. Ask LeadNet lets Gemini select relevant fact IDs; code renders complete labelled bilingual facts so a model cannot swap metric values. Officers cannot publish a verified status. A failed evidence model call holds a claim. Silence never verifies a fix.
+Shared TypeScript computes ward routing, priority, SLAs, allowed status changes, evidence gates, citizen quorum and every metric. Ask Namma Civic lets Gemini select relevant fact IDs; code renders complete labelled bilingual facts so a model cannot swap metric values. Officers cannot publish a verified status. A failed evidence model call holds a claim. Silence never verifies a fix.
 
 Authentication uses Firebase ID tokens. Officer actions are scoped to assigned wards. The hackathon role switch is explicitly a demo capability and must be disabled with `DEMO_MODE=0` for a real deployment. Browser Firestore and Storage writes are denied by rules.
 

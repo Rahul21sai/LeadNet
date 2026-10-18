@@ -1,6 +1,8 @@
-# Submission readiness
+# Namma Civic submission readiness
 
 This folder is a local review package. The owner explicitly chose to continue locally, deferring cloud deployment and live model evaluation. It does not mean the contest entry has been submitted or a public deployment is ready.
+
+The current deliverables are `Namma-Civic-AI-Builder-Cup.pptx` and `Namma-Civic-AI-Builder-Cup.pdf`.
 
 ## Prepared locally
 
@@ -12,8 +14,9 @@ This folder is a local review package. The owner explicitly chose to continue lo
 - [x] No fabricated model benchmark or product screenshot.
 - [x] English demo recording script targets 2:45.
 - [x] Brief solution description drafted under the 1,024-character limit.
+- [x] Product branding updated to Namma Civic in the deck, notes, description and video script; original team placeholders, template artwork and repository identity are preserved.
 - [x] Final PPTX and PDF rendered, inspected and verified; see `validation-report.json`. Package/layout checks have zero findings; all 14 actual PDF pages were inspected.
-- [x] Final PDF size is 1,974,292 bytes, below 5 MB. The PDF uses image pages; the PPTX keeps editable text and diagrams.
+- [x] Final PDF size is 1,975,244 bytes, below 5 MB. The PDF uses image pages; the PPTX keeps editable text and diagrams.
 
 ## Deferred requirements for a future public submission
 

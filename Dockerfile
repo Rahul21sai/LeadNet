@@ -1,4 +1,4 @@
-# LeadNet API — Cloud Run image. Build context is the repo root (npm workspaces).
+# Namma Civic API — Cloud Run image. Build context is the repo root (npm workspaces).
 FROM node:22-slim AS build
 WORKDIR /repo
 COPY package.json package-lock.json .npmrc ./

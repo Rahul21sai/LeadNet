@@ -17,7 +17,7 @@ def el(tag, attrs=None, parent=None, **extra):
     return ET.SubElement(parent if parent is not None else svg, f'{{{NS}}}{tag}', {**(attrs or {}), **{k.replace('_', '-'): str(v) for k, v in extra.items()}})
 
 
-el('title', {'id': 'title'}).text = 'LeadNet system architecture with official Google Cloud and Firebase product icons'
+el('title', {'id': 'title'}).text = 'Namma Civic system architecture with official Google Cloud and Firebase product icons'
 el('desc', {'id': 'desc'}).text = 'Connected target: React SPA on Firebase Hosting calls the Hono API on Cloud Run, which uses Firebase Authentication, Firestore, Cloud Storage and bounded Vertex AI Gemini. Application code determines civic and connection outcomes. A separate configured Vercel demonstration uses fictional records and device storage. Deployment and video runtime are unverified.'
 defs = el('defs')
 for name, colour in [('blue', BLUE), ('gray', MUTED), ('green', GREEN)]:
@@ -87,8 +87,8 @@ def simple_icon(kind, x, y):
 
 # Page and scope boundaries.
 rect(0, 0, 2560, 1440, stroke='none', radius=0)
-text(80, 86, 'LeadNet', 60, 700)
-text(350, 86, 'System architecture', 34, 400, MUTED)
+text(80, 86, 'Namma Civic', 60, 700)
+text(540, 86, 'System architecture', 34, 400, MUTED)
 text(80, 127, 'Civic accountability, local community and consent-based connections', 24, 400, MUTED)
 text(2470, 77, '18 OCT 2026', 19, 600, MUTED, 'end')
 text(2470, 111, 'Source architecture • deployment unverified', 21, 400, MUTED, 'end')
@@ -205,7 +205,7 @@ text(1645, 1208, 'Device storage', 26, 600)
 text(1645, 1247, 'IndexedDB: captured media and community posts', 22, 400, MUTED)
 text(1645, 1282, 'localStorage: connection requests and preferences', 22, 400, MUTED)
 text(80, 1393, 'Product artwork: official Google Cloud icon library + Firebase brand assets. Diagram reflects implemented source, not verified deployment.', 19, 400, MUTED)
-text(2480, 1393, 'LeadNet', 22, 600, MUTED, 'end')
+text(2480, 1393, 'Namma Civic', 22, 600, MUTED, 'end')
 
 ET.indent(svg, space='  ')
 target = ROOT / 'leadnet-google-cloud-architecture.svg'

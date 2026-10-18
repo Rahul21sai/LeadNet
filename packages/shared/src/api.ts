@@ -56,7 +56,7 @@ export interface DraftResponse {
     };
     candidatesConsidered: number;
   } | null;
-  /** AI checks that ran, for the "How LeadNet decided" panel. */
+  /** AI checks that ran, for the "How Namma Civic decided" panel. */
   checks: Array<{ name: string; passed: boolean }>;
   fallbackUsed: boolean;
 }

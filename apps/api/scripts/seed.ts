@@ -136,11 +136,11 @@ function makeRecord(index: number): RecordRow {
   const reportEvidence = photo(reportPhoto, 'report', reportedAt);
   event('reported', reportedAt, 'citizen', 'Citizen', { toStatus: 'reported', note: 'Fictional demo report. Licensed photos illustrate the scenario; they do not document this location.', evidenceIds: reportEvidence ? [reportEvidence] : [] });
   for (let i = 1; i < reports.length; i++) event('merged', reports[i]!.createdAt, 'citizen', 'Citizen', { note: 'Scripted demo report joined this canonical issue.' });
-  event('supported', reportedAt + eligible * 30_000 + 1_000, 'system', 'LeadNet (demo system)', { note: `${eligible} fictional citizens support this demo issue.`, meta: { isDemo: true, count: eligible } });
+  event('supported', reportedAt + eligible * 30_000 + 1_000, 'system', 'Namma Civic (demo system)', { note: `${eligible} fictional citizens support this demo issue.`, meta: { isDemo: true, count: eligible } });
   let status: Status = 'reported';
   const transition = (to: Status, role: Role | 'system', type: EventType, at: number, note: string, evidenceIds: string[] = []) => {
     assert.ok(canTransition(status, to, role), `${id}: invalid ${status} -> ${to}`);
-    event(type, at, role === 'officer' ? 'officer' : 'system', role === 'officer' ? `Demo ward officer · ${ward.name_en}` : 'LeadNet (demo system)', { fromStatus: status, toStatus: to, note, evidenceIds, meta: { isDemo: true, role } });
+    event(type, at, role === 'officer' ? 'officer' : 'system', role === 'officer' ? `Demo ward officer · ${ward.name_en}` : 'Namma Civic (demo system)', { fromStatus: status, toStatus: to, note, evidenceIds, meta: { isDemo: true, role } });
     status = to;
   };
   let acknowledgedAt: number | null = null, firstClaimedAt: number | null = null, verifiedAt: number | null = null;
@@ -161,7 +161,7 @@ function makeRecord(index: number): RecordRow {
     record.observation = { ...observation, notes: 'Scripted negative fixture: source photo is from another city. This observation is not a recorded Gemini call.' };
     record.gate = gate;
     evidenceFlag = { ...gate, overridden: scenario === 'overridden', note: 'Scripted demo scenario; different-city evidence must be held.' };
-    event('evidence_flagged', claimedAt, 'system', 'LeadNet (demo evidence fixture)', { note: 'Different-location demo photo held by the shared evidence gate; issue remains open.', evidenceIds: [evidenceId] });
+    event('evidence_flagged', claimedAt, 'system', 'Namma Civic (demo evidence fixture)', { note: 'Different-location demo photo held by the shared evidence gate; issue remains open.', evidenceIds: [evidenceId] });
     if (scenario === 'overridden') {
       overrideCount = 1; claimCount = 1; firstClaimedAt = claimedAt + HOUR;
       evidenceFlag.note = 'Demo override with written reason: inspector requests citizen review. Not an official inspection.';

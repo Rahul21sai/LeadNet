@@ -1,4 +1,4 @@
-# LeadNet continuation
+# Namma Civic continuation
 
 Recovered from Claude session `dd8efadd-d109-4fb3-8fed-72af80eef5e5` on 17 October 2026.
 

@@ -1,6 +1,6 @@
 # AGENTS.md — how to work in this repo
 
-LeadNet is a hackathon build (Google Cloud × Hack2Skill **AI Builder Cup**, deadline **18 Oct 2026 23:59 IST**).
+Namma Civic is a hackathon build (Google Cloud × Hack2Skill **AI Builder Cup**, deadline **18 Oct 2026 23:59 IST**).
 Product intent lives in `docs/PRD.md`, system shape in `docs/ARCHITECTURE.md`, visual rules in
 `docs/DESIGN_SYSTEM.md`. Read the one that answers your question before writing code.
 

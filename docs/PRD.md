@@ -1,7 +1,7 @@
-# LeadNet — Product Requirements (hackathon edition)
+# Namma Civic — Product Requirements (hackathon edition)
 
 > **Bengaluru, on the record.** Officials can *claim* a fix. Citizens *verify* it — with evidence.
-> LeadNet publishes the gap.
+> Namma Civic publishes the gap.
 
 Submission: Google Cloud × Hack2Skill **AI Builder Cup 2026**, theme **Sustainability & Social Impact**.
 Deadline 18 Oct 2026 23:59 IST. Feature freeze 18 Oct 14:00 IST.
@@ -30,7 +30,7 @@ with Gemini doing the parts only a model can do, and deterministic code owning e
 3. **Duplicate merge** — code finds open same-category issues within 150 m; Gemini adjudicates "same real-world problem?"
    among those candidates only; citizen chooses to join (adds support) or file separately. Original reports are preserved.
 4. **Live civic map** — real-time markers coloured by status, clustering, ward boundaries, filters, issue sheet.
-5. **Issue record** — status timeline (append-only), evidence gallery, before/after compare, "How LeadNet decided" (AI trail
+5. **Issue record** — status timeline (append-only), evidence gallery, before/after compare, "How Namma Civic decided" (AI trail
    with verifier checks), support & follow, verification controls, Wallet-style **Issue Pass** for the reporter.
 6. **Officer console** — demo role switch; ward queue sorted by priority with breakdown and SLA countdown; acknowledge →
    start → upload resolution photo → **Gemini evidence check** (same place? defect gone?) → code gate holds suspicious
@@ -44,7 +44,7 @@ with Gemini doing the parts only a model can do, and deterministic code owning e
 
 ## Should ship if time allows
 - Fictional leader profiles + development project tracker (milestones planned vs actual, linked issues), labelled demo.
-- "Ask LeadNet" — question → code-computed facts → Gemini selects relevant fact IDs → code renders complete labelled bilingual facts.
+- "Ask Namma Civic" — question → code-computed facts → Gemini selects relevant fact IDs → code renders complete labelled bilingual facts.
 - Face / number-plate blur before publishing photos.
 - Gemini-written ward brief (narrative verified to cite only computed numbers).
 - Dark mode polish.

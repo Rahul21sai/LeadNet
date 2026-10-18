@@ -17,8 +17,8 @@ for page in pages:
         raise FileNotFoundError(page)
 
 pdf = canvas.Canvas(str(output), pagesize=(720, 405), pageCompression=1)
-pdf.setTitle("LeadNet - AI Builder Cup - Review snapshot")
-pdf.setAuthor("LeadNet")
+pdf.setTitle("Namma Civic - AI Builder Cup - Review snapshot")
+pdf.setAuthor("Namma Civic")
 pdf.setSubject("Template-based review deck. Team details, screenshots, public links and live evaluation remain pending.")
 for page in pages:
     image = Image.open(page).convert("RGB")

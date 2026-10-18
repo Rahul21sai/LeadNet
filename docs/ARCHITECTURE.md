@@ -1,4 +1,4 @@
-# LeadNet — Architecture
+# Namma Civic — Architecture
 
 Google Cloud icon diagram: [PNG](diagrams/leadnet-google-cloud-architecture.png) · [editable SVG](diagrams/leadnet-google-cloud-architecture.svg) · [sources and regeneration](diagrams/README.md). The graphic distinguishes the static Vercel demo configuration from the connected cloud target; cloud deployment remains unverified.
 

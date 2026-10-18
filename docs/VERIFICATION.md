@@ -15,7 +15,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 | `git diff --check` | Passes |
 | Built API health / unauthenticated draft request | Health returns 200; mutation returns 401 |
 
-The latest seed contains 200 fictional issues, 670 reports, 3,377 supporters, 150 votes, 1,498 events, 286 evidence records, six fictional personas and eight projects. All 369 real wards are present; the demo issues cover 12 wards. The deterministic seed payload hash is `3ec084f0e4fd3c51ee0982034ed3e6e9b89dbe841d2fea21f264147300c2bfc1`.
+The latest seed contains 200 fictional issues, 670 reports, 3,377 supporters, 150 votes, 1,498 events, 286 evidence records, six fictional personas and eight projects. All 369 real wards are present; the demo issues cover 12 wards. The deterministic seed payload hash is `b3d1d91bcf5f0001cd0dc10f84ff6e697bc7c730a09daaf153d7982578f0c9a3`.
 
 ## Regression evidence
 
@@ -82,6 +82,12 @@ Private server collections remain covered by existing default-deny rules; browse
 The Vercel demo uses its own validated local-storage state with fictional profiles and incoming examples. Outgoing requests are never sent remotely or automatically accepted. Tests verify corrupt/genuine record rejection, quota-failure preservation, independent profile-ward selection, truthful refresh errors and scrubbed bio length after replacement expansion. SSR component checks verify actual controls, direction/status ownership, anonymous markup and cooldown labels; they do not establish browser layout or interaction.
 
 Fresh full verification passes 239 tests in 29 files, all-workspace typecheck and both connected web/API builds. Final connected and forced-demo web builds also pass after the central-hook import integration. Static demo assets contain People, consent controls, local storage and creator links; the live profile-mutation path is removed from that build. Independent review found and verified fixes for cooldown reversal, hidden profile drift, pair existence probing, delayed-token identity changes and bio persistence. No real connection, cloud write, external message, deployment or dependency installation was performed. Rendered browser/device and deployed multi-user QA remain unverified. See `CONNECTIONS.md`.
+
+## Namma Civic rebrand, 18 October
+
+The owner renamed the product to Namma Civic. The interface, page metadata, social image, share/email wording, downloaded filenames, demo timeline actors, documentation, architecture graphics and submission exports use the new name. Repository URLs, package scopes, cloud resources and browser-storage namespaces retain their existing identities. The longer navigation wordmark has source-level responsive adjustments.
+
+Fresh verification passed 239 tests in 29 files, all-workspace typecheck, connected web/API production builds, and the forced-demo web build. After the final display-filename updates, the 20 affected community-client/feed tests passed again. The dry-run seed regeneration passed; a structural comparison confirmed only brand strings changed, with counts, metrics, record IDs and geometry unchanged. The seed payload hash above reflects these label changes. Diagram XML, unique IDs and image dimensions were checked and the new graphics inspected. The rebuilt 14-slide PPTX and PDF have their own validation report in submission. Rendered app QA remains unverified under the existing browser permission denial.
 
 ## Current limits and remaining work
 

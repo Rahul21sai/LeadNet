@@ -28,7 +28,7 @@ Set only in ignored `apps/api/.env` or your server's secret/environment configur
 
 ```dotenv
 RESEND_API_KEY=your_server_side_resend_key
-EMAIL_FROM=LeadNet <issues@your-verified-domain.example>
+EMAIL_FROM=Namma Civic <issues@your-verified-domain.example>
 PUBLIC_APP_URL=https://your-actual-deployed-app.example
 ```
 
@@ -56,6 +56,6 @@ No image is deployed by this change. FFmpeg is still not installed on this Windo
 
 ## Typography and verification limits
 
-Anthropic's current site declares custom Anthropic Sans/Serif/Mono fonts. A reuse license was not verified, so no font binaries were downloaded or redistributed. LeadNet uses an inspired serif treatment with Georgia and the existing Inter/Kannada fonts; locally installed Anthropic families can resolve first. Licensed font files can be added separately with their license.
+Anthropic's current site declares custom Anthropic Sans/Serif/Mono fonts. A reuse license was not verified, so no font binaries were downloaded or redistributed. Namma Civic uses an inspired serif treatment with Georgia and the existing Inter/Kannada fonts; locally installed Anthropic families can resolve first. Licensed font files can be added separately with their license.
 
 The browser service still denies automated access to the preview despite the owner's Allow setting. Unit/source checks do not replace rendered mobile/desktop, light/dark, actual camera/microphone/GPS or console testing. Live Gemini, mail delivery, video encoding, deployed rules and cloud persistence need their configured services and independent verification.

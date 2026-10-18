@@ -26,7 +26,7 @@ export function CameraCapture({ onCapture, onClose }: { onCapture: (file: File, 
     if (!active.current) return;
     setBusy(false);
     if (!blob) { setError('The camera could not capture a photo. Try again.'); return; }
-    onCapture(new File([blob], `leadnet-${capturedAt}.jpg`, { type: 'image/jpeg' }), position);
+    onCapture(new File([blob], `namma-civic-${capturedAt}.jpg`, { type: 'image/jpeg' }), position);
   };
   return <section className="community-camera" aria-label="Take an issue photo"><div className="community-camera-top"><span><Camera size={16} />Issue camera</span><button className="community-icon" type="button" onClick={onClose} aria-label="Close camera"><X size={18} /></button></div><video ref={video} muted playsInline onLoadedMetadata={() => setReady(true)} /><div className="community-camera-bottom"><p><MapPin size={14} />Your device location is requested when you take the photo.</p><button className="community-shutter" type="button" onClick={() => void takePhoto()} disabled={!ready || busy} aria-label={busy ? 'Finding photo location' : 'Take photo and find location'}><Circle size={33} strokeWidth={1.5} /></button><span role="status">{busy ? 'Finding location…' : 'Photo + location'}</span></div>{error && <p className="community-error" role="alert">{error}</p>}</section>;
 }

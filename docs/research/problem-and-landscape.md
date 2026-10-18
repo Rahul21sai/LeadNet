@@ -1,4 +1,4 @@
-# LeadNet: problem and landscape evidence
+# Namma Civic: problem and landscape evidence
 
 Prepared 17 Oct 2026 (IST) for the Google Cloud x Hack2skill AI Builder Cup 2026 pitch deck, theme "Sustainability & Social Impact". Read-only research: nothing was installed, signed up for or submitted anywhere.
 
@@ -13,13 +13,13 @@ Prepared 17 Oct 2026 (IST) for the Google Cloud x Hack2skill AI Builder Cup 2026
 
 ## 1. Flags that change the pitch (read first)
 
-1. **GBA has announced the same ideas.** On 9 Sep 2026 the Greater Bengaluru Authority (GBA) announced "Sahaya 3.0": citizen confirmation before closure, easier reopening, voice notes, Indian-language support, a public performance dashboard. It is "being developed"; I found no launch report as of 17 Oct. Do not claim LeadNet's citizen confirmation or voice is novel on its own. Claim that it ships now, independent of any department, with published metric definitions (sections 5.1 and 6).
-2. **The Minister warned against more apps.** TOI, 9 Sep 2026: "He cautioned against creating multiple apps for different civic services, saying the govt could instead incorporate useful ideas into existing systems." Position LeadNet as a verification and public-record layer that can feed Sahaaya (export or API), not a parallel complaint portal.
+1. **GBA has announced the same ideas.** On 9 Sep 2026 the Greater Bengaluru Authority (GBA) announced "Sahaya 3.0": citizen confirmation before closure, easier reopening, voice notes, Indian-language support, a public performance dashboard. It is "being developed"; I found no launch report as of 17 Oct. Do not claim Namma Civic's citizen confirmation or voice is novel on its own. Claim that it ships now, independent of any department, with published metric definitions (sections 5.1 and 6).
+2. **The Minister warned against more apps.** TOI, 9 Sep 2026: "He cautioned against creating multiple apps for different civic services, saying the govt could instead incorporate useful ideas into existing systems." Position Namma Civic as a verification and public-record layer that can feed Sahaaya (export or API), not a parallel complaint portal.
 3. **Cleanest fact for the deck.** The official Sahaaya dashboard counts 94.98% of 12,78,073 complaints as "Resolved", and a note on a sibling dashboard page says a "2nd stage officer" verifies and closes, with no citizen step. That page's heading contains "Test", so verify the wording before quoting it (S1).
 4. **Two wordings of the rubric.** The website and the T&C describe the four criteria differently, and the T&C says it prevails. Both are quoted in 2.1. Write to both.
 5. **Rules that can disqualify** (section 2.3): fresh code only (treat 7 Sep 2026 as the safe start date), no solo submissions (2-4 members; roster frozen after 14 Oct), any student on the team disqualifies the whole team, the prototype must use Gemini/Gemma or Google agentic platforms and be deployed on Cloud Run or Firebase, video strictly under 3 minutes, all submission materials in English.
 6. **Cut-off time is not published.** Every page says only "Oct 18, 2026". Your brief says 23:59 IST: UNVERIFIED. Check the Hack2skill dashboard submission form.
-7. **Development-project tracking is not in the LeadNet description I was given**, but it is one of your six comparison dimensions. Confirm it is built before ticking it. The GBA is building its own Road Infrastructure Management System (RIMS) for road works.
+7. **Development-project tracking is not in the Namma Civic description I was given**, but it is one of your six comparison dimensions. Confirm it is built before ticking it. The GBA is building its own Road Infrastructure Management System (RIMS) for road works.
 8. **Do not cite the bare-IP site** `13.202.92.66:5443` that presents itself as a GBA grievance portal (section 8).
 
 ## 2. Hackathon rules
@@ -80,7 +80,7 @@ Overview line worth echoing (H1): "start with a problem you understand, build a 
 | Category | "Clearly identify the problem statement you are submitting for (Healthcare, Education, Sustainability, Accessibility, Social Good)." That list is stale (the real themes are the six on the page). Write "Sustainability & Social Impact" exactly. | H2 |
 | Language | "All submission materials, including code, documentation, and presentations, must be in English." Caption or subtitle any Kannada voice in the demo. | H2 |
 | Fresh code | "Submissions must consist exclusively of fresh code and original assets created during the official hackathon timeline. Pre-existing products, ongoing projects, or code developed prior to the official launch will be disqualified." FAQ: "work started before the program launch, will not be considered." "Launch" is ambiguous (registration opened 1 Sep, build window 7 Sep). Treat 7 Sep 2026 as the safe start. | H5, H3 |
-| Integration | "Consider factors like scalability, performance, and integration with existing systems." Supports positioning LeadNet as feeding Sahaaya. | H2 |
+| Integration | "Consider factors like scalability, performance, and integration with existing systems." Supports positioning Namma Civic as feeding Sahaaya. | H2 |
 | Google Cloud credits | **None found.** The words credit, voucher and coupon appear on none of H1-H4. In the T&C the only "credit" is "compensation or credit for use of their Hackathon entry" (about the organiser's use of your entry, not cloud credits). Closest: "Google Cloud provides technical expertise access, and educational resources for this initiative." Treat credits as not offered. | H1-H5 |
 | AI tools (dev) | No rule for or against AI coding assistants or third-party libraries was found. The only AI rule is the Google-AI requirement above. Reading the "primarily Google Cloud" wording, keep runtime inference on Gemini/Gemma. The "Prompt your jersey" activity (Gemini or Imagen) is optional and not part of the stated judging. One clause to be aware of (T&C, Copyright): the participant warrants being "the sole author and copyright owner of the Submission" and that it is "an original work of the Participant". Nothing says how that applies to AI-assisted code; if the build is largely AI-written, ask the organiser (support+aibuildercup@hack2skill.com) rather than assume. | H1, H2, H5 |
 | Team | 2-4 members; cannot participate solo; one team per person; one solution under one theme; all members JAPAC-based. "Team additions or replacements are permitted only while the official registration window remains open (closing October 11). No team roster changes are allowed after October 14th." | H3, H5 |
@@ -93,7 +93,7 @@ Overview line worth echoing (H1): "start with a problem you understand, build a 
 
 ### 2.4 Rubric to evidence map
 
-| Criterion | What the text asks for | Where to find LeadNet's evidence |
+| Criterion | What the text asks for | Where to find Namma Civic's evidence |
 |---|---|---|
 | Problem Alignment & Impact (25%) | problem-solution fit; "measurable real-world viability" | S1, S2, S4 (self-reported closure vs recurrence and unverified repairs); S6 (drainage); a headline metric of citizen-confirmed vs officer-reported resolution |
 | Innovation & Creativity (25%) | "meaningful differentiation from existing solutions" | Section 6 table; claims list |
@@ -230,7 +230,7 @@ Announced, not launched (as far as I found):
 
 ### 5.6 SeeClickFix (US; now CivicPlus "SeeClickFix 311 CRM")
 - What it does: routes requests "based on location and category, while identifying and merging duplicate submissions" (CivicPlus [X]). Staff can "merge Requests together into one"; the merged request "will automatically go into the Archived state (this can't be reopened)" (CivicPlus help [V]). "If a request is a 'public' request, anyone using the SeeClickFix system will see the problem pinned to the map and can follow its progress ... Public requests help reduce duplicate reports" (a city FAQ, Middletown CT [X]). "By default, commenting and reopening of Requests are allowed for all Request Categories." (CivicPlus help [X]). API: "Any authenticated user can change the status of an issue from Open to Closed and Closed to Open. Only government employees can change the status from Open to Acknowledged and Acknowledged to Closed." (dev.seeclickfix.com [X])
-- Documented weakness: Albany, NY switched its SeeClickFix program off in December 2024: "The city of Albany has temporarily deactivated its SeeClickFix program after a New York Court of Appeals ruling determined that reports submitted through the app qualify as 'written notice' of road defects." (Spectrum News, 18 Dec 2024 [V]). Analysis: public, timestamped reports can create liability for authorities, so an open record may meet resistance. LeadNet should be able to run without a department opting in.
+- Documented weakness: Albany, NY switched its SeeClickFix program off in December 2024: "The city of Albany has temporarily deactivated its SeeClickFix program after a New York Court of Appeals ruling determined that reports submitted through the app qualify as 'written notice' of road defects." (Spectrum News, 18 Dec 2024 [V]). Analysis: public, timestamped reports can create liability for authorities, so an open record may meet resistance. Namma Civic should be able to run without a department opting in.
 
 ### 5.7 Generic 311 systems (international evidence)
 - Closed without a fix: Atlanta City Auditor, Performance Audit of work-order management, Jan 2016 (older, but the most rigorous audit I found) [X]: "more than 20% of service requests appear to have been closed without actual resolution." "Our telephone survey confirmed residents' perceptions that service requests had been closed without resolution of the problem". On duplicates: they "affected fewer records, but were a bigger problem in some business units than others."
@@ -241,7 +241,7 @@ Announced, not launched (as far as I found):
 
 Codes: **YES** = documented capability. **PART** = partial, optional, or announced but not launched (stated in the cell). **NONE** = no evidence found in the sources read (not proof of absence). **?** = not established.
 
-| Dimension | Sahaaya 2.0 / 1533 | I Change My City | Swachhata | NammaKasa (2026) | FixMyStreet (UK) | SeeClickFix | Generic 311 | LeadNet (per brief, not checked against the build) |
+| Dimension | Sahaaya 2.0 / 1533 | I Change My City | Swachhata | NammaKasa (2026) | FixMyStreet (UK) | SeeClickFix | Generic 311 | Namma Civic (per brief, not checked against the build) |
 |---|---|---|---|---|---|---|---|---|
 | Canonical-issue dedupe | NONE (each duplicate registered, S7) | ? | PART (vote and comment on nearby) | ? | PART (suggest and subscribe, Pro) | YES (staff merge) | PART (varies; "Duplicate" is a closure code) | YES |
 | Evidence-verified closure by citizen confirmation | PART (reopen and escalate after closure; confirm-before-close proposed in 3.0) | PART (success stories cite citizen confirmation; mechanism undocumented) | PART (reopen; engineer proof photo; officer closes) | PART (verification photo by official or volunteer; citizen confirmation not documented) | PART (opt-in survey at 4 weeks) | PART (reopen allowed; confirm-before-close not documented) | NONE (agency sets closure; audits show closure without fix) | YES (only citizen confirmation verifies) |
@@ -250,7 +250,7 @@ Codes: **YES** = documented capability. **PART** = partial, optional, or announc
 | Development-project tracking | PART (RIMS road works; in development, citizen view planned) | PART (ward budget and utilisation info, 2017 description) | NONE | NONE | NONE | NONE | NONE | CONFIRM it is built |
 | Open public record | PART (aggregate dashboard; grievance data republished on OpenCity, per a search excerpt) | PART (public site; open datasets, CC BY-SA) | PART (public portals) | YES (public map; CC-BY data) | YES (public map; keeps all reports; open source) | PART (public by default in many cities; cities can disable, e.g. Albany) | YES (e.g. NYC 311 open data) | YES |
 
-Not one of the six dimensions, but decisive: in every GBA system the department sets the status. LeadNet's status is set by the citizen, and the record is independent of the department.
+Not one of the six dimensions, but decisive: in every GBA system the department sets the status. Namma Civic's status is set by the citizen, and the record is independent of the department.
 
 **What survives scrutiny**
 - Each capability exists somewhere or is planned by the GBA: dedupe (SeeClickFix), reopen (Sahaaya, Swachhata, FixMyStreet, SeeClickFix), public metrics (Swachh Manch, Sahaaya, NammaKasa), voice (Sahaya 3.0, planned), project tracking (RIMS, planned). The defensible difference is the combination, plus independence from the department.
@@ -273,8 +273,8 @@ Not one of the six dimensions, but decisive: in every GBA system the department 
 8. Anything sourced from the bare-IP site.
 
 **Suggested framing against Sahaya 3.0** (my suggestion, your call)
-- Cite the GBA's own proposal as proof of demand, then say LeadNet is live and department-independent.
-- Offer an export or API so Sahaaya can ingest LeadNet's verified issues.
+- Cite the GBA's own proposal as proof of demand, then say Namma Civic is live and department-independent.
+- Offer an export or API so Sahaaya can ingest Namma Civic's verified issues.
 - Lead with the metric nobody publishes: citizen-confirmed resolution rate against officer-reported "resolved".
 
 ## 7. Language reality (three sentences for the deck)
@@ -291,7 +291,7 @@ Notes:
 
 ## 8. Provenance warnings
 
-- **Bare-IP site posing as the GBA.** `http://13.202.92.66:5443` appears in search results as "Greater Bengaluru Authority ... Public Grievance Redressal System", with the Chief Minister, Deputy Chief Minister and Minister's names and photos and GBA/BBMP logos. Its footer says: "Demonstration prototype -- Greater Bengaluru Authority, Bengaluru East City Corporation. All names, numbers and case data are simulated." It is not an official GBA property and its origin is unknown. I read it only through the Jina reader, not directly. Do not cite it or enter data there. It describes a close-out rule similar to LeadNet's (officer records evidence, citizen confirms by WhatsApp or SMS in Kannada and English, reopen escalates). Treat it as a competitive-awareness signal. If it is an earlier demo from your own team, check it against the fresh-code rule in 2.3.
+- **Bare-IP site posing as the GBA.** `http://13.202.92.66:5443` appears in search results as "Greater Bengaluru Authority ... Public Grievance Redressal System", with the Chief Minister, Deputy Chief Minister and Minister's names and photos and GBA/BBMP logos. Its footer says: "Demonstration prototype -- Greater Bengaluru Authority, Bengaluru East City Corporation. All names, numbers and case data are simulated." It is not an official GBA property and its origin is unknown. I read it only through the Jina reader, not directly. Do not cite it or enter data there. It describes a close-out rule similar to Namma Civic's (officer records evidence, citizen confirms by WhatsApp or SMS in Kannada and English, reopen escalates). Treat it as a competitive-awareness signal. If it is an earlier demo from your own team, check it against the fresh-code rule in 2.3.
 - **Social posts.** Instagram reels announcing the GBA WhatsApp chatbot are not used. The number 9448197197 is confirmed on BSWML's official page.
 - **Blocked or Cloudflare-gated pages.** ThePrint (S5) and parts of other outlets were [X] only.
 
@@ -309,7 +309,7 @@ Notes:
 - NCRB 2024 "sixth consecutive year" and ThePrint's 2024 "17 such deaths" are search-excerpt only. The Hindu's article (opened) confirms 17 cases.
 - Whether the Sahaaya dashboard's ward-wise tab shows ward-level resolution times (not opened).
 - How the "Social Choice Award" is decided.
-- Whether LeadNet builds development-project tracking.
+- Whether Namma Civic builds development-project tracking.
 
 ## 10. Source register (landscape and rules; statistic sources are inline in section 3)
 

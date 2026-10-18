@@ -1,4 +1,4 @@
-# LeadNet submission deck
+# Namma Civic submission deck
 
 Local review snapshot. Cloud deployment and live model evaluation are deferred by owner. Team details, public links, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.
 
@@ -14,7 +14,7 @@ Problem Statement: [Owner to fill]
 
 ### Presenter notes and sources
 
-Team details remain placeholders at the owner's explicit request. Product: LeadNet. Proposed challenge: Sustainability & Social Impact. Confirm registered team roster before submission.
+Team details remain placeholders at the owner's explicit request. Product: Namma Civic. Proposed challenge: Sustainability & Social Impact. Confirm registered team roster before submission.
 
 Source: explicit owner approval in the recovered session, 17 October 2026.
 
@@ -24,11 +24,11 @@ Source: explicit owner approval in the recovered session, 17 October 2026.
 
 Brief about the idea
 
-LeadNet
+Namma Civic
 
 Citizens verify the fix
 
-A closed complaint alone does not show whether a street was repaired. LeadNet keeps the report, evidence, official claim and citizen verdict in one public record.
+A closed complaint alone does not show whether a street was repaired. Namma Civic keeps the report, evidence, official claim and citizen verdict in one public record.
 
 Photo + voice reporting     Real ward assignment     Public outcome ledger
 
@@ -36,7 +36,7 @@ Bengaluru prototype | Independent demonstration; no government endorsement
 
 ### Presenter notes and sources
 
-LeadNet helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.
+Namma Civic helps citizens report civic problems, tracks the official response, and separates a claimed fix from citizen-verified resolution. The prototype focuses on one complete report-to-verification loop in Bengaluru.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
 Source: docs/research/wards.md; apps/api/data/validation.json. GBA December 2025 final delimitation via https://data.opencity.in/dataset/gba-wards-delimitation-2025 (metadata licence: Other (Public Domain)), official GBA GeoServer Kannada cross-check. 369 cleaned polygons, 5 corporations; source differences documented.
@@ -217,7 +217,7 @@ API owns all writes. Browser reads are read-only. Schema checks, one repair retr
 
 This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. Cloud deployment and live model evaluation are deferred by owner; the current review continues locally.
 
-For Ask LeadNet, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.
+For Ask Namma Civic, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
 
@@ -369,7 +369,7 @@ Complaint-system integrations, notifications, privacy blurring, real official id
 
 ### Presenter notes and sources
 
-Government integrations and real official verification are roadmap items. LeadNet is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.
+Government integrations and real official verification are roadmap items. Namma Civic is an independent prototype; seeded fictional leaders and budgets must not be mistaken for actual officials or public spending.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
 
@@ -381,7 +381,7 @@ Provide links to your:
 
 GitHub public repository
 
-[Owner: publish approved repository and paste URL]
+https://github.com/Rahul21sai/LeadNet
 
 Demo video (under 3 minutes)
 

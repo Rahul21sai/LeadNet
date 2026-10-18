@@ -43,7 +43,7 @@ export async function composeCommunity(r: Runtime, identity: Identity, input: { 
   const needsTranscript = !!audio && !result.value.transcript;
   const emailSubject = post ? `Request for civic action: ${post.replace(/\s+/g, ' ').slice(0, 95)}` : '';
   const locationLine = ward && input.location ? `\n\nLocation selected by the citizen: ${ward.name.en}${ward.assembly ? `, ${ward.assembly}` : ''}.\nMap: https://www.openstreetmap.org/?mlat=${publicCaptureLocation(input.location).lat}&mlon=${publicCaptureLocation(input.location).lng}` : '';
-  const emailBody = post ? `Dear Representative,\n\n${post}${locationLine}\n\nPlease review this civic concern and advise on the appropriate action.\n\nSubmitted by a citizen through LeadNet.` : '';
+  const emailBody = post ? `Dear Representative,\n\n${post}${locationLine}\n\nPlease review this civic concern and advise on the appropriate action.\n\nSubmitted by a citizen through Namma Civic.` : '';
   return { transcript: result.value.transcript, post, emailSubject, emailBody, xText: post.slice(0, 280), fallbackUsed: result.run.fallbackUsed, needsTranscript, aiRunId: result.run.id, checks: result.run.checks };
 }
 
@@ -145,7 +145,7 @@ export async function emailCommunityPost(r: Runtime, identity: Identity, input: 
   if (state.status === 'sent') return { status: 'already_sent', receiptId: state.receiptId! };
   const attachment = owner.mediaPath?.endsWith('.jpg') ? await r.media.read(owner.mediaPath) : undefined;
   const locationText = `Location: ${lookup.ward?.name ?? 'Bengaluru'}${lookup.ward?.assembly ? `, ${lookup.ward.assembly}` : ''}.\nMap: https://www.openstreetmap.org/?mlat=${post.location?.lat}&mlon=${post.location?.lng}`;
-  const postLink = /^https:\/\//.test(env.publicAppUrl) ? `\nLeadNet record: ${env.publicAppUrl.replace(/\/$/, '')}/community#post-${encodeURIComponent(post.id)}` : '';
+  const postLink = /^https:\/\//.test(env.publicAppUrl) ? `\nNamma Civic record: ${env.publicAppUrl.replace(/\/$/, '')}/community#post-${encodeURIComponent(post.id)}` : '';
   const receiptId = await r.email.send({ to: representative.email, subject, text: `${body}\n\n${locationText}${postLink}\n\nOfficial contact source: ${representative.sourceUrl}`, idempotencyKey: id, ...(attachment ? { attachment } : {}) });
   await r.store.set(path, { ...state, status: 'sent', receiptId });
   return { status: 'sent', receiptId };

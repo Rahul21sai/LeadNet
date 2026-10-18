@@ -25,7 +25,7 @@ export const emailProvider: EmailProvider = {
     if (!this.available()) throw new ApiFault(503, 'email_unavailable', 'Direct email needs a configured mail provider and verified sending domain. You can still copy your reviewed draft.');
     let response: Response;
     try {
-      response = await fetch('https://api.resend.com/emails', { method: 'POST', signal: AbortSignal.timeout(12_000), headers: { Authorization: `Bearer ${env.resendApiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': input.idempotencyKey }, body: JSON.stringify({ from: env.emailFrom, to: [input.to], subject: input.subject, text: input.text, ...(input.attachment ? { attachments: [{ filename: 'leadnet-issue.jpg', content: input.attachment.bytes.toString('base64'), content_type: input.attachment.mimeType }] } : {}) }) });
+      response = await fetch('https://api.resend.com/emails', { method: 'POST', signal: AbortSignal.timeout(12_000), headers: { Authorization: `Bearer ${env.resendApiKey}`, 'Content-Type': 'application/json', 'Idempotency-Key': input.idempotencyKey }, body: JSON.stringify({ from: env.emailFrom, to: [input.to], subject: input.subject, text: input.text, ...(input.attachment ? { attachments: [{ filename: 'namma-civic-issue.jpg', content: input.attachment.bytes.toString('base64'), content_type: input.attachment.mimeType }] } : {}) }) });
     } catch { throw new ApiFault(503, 'email_delivery_pending', 'The mail provider did not confirm delivery. Retry this same request to check it safely.'); }
     if (!response.ok) throw new ApiFault(503, 'email_delivery_pending', 'The mail provider did not confirm delivery. Retry this same request to check it safely.');
     const value = await response.json() as { id?: unknown };

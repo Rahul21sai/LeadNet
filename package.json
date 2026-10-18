@@ -2,7 +2,7 @@
   "name": "leadnet",
   "private": true,
   "type": "module",
-  "description": "LeadNet — Bengaluru civic issues, on the record. Evidence-backed civic accountability on Google Cloud + Gemini.",
+  "description": "Namma Civic — Bengaluru civic issues, on the record. Evidence-backed civic accountability on Google Cloud + Gemini.",
   "workspaces": [
     "packages/shared",
     "apps/api",

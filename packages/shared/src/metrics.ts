@@ -2,7 +2,7 @@ import type { Category, Status } from './enums.ts';
 import { computeSla } from './sla.ts';
 
 /**
- * The public accountability ledger. Every number LeadNet publishes is computed
+ * The public accountability ledger. Every number Namma Civic publishes is computed
  * here from issue records — never estimated, never written by a model. Each
  * metric carries a published definition and the sample size it was computed on.
  */

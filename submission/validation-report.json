@@ -1,21 +1,22 @@
 {
-  "revision": "v4",
+  "revision": "namma-civic-v1",
   "slideCount": 14,
-  "pptxBytes": 1033010,
-  "pdfBytes": 1974292,
-  "descriptionCharacters": 781,
-  "pptxSha256": "41b5ab697402997c999780e1e3fde5e33fba7a0f9abf9be0be7026b60b354d57",
-  "pdfSha256": "87adba62dd987e949babe94602b34ca29af8e4e9da1834d458f9efb736917ac9",
+  "pptxBytes": 1033038,
+  "pdfBytes": 1975244,
+  "descriptionCharacters": 785,
+  "pptxSha256": "78a7aaca0be5c3e53a6ce2a594b76974339b546269e7f6ea0aedc7add9167289",
+  "pdfSha256": "f1f3099e559448a60677229714c3e3e21f0d504b7b5c9d436bc67d0bf946c7bb",
   "packageIntegrityFindings": 0,
   "layoutFindings": 0,
   "artifactToolReimportPassed": true,
-  "visualReview": "All14 PDF pages rendered with Poppler; modified pages4,9,11,12,13 inspected individually. Unchanged pages were reviewed in prior revision.",
+  "visualReview": "All 14 final PDF pages rendered with Poppler and inspected individually. The new product title fits. Twelve slide renders are pixel-identical to v4; slide 2 contains Namma Civic branding and slide 13 reflects the existing repository URL saved in status.json.",
   "cloudStatus": "Cloud deployment and live model evaluation deferred by owner",
   "limitations": [
     "Team fields intentionally blank",
     "Genuine UI screenshots blocked by saved browser policy",
-    "Public URLs pending",
+    "Product and video public URLs pending",
     "No live model quality or latency measurements",
-    "Image-page PDF; editable PPTX supplied"
+    "Image-page PDF; editable PPTX supplied",
+    "Native PowerPoint execution not verified"
   ]
 }

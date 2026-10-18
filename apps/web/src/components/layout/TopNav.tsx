@@ -38,20 +38,20 @@ export function TopNav() {
   const toggle = () => { const next = document.documentElement.dataset.theme !== 'dark'; setDark(next); setTheme(next ? 'dark' : 'light'); };
   return (
     <LayoutGroup id="primary-navigation"><header className="civic-topnav sticky top-0 z-50 border-b border-hairline bg-surface">
-      <nav className="mx-auto flex h-16 max-w-[1360px] items-center gap-3 px-5 text-[13px] sm:px-8 lg:gap-6" aria-label="Primary">
-        <NavLink to="/" onClick={() => setOpen(false)} className="flex min-h-11 items-center gap-2.5 text-xl font-semibold tracking-tight">
-          <span className="civic-brand-mark flex h-8 w-8 items-center justify-center rounded-full bg-primary text-on-primary"><MapPin size={18} strokeWidth={2} /></span>LeadNet<span className="hidden border-l border-hairline pl-4 text-xs font-normal tracking-normal text-ink-3 xl:inline">Bengaluru, on the record.</span>
+      <nav className="mx-auto flex h-16 max-w-[1360px] items-center gap-2 px-4 text-[13px] sm:gap-3 sm:px-8 xl:gap-6" aria-label="Primary">
+        <NavLink to="/" onClick={() => setOpen(false)} className="flex min-h-11 shrink-0 items-center gap-2.5 whitespace-nowrap text-lg font-semibold tracking-tight sm:text-xl">
+          <span className="civic-brand-mark flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-on-primary"><MapPin size={18} strokeWidth={2} aria-hidden="true" /></span><span>Namma Civic</span><span className="hidden border-l border-hairline pl-4 text-xs font-normal tracking-normal text-ink-3 min-[1360px]:inline">Bengaluru, on the record.</span>
         </NavLink>
         <div className="hidden flex-1 items-center justify-center gap-1 text-ink-3 lg:flex">
           {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={({ isActive }) => `civic-nav-link relative flex min-h-11 items-center rounded-pill px-3.5 ${isActive ? 'font-medium text-ink' : 'hover:text-ink'}`}>
+            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={({ isActive }) => `civic-nav-link relative flex min-h-11 items-center whitespace-nowrap rounded-pill px-2.5 xl:px-3.5 ${isActive ? 'font-medium text-ink' : 'hover:text-ink'}`}>
               {({ isActive }) => <>{isActive && <motion.span layoutId="desktop-active-route" className="civic-nav-link__indicator absolute inset-0 rounded-pill bg-fill" transition={spring} />}<span className="relative">{l.label}</span></>}
             </NavLink>
           ))}
         </div>
-        <div className="ml-auto flex items-center gap-2 lg:ml-0"><button type="button" onClick={toggle} className="grid h-11 w-11 place-items-center rounded-full text-ink-3 hover:bg-fill max-[360px]:hidden" aria-label={dark ? 'Use light theme' : 'Use dark theme'} title={`Theme: ${getTheme()}`}><AnimatePresence initial={false}><motion.span key={dark ? 'light' : 'dark'} className="col-start-1 row-start-1 inline-flex" initial={{ opacity: 0, rotate: reducedMotion ? 0 : -25, scale: reducedMotion ? 1 : 0.75 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: reducedMotion ? 0 : 25, scale: reducedMotion ? 1 : 0.75 }} transition={{ duration: reducedMotion ? 0 : 0.18 }}>{dark ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}</motion.span></AnimatePresence></button>
-        <NavLink to="/?compose=1" onClick={() => setOpen(false)} className="flex min-h-11 items-center gap-2 rounded-pill bg-primary px-3 font-medium text-on-primary sm:px-5">
-          <span>New issue</span><ArrowUpRight size={14} className="hidden sm:block" aria-hidden="true" />
+        <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-2 lg:ml-0"><button type="button" onClick={toggle} className="grid h-11 w-11 place-items-center rounded-full text-ink-3 hover:bg-fill max-[360px]:hidden" aria-label={dark ? 'Use light theme' : 'Use dark theme'} title={`Theme: ${getTheme()}`}><AnimatePresence initial={false}><motion.span key={dark ? 'light' : 'dark'} className="col-start-1 row-start-1 inline-flex" initial={{ opacity: 0, rotate: reducedMotion ? 0 : -25, scale: reducedMotion ? 1 : 0.75 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} exit={{ opacity: 0, rotate: reducedMotion ? 0 : 25, scale: reducedMotion ? 1 : 0.75 }} transition={{ duration: reducedMotion ? 0 : 0.18 }}>{dark ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}</motion.span></AnimatePresence></button>
+        <NavLink to="/?compose=1" onClick={() => setOpen(false)} aria-label="New issue" className="flex min-h-11 items-center gap-2 whitespace-nowrap rounded-pill bg-primary px-3 font-medium text-on-primary sm:px-5">
+          <span className="sm:hidden">New</span><span className="hidden sm:inline">New issue</span><ArrowUpRight size={14} className="hidden sm:block" aria-hidden="true" />
         </NavLink>
         <button ref={menuButton} type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'} className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-fill lg:hidden">{open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}</button></div>
       </nav>

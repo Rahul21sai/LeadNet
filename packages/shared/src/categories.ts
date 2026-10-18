@@ -14,7 +14,7 @@ export interface CategoryMeta {
 }
 
 /**
- * Category → department / SLA / risk. These SLAs are LeadNet *demo targets*,
+ * Category → department / SLA / risk. These SLAs are Namma Civic *demo targets*,
  * modelled loosely on published municipal norms; the methodology page says so.
  */
 export const CATEGORY_META: Record<Category, CategoryMeta> = {
