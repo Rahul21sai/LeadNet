@@ -3,7 +3,7 @@ import { cors } from 'hono/cors';
 import { secureHeaders } from 'hono/secure-headers';
 import { bodyLimit } from 'hono/body-limit';
 import { z } from 'zod';
-import { zAsk, zDemoRole, zFollow, zLatLng, zSubmitReport, zTransition, zCaptureLocation, zCommunityPost, zCommunityComment, zCommunityReaction, zCommunityEmail, type HealthResponse } from '@leadnet/shared';
+import { zAsk, zDemoRole, zFollow, zLatLng, zSubmitReport, zTransition, zCaptureLocation, zCommunityPost, zCommunityComment, zCommunityReaction, zCommunityEmail, zConnectionProfile, zSendConnection, zConnectionAction, type HealthResponse } from '@leadnet/shared';
 import { env } from './env.ts';
 import type { Identity } from './services/firebase.ts';
 import { ApiFault } from './services/errors.ts';
@@ -13,6 +13,7 @@ import { askLeadNet, demoRole, followIssue, officerQueue, resolveIssue, supportI
 import { commentCommunityPost, communityCapabilities, composeCommunity, createCommunityPost, emailCommunityPost, reactCommunityPost } from './services/community.ts';
 import { representativeLookup, representativeWardLookup } from './services/representatives.ts';
 import { regionCreators } from './services/creators.ts';
+import { actOnConnection, communityConnections, communityPeople, saveConnectionProfile, sendConnection } from './services/connections.ts';
 
 function validated<T>(schema: z.ZodType<T>, body: unknown): T {
   const result = schema.safeParse(body);
@@ -49,6 +50,10 @@ export function createApp(options: Partial<Runtime> = {}) {
     c.json<HealthResponse>({ ok: true, version: env.version, region: env.region, model: env.models.triage, time: Date.now() }),
   );
   app.get('/api/v1/community/capabilities', (c) => c.json(communityCapabilities(r)));
+  app.get('/api/v1/community/people', async (c) => {
+    c.header('Cache-Control', 'no-store');
+    return c.json(await communityPeople(r, c.req.query('wardId')));
+  });
   app.get('/api/v1/community/representatives', (c) => {
     const wardId = c.req.query('wardId');
     if (wardId !== undefined) return c.json(representativeWardLookup(r.wards, validated(z.string().min(1).max(120).regex(/^[a-zA-Z0-9_-]+$/), wardId)));
@@ -56,6 +61,8 @@ export function createApp(options: Partial<Runtime> = {}) {
     return c.json(representativeLookup(r.wards, point.lat, point.lng));
   });
 
+  app.use('/api/v1/community/connections', async (c, next) => { c.header('Cache-Control', 'private, no-store'); return next(); });
+  app.use('/api/v1/community/connections/*', async (c, next) => { c.header('Cache-Control', 'private, no-store'); return next(); });
   app.use('/api/v1/*', async (c, next) => {
     if (c.req.method === 'OPTIONS') return next();
     const token = c.req.header('Authorization')?.match(/^Bearer (\S+)$/i)?.[1];
@@ -64,6 +71,14 @@ export function createApp(options: Partial<Runtime> = {}) {
     return next();
   });
   app.use('/api/v1/*', async (c, next) => bodyLimit({ maxSize: (c.req.path === '/api/v1/community/posts' ? 22 : 11) * 1024 * 1024, onError: (ctx) => ctx.json({ error: { code: 'body_too_large', message: 'This upload exceeds the permitted size.' } }, 413) })(c, next));
+
+  app.get('/api/v1/community/connections', async (c) => c.json(await communityConnections(r, c.get('identity'))));
+  app.post('/api/v1/community/connections/profile', async (c) => c.json(await saveConnectionProfile(r, c.get('identity'), validated(zConnectionProfile, await c.req.json()))));
+  app.post('/api/v1/community/connections', async (c) => c.json(await sendConnection(r, c.get('identity'), validated(zSendConnection, await c.req.json()).peerId)));
+  app.post('/api/v1/community/connections/:id/action', async (c) => {
+    const body = validated(zConnectionAction, await c.req.json());
+    return c.json(await actOnConnection(r, c.get('identity'), c.req.param('id'), body.action, body.revision));
+  });
 
   app.post('/api/v1/community/compose', async (c) => {
     const form = await c.req.formData();

@@ -6,6 +6,7 @@ import { getTheme, setTheme } from '../../lib/theme.ts';
 
 const LINKS = [
   { to: '/', label: 'Community' },
+  { to: '/people', label: 'People' },
   { to: '/map', label: 'Explore' },
   { to: '/ledger', label: 'Public ledger' },
   { to: '/how-it-works', label: 'How it works' },

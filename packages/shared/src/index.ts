@@ -10,3 +10,4 @@ export * from './types.ts';
 export * from './api.ts';
 export * from './community.ts';
 export * from './creators.ts';
+export * from './connections.ts';

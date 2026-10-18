@@ -6,7 +6,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 
 | Check | Result |
 |---|---|
-| `npm test` | 178 tests pass in 22 files, including creator access/privacy, scope changes, grouping, feed visibility, report-to-post publication, immutable uploads and existing civic workflows |
+| `npm test` | 239 tests pass in 29 files, including connection consent/privacy/identity isolation, creator access, feed visibility, report-to-post publication and existing civic workflows |
 | `npm run typecheck` | Shared, API and web pass |
 | `npm run build` | Web and API production builds pass |
 | `node --test scripts/geo/geo.test.mjs` | 3 tests pass |
@@ -72,6 +72,16 @@ The new authenticated GET endpoint checks trusted officer/admin role and exact w
 The static preview generates explicitly fictional author associations only over fictional records in the selected ward; it does not infer real author identity from anonymous public posts. A populated sample-ward shortcut helps demonstrate sparse wards. Private device posts remain separate.
 
 Fresh verification: 178 tests in 22 files pass, all-workspace typecheck passes, and web/API production builds pass. A separate app-root build with `VITE_DEMO_MODE=1` passes; static asset checks find the leader directory/fictional labels and confirm the connected creator request is removed from that build. Both local service listeners remain present. Coverage adds six shared grouping/demo cases, 21 API scope/aggregation/privacy cases, four server-claim cases, three client-scope cases and four auth-change cases. The auth-change regression was reproduced with two failing tests before the pending-claims fix. Independent source review found no remaining actionable issues. Actual browser rendering and live Firebase/Cloud Run behavior remain unverified under the existing access/configuration limits. See `REGION_CREATORS.md` for attribution and access details.
+
+## Citizen connections, 18 October
+
+The owner requested connection sending from a social-network reference image and confirmed that it should be available to all citizens through People. The new page provides ward-based discovery, opt-in anonymous profiles, public-bio search, request sending, Incoming/Sent/Connections views, acceptance/decline/cancellation and confirmed removal. Creator directories link only to opted-in same-ward profiles; fictional creator examples link to matching fictional People profiles. Existing colours, typography, reduced motion and civic flows are preserved.
+
+Private server collections remain covered by existing default-deny rules; browsers never write them directly. Transactions enforce one unordered pair, two-sided consent, idempotency, 20-new-request hourly limits, monotonically increasing revisions and 24-hour decline/removal cooldowns in both directions. Public projections exclude UID, personal contact and exact location. Participant views use immutable request-time profile snapshots, so later hidden profile edits do not leak to former requesters. Existing/nonexistent pair probes by outsiders produce the same response. Private results are no-store, bound to the current UID after token loading and gated by auth epoch during account/token changes.
+
+The Vercel demo uses its own validated local-storage state with fictional profiles and incoming examples. Outgoing requests are never sent remotely or automatically accepted. Tests verify corrupt/genuine record rejection, quota-failure preservation, independent profile-ward selection, truthful refresh errors and scrubbed bio length after replacement expansion. SSR component checks verify actual controls, direction/status ownership, anonymous markup and cooldown labels; they do not establish browser layout or interaction.
+
+Fresh full verification passes 239 tests in 29 files, all-workspace typecheck and both connected web/API builds. Final connected and forced-demo web builds also pass after the central-hook import integration. Static demo assets contain People, consent controls, local storage and creator links; the live profile-mutation path is removed from that build. Independent review found and verified fixes for cooldown reversal, hidden profile drift, pair existence probing, delayed-token identity changes and bio persistence. No real connection, cloud write, external message, deployment or dependency installation was performed. Rendered browser/device and deployed multi-user QA remain unverified. See `CONNECTIONS.md`.
 
 ## Current limits and remaining work
 

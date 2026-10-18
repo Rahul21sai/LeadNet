@@ -14,6 +14,8 @@ Counts and grouping are deterministic shared code. Each issue/post counts once p
 
 The API reads existing public issues/posts plus server-only report/post ownership. It returns no raw UID, private report text, transcript, exact coordinate, contact detail or storage path. No collection or Firestore-rule change is required, and browsers do not query private ownership data.
 
+A connection-profile link is included only when that citizen has opted into People for the same ward. No global connection reference is emitted for a nonconsenting creator. See `CONNECTIONS.md` for the request/acceptance flow; fictional examples link to their matching demo People profiles.
+
 ## Vercel and local demonstration
 
 With `VITE_DEMO_MODE=1`, the directory uses explicit fictional author associations over existing fictional issue records in the selected ward. These associations are illustrative and do not recover actual author identities from public posts. Genuine issue records are excluded. Device-saved community posts remain separate because the static preview cannot verify their ward/author association.

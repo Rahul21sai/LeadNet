@@ -21,7 +21,7 @@ class ReadTrackingStore extends MemoryStore {
   }
   override async get<T>(path: string): Promise<T | null> {
     this.reads.push({ path });
-    return path.startsWith('postOwners/') ? this.trackPrivateRead(() => super.get<T>(path)) : super.get<T>(path);
+    return path.startsWith('postOwners/') || path.startsWith('connectionProfiles/') ? this.trackPrivateRead(() => super.get<T>(path)) : super.get<T>(path);
   }
   override async list<T>(collection: string, filters: Filter[] = []): Promise<T[]> {
     this.reads.push({ collection, filters });
@@ -159,5 +159,26 @@ describe('ward creator directory aggregation', () => {
     const response = await s.request(); expect(response.status).toBe(200); const result = await response.json() as RegionCreatorsResponse;
     expect(result).toMatchObject({ creatorCount: 1, activityCount: 50 }); expect(s.store.maxPrivateReads).toBeGreaterThan(1); expect(s.store.maxPrivateReads).toBeLessThanOrEqual(8);
     expect(s.store.reads.filter((read) => 'collection' in read && read.collection === 'reports')).toHaveLength(25);
+  });
+  it('links only an opted-in profile for the selected ward without exposing its private owner', async () => {
+    const s = setup();
+    const authors = ['private-opted-in', 'private-opted-out', 'private-other-ward', 'private-no-profile'];
+    for (const [index, uid] of authors.entries()) await s.addPost(post(`profile-post-${index}`), uid);
+    const personId = (uid: string) => createHash('sha256').update(JSON.stringify(['leadnet-person', uid])).digest('hex');
+    for (const [index, uid] of authors.slice(0, 3).entries()) await s.store.set(`connectionProfiles/${personId(uid)}`, { id: personId(uid), uid, ward: { id: index === 2 ? otherWard.id : ward.id, name: ward.name.en }, bio: 'PRIVATE_PROFILE_BIO', discoverable: index !== 1, createdAt: 100, updatedAt: 100, isDemo: false });
+    const response = await s.request(); expect(response.status).toBe(200); const result = await response.json() as RegionCreatorsResponse;
+    const optedIn = result.creators.find((creator) => creator.id === creatorId(ward.id, authors[0]!));
+    expect(optedIn).toMatchObject({ connectionProfileId: personId(authors[0]!) });
+    for (const creator of result.creators.filter((value) => value !== optedIn)) expect(creator).not.toHaveProperty('connectionProfileId');
+    for (const uid of authors) expect(JSON.stringify(result)).not.toContain(uid);
+    expect(JSON.stringify(result)).not.toContain('PRIVATE_PROFILE_BIO');
+  });
+  it('bounds opt-in profile lookups and never lists the global profile collection', async () => {
+    const s = setup();
+    for (let index = 0; index < 25; index++) await s.addPost(post(`author-post-${index}`), `private-distinct-author-${index}`);
+    const response = await s.request(); expect(response.status).toBe(200); expect((await response.json() as RegionCreatorsResponse).creatorCount).toBe(25);
+    expect(s.store.maxPrivateReads).toBeGreaterThan(1); expect(s.store.maxPrivateReads).toBeLessThanOrEqual(8);
+    expect(s.store.reads.filter((read) => 'path' in read && read.path.startsWith('connectionProfiles/'))).toHaveLength(25);
+    expect(s.store.reads.some((read) => 'collection' in read && read.collection === 'connectionProfiles')).toBe(false);
   });
 });

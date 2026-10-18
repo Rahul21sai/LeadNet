@@ -43,6 +43,8 @@ All writes via the API (admin SDK). Timestamps are epoch ms. Types in `packages/
 
 The leader creator directory reads existing reports and post ownership only through authenticated `GET /api/v1/officer/creators?wardId=...`. Assigned-ward officers/admins receive anonymous ward-scoped references and public activity projections. Self-assigned demo roles are denied; neither raw ownership nor private reports become browser-readable. Grouping and deduplication live in `packages/shared/src/creators.ts`; this feature adds no collections or security rules.
 
+Connections add server-only `connectionProfiles` and `connections` under existing default-deny rules. Public People reads return matching-ward opt-ins only; authenticated inboxes/actions expose only participant projections. Unordered-pair transactions, revisions, rate limits and request-time profile snapshots preserve consent. Web hooks bind requests/caches to the current UID/auth epoch. The offline demo uses separate validated browser storage and fictional profiles; it never calls the live connection API.
+
 Private follows live in `users/{uid}.followedIssueIds`. Following saves a record but does not add support or verification eligibility. Public triage trails retain categorical observations only; original AI titles, summaries and voice transcripts remain private. Public duplicate trails omit unapproved free-text reasons. Photo objects start unpublished and become readable only after their evidence document commits.
 
 Key distinction (from the concept): a **report** is one citizen's submission; an **issue** is the real-world problem;

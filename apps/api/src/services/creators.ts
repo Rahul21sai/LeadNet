@@ -3,6 +3,7 @@ import { summarizeRegionCreators, type CommunityPostDoc, type CreatorActivity, t
 import type { Runtime } from './context.ts';
 import { ApiFault, documentId } from './errors.ts';
 import type { Identity } from './firebase.ts';
+import { connectionProfileId, type ConnectionProfileDoc } from './connections.ts';
 
 const READ_BATCH_SIZE = 8;
 type ReportAuthor = Pick<ReportDoc, 'uid' | 'issueId' | 'createdAt'>;
@@ -31,13 +32,19 @@ export async function regionCreators(r: Runtime, identity: Identity, selectedWar
   const issues = wardIssues.filter((issue) => issue.wardId === wardId);
   const issueById = new Map(issues.map((issue) => [issue.id, issue]));
   const contributions: CreatorContribution[] = [];
+  const creatorOwners = new Map<string, string>();
+  const ownedContribution = (uid: string, activity: CreatorActivity) => {
+    const result = contribution(wardId, uid, activity);
+    creatorOwners.set(result.creatorId, uid);
+    return result;
+  };
 
   // Bound ownership fan-out independently of the number of public records in a ward.
   for (let offset = 0; offset < issues.length; offset += READ_BATCH_SIZE) {
     const results = await Promise.all(issues.slice(offset, offset + READ_BATCH_SIZE).map(async (issue) => {
       const authors = await r.store.list<ReportAuthor>('reports', [{ field: 'issueId', op: '==', value: issue.id }]);
       return authors.filter((author) => author.issueId === issue.id && typeof author.uid === 'string' && author.uid.length > 0)
-        .map((author) => contribution(wardId, author.uid, issueActivity(issue, author.createdAt)));
+        .map((author) => ownedContribution(author.uid, issueActivity(issue, author.createdAt)));
     }));
     contributions.push(...results.flat());
   }
@@ -50,10 +57,20 @@ export async function regionCreators(r: Runtime, identity: Identity, selectedWar
       const canonicalIssue = post.issueId && post.id === `issue-${post.issueId}` ? issueById.get(post.issueId) : undefined;
       const activity: CreatorActivity = canonicalIssue ? issueActivity(canonicalIssue, post.createdAt)
         : { id: post.id, kind: 'post', title: post.text, createdAt: post.createdAt, category: post.category, status: null, isDemo: post.isDemo };
-      return contribution(wardId, owner.uid, activity);
+      return ownedContribution(owner.uid, activity);
     }));
     for (const result of results) if (result) contributions.push(result);
   }
 
-  return summarizeRegionCreators(wardId, contributions);
+  const result = summarizeRegionCreators(wardId, contributions);
+  for (let offset = 0; offset < result.creators.length; offset += READ_BATCH_SIZE) {
+    await Promise.all(result.creators.slice(offset, offset + READ_BATCH_SIZE).map(async (creator) => {
+      const uid = creatorOwners.get(creator.id);
+      if (!uid) return;
+      const id = connectionProfileId(uid);
+      const profile = await r.store.get<ConnectionProfileDoc>(`connectionProfiles/${id}`);
+      if (profile?.id === id && profile.uid === uid && profile.discoverable === true && profile.ward.id === wardId) creator.connectionProfileId = id;
+    }));
+  }
+  return result;
 }

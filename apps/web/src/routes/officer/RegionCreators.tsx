@@ -41,7 +41,7 @@ function ConnectedCreators({ wardId, wardName, session }: Props & { session: Ses
   />;
 
   const result = query.data;
-  return <CreatorDirectory wardName={wardName} result={result} loading={query.isPending} refreshing={query.isFetching}
+  return <CreatorDirectory wardId={wardId} wardName={wardName} result={result} loading={query.isPending} refreshing={query.isFetching}
     error={query.error} onRefresh={() => { if (scope.allowed) void query.refetch(); }} />;
 }
 
@@ -49,12 +49,13 @@ function OfflineCreators({ wardId, wardName, wards, onSelectWard, onRefresh }: P
   const issues = useIssues();
   const result = demoRegionCreators(wardId, issues.data);
   const sampleWard = wards.find((ward) => ward.id !== wardId && issues.data.some((issue) => issue.isDemo && issue.wardId === ward.id));
-  return <CreatorDirectory wardName={wardName} result={issues.loading || issues.error ? undefined : result}
+  return <CreatorDirectory wardId={wardId} wardName={wardName} result={issues.loading || issues.error ? undefined : result}
     loading={issues.loading} refreshing={false} error={issues.error} onRefresh={onRefresh} offline
     sampleWard={sampleWard ? { name: sampleWard.name.en, select: () => onSelectWard(sampleWard.id) } : undefined} />;
 }
 
 interface DirectoryProps {
+  wardId: string;
   wardName: string;
   result: RegionCreatorsResponse | undefined;
   loading: boolean;
@@ -65,7 +66,7 @@ interface DirectoryProps {
   onRefresh: () => void;
 }
 
-function CreatorDirectory({ wardName, result, loading, refreshing, error, offline = false, sampleWard, onRefresh }: DirectoryProps) {
+function CreatorDirectory({ wardId, wardName, result, loading, refreshing, error, offline = false, sampleWard, onRefresh }: DirectoryProps) {
   const [search, setSearch] = useState('');
   const query = search.trim().toLocaleLowerCase();
   const creators = result?.creators.filter((creator) => !query || [
@@ -107,12 +108,12 @@ function CreatorDirectory({ wardName, result, loading, refreshing, error, offlin
       {result.creatorCount === 0 ? <EmptyState title={offline ? 'No creator examples in this ward.' : 'No issue creators in this ward yet.'}
         description={offline ? 'Choose a ward with seeded examples above. Private device posts are not part of this directory.' : 'Authors will appear after an issue or community post is submitted with this ward assigned. Try another region or refresh later.'} />
         : !creators.length ? <EmptyState title="No matching citizen records." description="Try another reference or a word from an issue title."><button type="button" onClick={() => setSearch('')} className="min-h-11 rounded-pill bg-fill px-5 text-sm">Clear search</button></EmptyState>
-          : <><p className="mb-3 text-[12px] text-ink-3">{query ? `${creators.length} matching ${creators.length === 1 ? 'entry' : 'entries'}. ` : ''}Most recent submission first. Each issue / post counts once per citizen. References apply only within this ward.</p><ul className="overflow-hidden rounded-lg border border-hairline bg-surface">{creators.map((creator) => <CreatorRow key={creator.id} creator={creator} offline={offline} />)}</ul></>}
+          : <><p className="mb-3 text-[12px] text-ink-3">{query ? `${creators.length} matching ${creators.length === 1 ? 'entry' : 'entries'}. ` : ''}Most recent submission first. Each issue / post counts once per citizen. References apply only within this ward.</p><ul className="overflow-hidden rounded-lg border border-hairline bg-surface">{creators.map((creator) => <CreatorRow key={creator.id} creator={creator} offline={offline} wardId={wardId} />)}</ul></>}
     </>}
   </section>;
 }
 
-function CreatorRow({ creator, offline }: { creator: RegionCreator; offline: boolean }) {
+function CreatorRow({ creator, offline, wardId }: { creator: RegionCreator; offline: boolean; wardId: string }) {
   const [open, setOpen] = useState(false);
   const detailId = useId();
   const reduced = useReducedMotion();
@@ -125,6 +126,7 @@ function CreatorRow({ creator, offline }: { creator: RegionCreator; offline: boo
       </span>
       <span className="mt-1 flex min-h-11 shrink-0 items-center gap-2 text-[12px] text-community-accent"><span className="hidden sm:inline">{open ? 'Hide records' : 'View records'}</span><motion.span initial={false} animate={{ rotate: open ? 180 : 0 }} transition={{ duration: reduced ? 0 : 0.18 }}><ChevronDown size={17} aria-hidden="true" /></motion.span></span>
     </button>
+    {creator.connectionProfileId && <Link to={`/people?wardId=${encodeURIComponent(wardId)}&person=${encodeURIComponent(creator.connectionProfileId)}`} className="mx-5 mb-4 inline-flex min-h-11 items-center gap-2 rounded-pill border border-hairline px-4 text-[13px] text-community-accent hover:bg-community-accent-tint sm:ml-[84px]">View connection profile<ArrowUpRight size={14} aria-hidden="true" /></Link>}
     <AnimatePresence initial={false}>{open && <motion.div id={detailId} initial={{ height: reduced ? 'auto' : 0, opacity: reduced ? 1 : 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: reduced ? 0 : 0.2 }} className="overflow-hidden">
       <div className="border-t border-hairline bg-canvas px-5 pb-2 pt-3 sm:pl-[84px] sm:pr-6"><p className="mb-1 text-[12px] text-ink-3">{offline ? 'Seeded public records for this fictional example' : 'Public records submitted by this citizen'}</p><ul>{creator.activities.map((activity) => <li key={`${activity.kind}:${activity.id}`} className="border-b border-hairline last:border-b-0">
         <Link to={activity.kind === 'issue' ? `/issue/${encodeURIComponent(activity.id)}` : `/?post=${encodeURIComponent(activity.id)}`} className="group flex min-h-11 items-start justify-between gap-4 py-4">

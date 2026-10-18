@@ -20,6 +20,7 @@ export interface CreatorContribution {
 
 export interface RegionCreator {
   id: string;
+  connectionProfileId?: string;
   authorLabel: 'Citizen';
   activityCount: number;
   lastPostedAt: number;
@@ -67,5 +68,6 @@ export function demoRegionCreators(wardId: string, issues: readonly IssueDoc[]):
     const example = [...issue.id].reduce((value, letter) => (value * 31 + letter.charCodeAt(0)) >>> 0, 0) % 4 + 1;
     return { creatorId: `demo-${wardId}-citizen-${example}`, wardId, activity: { id: issue.id, kind: 'issue', title: issue.title.en, createdAt: issue.reportedAt, category: issue.category, status: issue.status, isDemo: true } };
   });
-  return summarizeRegionCreators(wardId, contributions, { isDemo: true, notice: 'Fictional creator examples. These illustrative author associations do not identify actual citizens. Device posts are separate; the connected service uses authenticated submission ownership.' });
+  const response = summarizeRegionCreators(wardId, contributions, { isDemo: true, notice: 'Fictional creator examples. These illustrative author associations do not identify actual citizens. Device posts are separate; the connected service uses authenticated submission ownership.' });
+  return { ...response, creators: response.creators.map((creator) => ({ ...creator, connectionProfileId: creator.id })) };
 }

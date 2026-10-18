@@ -9,6 +9,7 @@ export interface Session {
   wardIds: string[];
   ready: boolean;
   demoOfficer?: boolean;
+  authEpoch?: number;
 }
 
 let session: Session = { user: null, role: 'citizen', wardIds: [], ready: false };
@@ -20,22 +21,22 @@ const emit = () => listeners.forEach((l) => l());
 onIdTokenChanged(auth, async (user) => {
   const revision = ++sessionRevision;
   if (!user) {
-    session = { user: null, role: 'citizen', wardIds: [], ready: true };
+    session = { user: null, role: 'citizen', wardIds: [], ready: true, authEpoch: revision };
     emit();
     return;
   }
   // Hide previous permissions while new or refreshed signed claims are checked.
-  session = { user, role: 'citizen', wardIds: [], ready: false };
+  session = { user, role: 'citizen', wardIds: [], ready: false, authEpoch: revision };
   emit();
   try {
     const token = await user.getIdTokenResult();
     if (revision !== sessionRevision) return;
     const role = ['citizen', 'officer', 'moderator', 'admin'].includes(String(token.claims.role)) ? token.claims.role as Role : 'citizen';
     const wardIds = Array.isArray(token.claims.wardIds) ? token.claims.wardIds.filter((id): id is string => typeof id === 'string') : [];
-    session = { user, role, wardIds, ready: true, demoOfficer: token.claims.demoOfficer === true };
+    session = { user, role, wardIds, ready: true, demoOfficer: token.claims.demoOfficer === true, authEpoch: revision };
   } catch {
     if (revision !== sessionRevision) return;
-    session = { user, role: 'citizen', wardIds: [], ready: true };
+    session = { user, role: 'citizen', wardIds: [], ready: true, authEpoch: revision };
   }
   emit();
 });
@@ -57,6 +58,8 @@ export async function ensureSignedIn(): Promise<User> {
   signingIn ??= signInAnonymously(auth).then((cred) => cred.user).finally(() => { signingIn = null; });
   return signingIn;
 }
+
+export const currentSignedInUid = (): string | null => auth.currentUser?.uid ?? null;
 
 export async function signInWithGoogle() {
   await signInWithPopup(auth, new GoogleAuthProvider());

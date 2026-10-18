@@ -7,6 +7,7 @@ import { isOfflineDemo, readDemo } from './demo.ts';
 import { useSession } from './auth.ts';
 import { api } from './api.ts';
 import { canDisplayRegionCreators, regionCreatorsScope } from './creatorScope.ts';
+export { useConnections } from './connections.ts';
 
 /**
  * Realtime read hooks over public Firestore collections. Browsers never write

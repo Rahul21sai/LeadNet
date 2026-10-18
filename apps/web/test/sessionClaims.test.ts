@@ -33,9 +33,11 @@ describe('creator directory identity changes', () => {
 
   it('also hides cached officer claims while a same-account token refresh is checked', async () => {
     await state.changed!(officer('fixture-a'));
+    const previousEpoch = useSession().authEpoch!;
     let finish!: (value: unknown) => void;
     const checking = state.changed!({ uid: 'fixture-a', getIdTokenResult: () => new Promise((resolve) => { finish = resolve; }) });
     expect(useSession()).toMatchObject({ ready: false, role: 'citizen', wardIds: [] });
+    expect(useSession().authEpoch).toBeGreaterThan(previousEpoch);
     finish({ claims: { role: 'officer', wardIds: ['ward-b'], demoOfficer: true } }); await checking;
     expect(useSession()).toMatchObject({ ready: true, role: 'officer', wardIds: ['ward-b'], demoOfficer: true });
   });
