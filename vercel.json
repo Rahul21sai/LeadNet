@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci",
+  "buildCommand": "VITE_DEMO_MODE=1 npm run build -w @leadnet/web",
+  "outputDirectory": "apps/web/dist",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(?!api(?:/|$)).*", "dest": "/index.html" }
+  ]
+}

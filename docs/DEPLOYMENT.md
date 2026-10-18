@@ -4,6 +4,8 @@ Deployment was authorized in the recovered session for `leadnet-blr`, on the own
 
 ## Human sign-in
 
+For a team demonstration before provisioning Google Cloud, use [the Vercel preview guide](VERCEL_PREVIEW.md). The checked-in Vercel configuration hosts the device-only demo without server credentials; it does not enable shared posts, Gemini or direct email.
+
 Complete both interactive logins with the account that owns the Firebase project:
 
 ```powershell
