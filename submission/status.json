@@ -1,8 +1,8 @@
 {
-  "featureStatus": "Public Vercel device-only demonstration is accessible. Connected source is implemented; live Google Cloud integration remains unverified.",
-  "testStatus": "Automated contract tests pass; all-workspace typecheck and web/API builds pass; 11 offline AI safety checks pass",
-  "cloudStatus": "Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified.",
+  "featureStatus": "Public Firebase Hosting device-only demonstration is accessible. Posts and interactions stay in each browser; connected backend features remain unavailable.",
+  "testStatus": "All-workspace typecheck and nine static-server tests pass. Live Hosting routes, 369 wards and sample media verified. Community, People, map, issue and ledger layouts checked at 390px and 1440px in both themes.",
+  "cloudStatus": "Frontend deployed to Firebase Hosting Spark in leadnet-blr on 18 October 2026. Project billing remains disabled. Cloud Run, connected backend and live Gemini were not deployed or verified.",
   "repositoryUrl": "https://github.com/Rahul21sai/LeadNet",
   "videoUrl": null,
-  "productUrl": "https://lead-net-6639-eta.vercel.app/"
+  "productUrl": "https://leadnet-blr.web.app/"
 }
