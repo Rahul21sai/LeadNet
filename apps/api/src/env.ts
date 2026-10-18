@@ -17,9 +17,14 @@ export const env = {
     dedupe: process.env.MODEL_DEDUPE ?? 'gemini-3.8-flash',
     evidence: process.env.MODEL_EVIDENCE ?? 'gemini-3.8-flash',
     brief: process.env.MODEL_BRIEF ?? 'gemini-3.5-flash-lite',
+    compose: process.env.MODEL_COMPOSE ?? 'gemini-3.8-flash',
   },
   /** When true, AI calls return deterministic fixtures (offline dev / tests). */
   aiMock: process.env.AI_MOCK === '1',
+  resendApiKey: process.env.RESEND_API_KEY ?? '',
+  emailFrom: process.env.EMAIL_FROM ?? '',
+  publicAppUrl: process.env.PUBLIC_APP_URL ?? '',
+  ffmpegPath: process.env.FFMPEG_PATH ?? 'ffmpeg',
   /** Allows the demo role switcher (officer persona). On for the hackathon deployment. */
   demoMode: process.env.DEMO_MODE !== '0',
   allowedOrigins: (process.env.ALLOWED_ORIGINS ?? 'http://localhost:5173,https://leadnet-blr.web.app,https://leadnet-blr.firebaseapp.com').split(','),

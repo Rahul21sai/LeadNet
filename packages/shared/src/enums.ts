@@ -80,7 +80,7 @@ export type EventType = (typeof EVENT_TYPES)[number];
 export const EVIDENCE_KINDS = ['report', 'progress', 'resolution', 'verification'] as const;
 export type EvidenceKind = (typeof EVIDENCE_KINDS)[number];
 
-export const AI_TASKS = ['triage', 'dedupe', 'evidence', 'brief'] as const;
+export const AI_TASKS = ['triage', 'dedupe', 'evidence', 'brief', 'compose'] as const;
 export type AiTask = (typeof AI_TASKS)[number];
 
 export const LANGS = ['en', 'kn', 'hi'] as const;

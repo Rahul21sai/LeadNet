@@ -3,13 +3,15 @@ import { cors } from 'hono/cors';
 import { secureHeaders } from 'hono/secure-headers';
 import { bodyLimit } from 'hono/body-limit';
 import { z } from 'zod';
-import { zAsk, zDemoRole, zFollow, zLatLng, zSubmitReport, zTransition, type HealthResponse } from '@leadnet/shared';
+import { zAsk, zDemoRole, zFollow, zLatLng, zSubmitReport, zTransition, zCaptureLocation, zCommunityPost, zCommunityComment, zCommunityReaction, zCommunityEmail, type HealthResponse } from '@leadnet/shared';
 import { env } from './env.ts';
 import type { Identity } from './services/firebase.ts';
 import { ApiFault } from './services/errors.ts';
 import { runtime, type Runtime } from './services/context.ts';
 import { draftReport, submitReport } from './services/reports.ts';
 import { askLeadNet, demoRole, followIssue, officerQueue, resolveIssue, supportIssue, transitionIssue, verifyIssue } from './services/workflow.ts';
+import { commentCommunityPost, communityCapabilities, composeCommunity, createCommunityPost, emailCommunityPost, reactCommunityPost } from './services/community.ts';
+import { representativeLookup, representativeWardLookup } from './services/representatives.ts';
 
 function validated<T>(schema: z.ZodType<T>, body: unknown): T {
   const result = schema.safeParse(body);
@@ -45,6 +47,13 @@ export function createApp(options: Partial<Runtime> = {}) {
   app.get('/api/v1/health', (c) =>
     c.json<HealthResponse>({ ok: true, version: env.version, region: env.region, model: env.models.triage, time: Date.now() }),
   );
+  app.get('/api/v1/community/capabilities', (c) => c.json(communityCapabilities(r)));
+  app.get('/api/v1/community/representatives', (c) => {
+    const wardId = c.req.query('wardId');
+    if (wardId !== undefined) return c.json(representativeWardLookup(r.wards, validated(z.string().min(1).max(120).regex(/^[a-zA-Z0-9_-]+$/), wardId)));
+    const point = validated(zCaptureLocation.pick({ lat: true, lng: true }), { lat: Number(c.req.query('lat') ?? NaN), lng: Number(c.req.query('lng') ?? NaN) });
+    return c.json(representativeLookup(r.wards, point.lat, point.lng));
+  });
 
   app.use('/api/v1/*', async (c, next) => {
     if (c.req.method === 'OPTIONS') return next();
@@ -53,7 +62,22 @@ export function createApp(options: Partial<Runtime> = {}) {
     c.set('identity', await r.auth.verify(token));
     return next();
   });
-  app.use('/api/v1/*', bodyLimit({ maxSize: 11 * 1024 * 1024, onError: (c) => c.json({ error: { code: 'body_too_large', message: 'Uploads must be 10 MB or smaller in total.' } }, 413) }));
+  app.use('/api/v1/*', async (c, next) => bodyLimit({ maxSize: (c.req.path === '/api/v1/community/posts' ? 22 : 11) * 1024 * 1024, onError: (ctx) => ctx.json({ error: { code: 'body_too_large', message: 'This upload exceeds the permitted size.' } }, 413) })(c, next));
+
+  app.post('/api/v1/community/compose', async (c) => {
+    const form = await c.req.formData();
+    const location = text(form, 'location');
+    return c.json(await composeCommunity(r, c.get('identity'), { text: text(form, 'text') ?? '', audio: file(form, 'audio'), photo: file(form, 'photo'), ...(location ? { location: validated(zCaptureLocation, JSON.parse(location)) } : {}), lang: validated(z.enum(['en', 'kn', 'hi']), text(form, 'lang') ?? 'en'), target: validated(z.enum(['post', 'comment']), text(form, 'target') ?? 'post') }));
+  });
+  app.post('/api/v1/community/posts', async (c) => {
+    const form = await c.req.formData();
+    const metadata = text(form, 'metadata');
+    if (!metadata) throw new ApiFault(400, 'invalid_body', 'Post details are required.');
+    return c.json(await createCommunityPost(r, c.get('identity'), validated(zCommunityPost, JSON.parse(metadata)), file(form, 'photo'), file(form, 'video')));
+  });
+  app.post('/api/v1/community/posts/:id/reaction', async (c) => c.json(await reactCommunityPost(r, c.get('identity'), c.req.param('id'), validated(zCommunityReaction, await c.req.json()).liked)));
+  app.post('/api/v1/community/posts/:id/comments', async (c) => c.json(await commentCommunityPost(r, c.get('identity'), c.req.param('id'), validated(zCommunityComment, await c.req.json()))));
+  app.post('/api/v1/community/email', async (c) => c.json(await emailCommunityPost(r, c.get('identity'), validated(zCommunityEmail, await c.req.json()))));
 
   app.post('/api/v1/reports/draft', async (c) => {
     const form = await c.req.formData();

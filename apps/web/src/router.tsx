@@ -20,7 +20,9 @@ export const router = createBrowserRouter([
     element: <AppShell />,
     errorElement: <RouteError />,
     children: [
-      { index: true, lazy: () => import('./routes/home/index.tsx') },
+      { index: true, lazy: () => import('./routes/community/index.tsx') },
+      { path: 'community', lazy: () => import('./routes/community/index.tsx') },
+      { path: 'city', lazy: () => import('./routes/home/index.tsx') },
       { path: 'map', lazy: () => import('./routes/map/index.tsx') },
       { path: 'report', lazy: () => import('./routes/report/index.tsx') },
       { path: 'issue/:id', lazy: () => import('./routes/issue/index.tsx') },

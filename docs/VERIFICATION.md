@@ -1,4 +1,4 @@
-# Local verification, 17 October 2026
+# Local verification, 17–18 October 2026
 
 The owner chose to continue locally. Cloud setup, live model evaluation, deployment and final submission are deferred. No cloud write or dependency installation was performed. The owner subsequently authorized publishing the local build to `https://github.com/Rahul21sai/LeadNet.git`; the push is separate from deployment.
 
@@ -6,7 +6,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 
 | Check | Result |
 |---|---|
-| `npm test` | 67 tests pass in 8 files |
+| `npm test` | 129 tests pass in 15 files, including community trust boundaries, compose guards, contact matching, immutable uploads and existing civic workflows |
 | `npm run typecheck` | Shared, API and web pass |
 | `npm run build` | Web and API production builds pass |
 | `node --test scripts/geo/geo.test.mjs` | 3 tests pass |
@@ -27,12 +27,37 @@ The read-only integration reviewer independently reproduced the resolution-publi
 
 The source template's download instructions and blank slide were omitted. The review deck retains 14 slides, its branded template, editable text and diagrams. The PDF is assembled from rendered slides and is below 5 MB. Every final PDF page was rendered and inspected; the PPTX finalizer reports no package/layout findings and successful reimport. Team details, genuine product captures and public links remain intentional owner placeholders.
 
-## Limits and remaining work
+## Spatial interface follow-up
+
+The owner approved the Apple-style spatial city direction. The first pass added a layered city model from all 369 ward polygons, selectable source-record pins, status filters, rotation and overhead controls, responsive navigation motion and an optional depth comparison in the ledger. The owner then supplied rendered screenshots showing excessive height/whitespace and a blank explorer; the second pass is specified in `DESIGN_REFRESH.md`.
+
+The current design has a compact complete city model with attached record selection, a 64px header, refined light/charcoal materials, an actual issue's interactive photo comparison/timeline/citizen tally, varied category previews and a compact ledger comparison. The explorer is a definite-height map/list workspace with an inline local ward style and SVG fallback; no remote street, tile, glyph or building service is required. Source review found and fixed stale reused cluster markers and keyboard focus loss after mobile selection. Home and full issue photo comparisons both select the current claim's evidence; they never relabel an older claim's resolution as current.
+
+The geometry tests preserve all 375 source rings, including holes, and check geographic aspect correction, north orientation, finite projection and interior labels. Added tests validate MapLibre's installed style schema, exact ward extents, record identity/coordinates, invalid coordinates, reused cluster metadata, varied preview selection and current-claim evidence. Final `npm test` passes 87 tests in 11 files; all-workspace typecheck and both production builds pass. Changed normal text, link and status token pairings against the secondary materials were calculated at >=4.5:1. The separate design reviewer also projected the actual ward vertices through sampled camera rotations to check the reduced scene's ground bounds. These are source/calculation checks, not rendered screenshots.
+
+Existing dependencies suffice. Backend logic, credentials, Firebase settings, domain contracts and API paths were not changed.
+
+Browser access was retried after the owner confirmed enabling the origin, supplied an explicit Allow screenshot and restarted the system. The reboot stopped both development services; these were restored on the original local address. The restored tab was an internal error document; a documented fresh-tab recovery on the same browser and approved HTTP URL still received an explicit saved/managed-policy denial. No alternate browser surface, raw CDP or screenshot workaround was used. The new design has user-supplied before screenshots, static review and automated validation, not a rendered 390px/1440px, light/dark or console sign-off. Source details are in `SPATIAL_DESIGN.md`.
+
+## Community capture and outreach follow-up, 18 October
+
+The owner expanded the product to a community network with camera/location capture, private voice-to-draft generation, media posts, discussion, nearby discovery, official representative lookup and reviewed outreach. This explicitly supersedes the earlier social-experience restriction; canonical issue statuses, quorum and ledger calculations remain separate and unchanged.
+
+Implemented source includes public posts/comments and server-only writes; private ownership/raw-location/outbox/idempotency records; a device-only IndexedDB demonstration; new compose schema/verifiers/repair/fallback/private logs; photo re-encoding; official contact cards; reviewed Resend delivery; and a user-controlled X intent. The owner approved FFmpeg in the Docker runtime; it was added without deployment or installation on Windows. No exact Anthropic font binaries were downloaded or licensed; the interface uses a labelled inspired fallback.
+
+The directory contains 28 MLAs and five MPs with official published emails. All 369 ward assembly attributes match a sourced pair using the official assembly directory, Sansad and ECI mapping; API/web snapshots are identical. Matching is by ward assembly attribution, not an exact constituency polygon overlay. A real-geometry, in-process API check for the MG Road sample returned Ashokanagar/Shanthinagar and both roles with verified directory addresses. Ward-ID lookup returned the same pair. Public capability reads succeeded without credentials; unauthenticated post creation returned 401. No message was sent.
+
+Final full tests pass 129 cases across 15 files. They cover numeric/PII handling in English/Kannada/Hindi, fresh capture metadata, private sandbox state, safe links and deep links, current-claim evidence, post/comment/reaction limits and idempotency, authenticated ownership and matched email recipients, AI repair/fallback and photo-only drafts. An independent reviewer reproduced a delayed concurrent upload overwriting a published photo's access marker; the fix uses atomic GCS create-only preconditions and two production-adapter regressions now pass. API production build and all-workspace typechecks pass. Provider receipt retries are tested with fake adapters, not a real mail service.
+
+Changed community action/text pairings were calculated at >=4.5:1 on the intended materials. Source review covers responsive structure, sensor cleanup, draft confirmation separation and reduced motion. Actual device/browser rendering remains unverified under the existing explicit browser-service denial.
+
+## Current limits and remaining work
 
 - Browser access to `http://127.0.0.1:5173` was denied by a saved managed permission, including after the owner explicitly approved local testing. No alternate browser or screenshot workaround was used. Responsive visual behavior and the absence of browser console errors remain unverified.
 - Docker is unavailable on this host. The container context manifest exclusion was corrected and CI includes a Docker build, but the container itself has not been run here or in CI.
 - Live Firebase rules, custom claims, photo reads, real Firestore transactions, Vertex availability, model quality/latency and deployed behavior have not been tested. Offline safety checks are not model benchmarks. All live benchmark fields remain null.
-- The current local preview uses `VITE_DEMO_MODE=1`, prominently labels fictional records and rejects mutations. Normal production builds leave that mode off and use the live hooks/API.
+- The current local preview uses `VITE_DEMO_MODE=1`, labels fictional examples and permits only explicitly private device community activity. Cloud writes, live AI, voting and direct email remain disabled. Normal production builds leave that mode off and use the live hooks/API.
+- Real camera/microphone/GPS behavior and rendered community layouts need manual/device QA. Gemini quality/transcription, Resend delivery, FFmpeg encoding, deployed rules and real cloud persistence remain unverified. Docker is not installed on this host; the approved runtime image has not been built here.
 - The production build reports large Firebase/MapLibre chunks and upstream Zod annotation warnings. It exits successfully. No additional dependency or bundle tuning was introduced without evidence that it was needed.
 
 See `CONTINUATION.md` for recovered scope and `DEPLOYMENT.md` for the future authorized cloud sequence. GitHub publication is authorized. Browser permissions, team roster, actual video recording and final contest submission remain owner-controlled steps; cloud work is deferred.

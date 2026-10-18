@@ -15,6 +15,13 @@ service cloud.firestore {
     match /ledger/{docId} { allow read: if true; }
     match /leaders/{leaderId} { allow read: if true; }
     match /projects/{projectId} { allow read: if true; }
+    match /posts/{postId} {
+      allow read: if true;
+      match /comments/{commentId} { allow read: if true; }
+    }
+    match /postReactions/{reactionId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+    }
 
     // AI decision trail: public only once linked to a submitted report
     match /aiRuns/{runId} {
@@ -33,5 +40,8 @@ service cloud.firestore {
     match /drafts/{draftId} { allow read, write: if false; }
     match /supports/{supportId} { allow read, write: if false; }
     match /votes/{voteId} { allow read, write: if false; }
+    match /postOwners/{postId} { allow read, write: if false; }
+    match /communityRequests/{requestId} { allow read, write: if false; }
+    match /communityOutbox/{messageId} { allow read, write: if false; }
   }
 }

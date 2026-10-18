@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { collection, doc, limit as qLimit, onSnapshot, orderBy, query, where, type QueryConstraint } from 'firebase/firestore';
-import type { AiRunDoc, EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, UserDoc, WardDoc } from '@leadnet/shared';
+import type { AiRunDoc, CommunityPostDoc, CommunityCommentDoc, EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, UserDoc, WardDoc } from '@leadnet/shared';
 import { db } from './firebase.ts';
 import { isOfflineDemo, readDemo } from './demo.ts';
 import { useSession } from './auth.ts';
@@ -84,6 +84,9 @@ export function useIssueEvidence(id: string | undefined): Live<EvidenceDoc[]> {
 }
 
 export const useLedger = () => useLiveDoc<LedgerDoc>('ledger/city');
+export const useCommunityPosts = () => useLiveQuery<CommunityPostDoc>('posts', [orderBy('createdAt', 'desc'), qLimit(200)], []);
+export const useCommunityPost = (id: string | undefined) => useLiveDoc<CommunityPostDoc>(id ? `posts/${id}` : null, [id]);
+export const useCommunityComments = (id: string | undefined) => useLiveQuery<CommunityCommentDoc>(id ? `posts/${id}/comments` : null, [orderBy('createdAt', 'asc'), qLimit(100)], [id]);
 export const useWard = (id: string | undefined) => useLiveDoc<WardDoc>(id ? `wards/${id}` : null, [id]);
 export const useWards = () => useLiveQuery<WardDoc>('wards', [], []);
 export const useLeaders = () => useLiveQuery<LeaderDoc>('leaders', [], []);
