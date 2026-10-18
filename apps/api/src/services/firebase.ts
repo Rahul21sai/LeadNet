@@ -19,6 +19,7 @@ export interface Identity {
   uid: string;
   role: Role;
   wardIds: string[];
+  demoOfficer?: boolean;
 }
 
 export interface AuthProvider {
@@ -32,7 +33,7 @@ export const firebaseAuth: AuthProvider = {
       const decoded = await getAuth(adminApp()).verifyIdToken(token, true);
       const roles: Role[] = ['citizen', 'officer', 'moderator', 'admin'];
       const role: Role = roles.includes(decoded.role as Role) ? decoded.role as Role : 'citizen';
-      return { uid: decoded.uid, role, wardIds: Array.isArray(decoded.wardIds) ? decoded.wardIds.filter((id): id is string => typeof id === 'string') : [] };
+      return { uid: decoded.uid, role, wardIds: Array.isArray(decoded.wardIds) ? decoded.wardIds.filter((id): id is string => typeof id === 'string') : [], demoOfficer: decoded.demoOfficer === true };
     } catch {
       throw new ApiFault(401, 'unauthenticated', 'Your sign-in expired. Please sign in again.');
     }

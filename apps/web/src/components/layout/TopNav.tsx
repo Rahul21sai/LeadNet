@@ -9,7 +9,7 @@ const LINKS = [
   { to: '/map', label: 'Explore' },
   { to: '/ledger', label: 'Public ledger' },
   { to: '/how-it-works', label: 'How it works' },
-  { to: '/officer', label: 'Officer' },
+  { to: '/officer', label: 'Leaders' },
 ];
 
 export function TopNav() {

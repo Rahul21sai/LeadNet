@@ -8,6 +8,7 @@ export interface Session {
   role: Role;
   wardIds: string[];
   ready: boolean;
+  demoOfficer?: boolean;
 }
 
 let session: Session = { user: null, role: 'citizen', wardIds: [], ready: false };
@@ -23,12 +24,15 @@ onIdTokenChanged(auth, async (user) => {
     emit();
     return;
   }
+  // Hide previous permissions while new or refreshed signed claims are checked.
+  session = { user, role: 'citizen', wardIds: [], ready: false };
+  emit();
   try {
     const token = await user.getIdTokenResult();
     if (revision !== sessionRevision) return;
     const role = ['citizen', 'officer', 'moderator', 'admin'].includes(String(token.claims.role)) ? token.claims.role as Role : 'citizen';
     const wardIds = Array.isArray(token.claims.wardIds) ? token.claims.wardIds.filter((id): id is string => typeof id === 'string') : [];
-    session = { user, role, wardIds, ready: true };
+    session = { user, role, wardIds, ready: true, demoOfficer: token.claims.demoOfficer === true };
   } catch {
     if (revision !== sessionRevision) return;
     session = { user, role: 'citizen', wardIds: [], ready: true };

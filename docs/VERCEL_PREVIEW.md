@@ -26,6 +26,7 @@ No Vercel deployment has been created by preparing these files. This checkout ha
 | Feature | Demo behavior |
 |---|---|
 | Community feed, city map, ledger and issue pages | Bundled fictional example records and attributed real ward geometry |
+| Leaders → Issue creators | Fictional author associations grouped by selected ward; actual authorship requires a trusted connected leader account |
 | Camera, microphone and device location | Browser permissions required; HTTPS supports these APIs in compatible browsers |
 | Photo/video posts, written drafts, reactions, comments and bookmarks | Saved only in that browser; not shared across teammates |
 | Nearby | Filters available example/device posts within 5 km of the device; outside Bengaluru it may be empty |

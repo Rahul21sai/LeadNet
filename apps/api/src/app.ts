@@ -12,6 +12,7 @@ import { draftReport, submitReport } from './services/reports.ts';
 import { askLeadNet, demoRole, followIssue, officerQueue, resolveIssue, supportIssue, transitionIssue, verifyIssue } from './services/workflow.ts';
 import { commentCommunityPost, communityCapabilities, composeCommunity, createCommunityPost, emailCommunityPost, reactCommunityPost } from './services/community.ts';
 import { representativeLookup, representativeWardLookup } from './services/representatives.ts';
+import { regionCreators } from './services/creators.ts';
 
 function validated<T>(schema: z.ZodType<T>, body: unknown): T {
   const result = schema.safeParse(body);
@@ -109,6 +110,7 @@ export function createApp(options: Partial<Runtime> = {}) {
     return c.json(await demoRole(r, c.get('identity'), body.role, body.wardId));
   });
   app.get('/api/v1/officer/queue', async (c) => c.json(await officerQueue(r, c.get('identity'), c.req.query('wardId'))));
+  app.get('/api/v1/officer/creators', async (c) => c.json(await regionCreators(r, c.get('identity'), c.req.query('wardId'))));
   app.post('/api/v1/ask', async (c) => {
     const body = validated(zAsk, await c.req.json());
     return c.json(await askLeadNet(r, body.question, body.wardId));

@@ -6,7 +6,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 
 | Check | Result |
 |---|---|
-| `npm test` | 140 tests pass in 17 files, including feed visibility, report-to-post publication, community trust boundaries, compose guards, contact matching, immutable uploads and existing civic workflows |
+| `npm test` | 178 tests pass in 22 files, including creator access/privacy, scope changes, grouping, feed visibility, report-to-post publication, immutable uploads and existing civic workflows |
 | `npm run typecheck` | Shared, API and web pass |
 | `npm run build` | Web and API production builds pass |
 | `node --test scripts/geo/geo.test.mjs` | 3 tests pass |
@@ -62,6 +62,16 @@ New canonical issues atomically create one privacy-scrubbed community post with 
 Both production builds pass, including a fresh web build after the final mobile header spacing adjustment. Static production-asset checks confirm emitted tokens, colour/font fallbacks, reduced-motion feedback and the final New issue header link. Calculated community-button contrast is 5.74:1 in light and 8.09:1 in dark. These checks do not measure rendered behavior.
 
 The existing Vite process was verified against this repository's executable and restarted on `127.0.0.1:5173` in the same device-only demo mode; both the web and API TCP listeners are present. Browser-service access remains denied; responsive rendering, actual focus timing, camera/GPS and console-error checks remain unverified. No alternate browser or permission bypass was used.
+
+## Leader region creators, 18 October
+
+The owner requested a leader-selectable region directory and clarified that creators are citizens who posted issues. The existing officer route now presents a shared ward selector, Issue queue and Issue creators tabs, anonymous searchable entries and expandable public record links. The connected read lives in the central data hook; both request cache and rendered data are scoped by identity, signed role, ward assignments, demo-role restriction and selected ward. A new/refreshing identity immediately clears previously ready permissions before awaiting signed claims, preventing stale creator data from remaining visible during account/claim changes.
+
+The new authenticated GET endpoint checks trusted officer/admin role and exact ward scope before reading authorship records. Self-assigned demo officer roles are denied. It uses selected-ward issue/post queries, report authors and private post ownership, in batches of eight. Ward-scoped SHA256 references replace UIDs. Explicit projections exclude private report text, transcripts, exact coordinates, contacts and storage paths. Repeated reports and canonical feed projections deduplicate per citizen/issue; independently authored posts remain distinct. Aggregate activity counts describe records across citizen entries, not globally unique ward issues. No collection, security-rule or civic-state/metric changes were made.
+
+The static preview generates explicitly fictional author associations only over fictional records in the selected ward; it does not infer real author identity from anonymous public posts. A populated sample-ward shortcut helps demonstrate sparse wards. Private device posts remain separate.
+
+Fresh verification: 178 tests in 22 files pass, all-workspace typecheck passes, and web/API production builds pass. A separate app-root build with `VITE_DEMO_MODE=1` passes; static asset checks find the leader directory/fictional labels and confirm the connected creator request is removed from that build. Both local service listeners remain present. Coverage adds six shared grouping/demo cases, 21 API scope/aggregation/privacy cases, four server-claim cases, three client-scope cases and four auth-change cases. The auth-change regression was reproduced with two failing tests before the pending-claims fix. Independent source review found no remaining actionable issues. Actual browser rendering and live Firebase/Cloud Run behavior remain unverified under the existing access/configuration limits. See `REGION_CREATORS.md` for attribution and access details.
 
 ## Current limits and remaining work
 

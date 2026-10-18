@@ -68,6 +68,8 @@ Aadhaar/face-scan identity (never in a prototype); real leader verification; mul
 
 ## Locked decisions (2026-10-17)
 
+The owner further requested a leader view of citizen issue creators by region on 18 October. The officer workspace now includes a ward-scoped anonymous creator directory over canonical report authors and community post owners. The static preview uses labelled fictional associations. Trusted leader access, private identities and existing civic metrics remain separate; see `REGION_CREATORS.md`.
+
 The owner's 18 October community request extends the civic prototype with a social home feed, direct camera/location capture, video/photo posts, nearby/saved discovery, reactions, comments, reviewed voice/text/photo composition and source-backed MLA/MP outreach. This supersedes the prior anti-social-experience direction. Existing fictional leader personas remain demo-only; the separate real contact directory carries source URLs and check dates, never invented politician scores. Social engagement does not count as an official fix or voting eligibility. See `COMMUNITY_PLAN.md` and `COMMUNITY_SETUP.md` for implemented boundaries and integration requirements.
 | Decision | Choice | Rejected |
 |---|---|---|

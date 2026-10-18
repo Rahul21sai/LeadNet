@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { collection, doc, limit as qLimit, onSnapshot, orderBy, query, where, type QueryConstraint } from 'firebase/firestore';
-import type { AiRunDoc, CommunityPostDoc, CommunityCommentDoc, EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, UserDoc, WardDoc } from '@leadnet/shared';
+import type { AiRunDoc, CommunityPostDoc, CommunityCommentDoc, EvidenceDoc, IssueDoc, IssueEventDoc, LeaderDoc, LedgerDoc, ProjectDoc, RegionCreatorsResponse, UserDoc, WardDoc } from '@leadnet/shared';
 import { db } from './firebase.ts';
 import { isOfflineDemo, readDemo } from './demo.ts';
 import { useSession } from './auth.ts';
+import { api } from './api.ts';
+import { canDisplayRegionCreators, regionCreatorsScope } from './creatorScope.ts';
 
 /**
  * Realtime read hooks over public Firestore collections. Browsers never write
@@ -14,6 +17,23 @@ export interface Live<T> {
   data: T;
   loading: boolean;
   error: Error | null;
+}
+
+export function useRegionCreators(wardId: string) {
+  const session = useSession();
+  const scope = regionCreatorsScope(session, wardId);
+  const query = useQuery({
+    queryKey: scope.queryKey,
+    enabled: !isOfflineDemo && scope.allowed,
+    retry: false,
+    staleTime: 0,
+    queryFn: async () => {
+      const result = await api.get<RegionCreatorsResponse>(`/officer/creators?wardId=${encodeURIComponent(wardId)}`, { auth: true });
+      if (result.wardId !== wardId) throw new Error('The directory returned a different ward. Refresh to try again.');
+      return result;
+    },
+  });
+  return { ...query, data: query.data && canDisplayRegionCreators(session, wardId, query.data.wardId) ? query.data : undefined };
 }
 
 function useLiveQuery<T>(path: string | null, constraints: QueryConstraint[], deps: unknown[], initial: T[] = []): Live<T[]> {

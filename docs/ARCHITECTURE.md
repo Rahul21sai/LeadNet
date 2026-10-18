@@ -41,6 +41,8 @@ Public read: `issues` (+ `events`, `evidence` subcollections), `wards`, `ledger/
 `aiRuns` (only `public == true`). Owner read: `reports`, `users`. Server-only: `drafts`, `supports`, `votes`.
 All writes via the API (admin SDK). Timestamps are epoch ms. Types in `packages/shared/src/types.ts`.
 
+The leader creator directory reads existing reports and post ownership only through authenticated `GET /api/v1/officer/creators?wardId=...`. Assigned-ward officers/admins receive anonymous ward-scoped references and public activity projections. Self-assigned demo roles are denied; neither raw ownership nor private reports become browser-readable. Grouping and deduplication live in `packages/shared/src/creators.ts`; this feature adds no collections or security rules.
+
 Private follows live in `users/{uid}.followedIssueIds`. Following saves a record but does not add support or verification eligibility. Public triage trails retain categorical observations only; original AI titles, summaries and voice transcripts remain private. Public duplicate trails omit unapproved free-text reasons. Photo objects start unpublished and become readable only after their evidence document commits.
 
 Key distinction (from the concept): a **report** is one citizen's submission; an **issue** is the real-world problem;
