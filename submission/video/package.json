@@ -1,0 +1,14 @@
+{
+  "name": "video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node hf.mjs preview",
+    "check": "node hf.mjs check",
+    "render": "node hf.mjs render",
+    "doctor": "node hf.mjs doctor --json"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.171"
+  }
+}

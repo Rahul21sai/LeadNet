@@ -1,0 +1,7 @@
+{
+  "scene": "02-introduction",
+  "duration_s": 14,
+  "rules": ["waterfall-entry", "svg-path-draw"],
+  "exit": { "vector": "right 0.571 px/s on inner camera", "still_moving": true },
+  "entry": { "vector": "right 0.571 px/s on inner camera", "from_rest": false }
+}

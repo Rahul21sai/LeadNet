@@ -1,0 +1,155 @@
+1
+00:00:00,400 --> 00:00:05,627
+A broken footpath. An overflowing drain. A streetlight that stays dark. People share
+
+2
+00:00:05,627 --> 00:00:10,854
+these problems, but the post often disappears before anyone knows what happened. And
+
+3
+00:00:10,854 --> 00:00:15,680
+a complaint marked resolved does not always mean the problem is fixed.
+
+4
+00:00:18,400 --> 00:00:23,075
+We are Tri-Fusion, and this is Namma Civic: a community platform that connects
+
+5
+00:00:23,075 --> 00:00:27,751
+local observations, public discussion and evidence of action. Our Bengaluru prototype keeps the
+
+6
+00:00:27,751 --> 00:00:31,347
+issue visible from the first report to a citizen-verified outcome.
+
+7
+00:00:32,400 --> 00:00:37,455
+Start with New issue. A resident can take a photo, add a written
+
+8
+00:00:37,455 --> 00:00:42,509
+observation, or record a private voice note. With permission, the app captures a
+
+9
+00:00:42,509 --> 00:00:47,564
+fresh device location. The citizen reviews the description and media before sharing. The
+
+10
+00:00:47,564 --> 00:00:52,618
+deployed preview provides a device sandbox: posts stay in that browser. Live AI
+
+11
+00:00:52,618 --> 00:00:57,673
+rewriting and sharing across citizens require the connected service. The controls shown here
+
+12
+00:00:57,673 --> 00:01:00,395
+are captured from the actual deployed prototype.
+
+13
+00:01:07,400 --> 00:01:12,565
+Reporting becomes a conversation. People can react, comment and save an issue. The
+
+14
+00:01:12,565 --> 00:01:17,730
+People page lets citizens opt in to discovery and choose whether to connect.
+
+15
+00:01:17,730 --> 00:01:22,895
+In this demonstration, the profiles are fictional and requests stay in this browser.
+
+16
+00:01:22,895 --> 00:01:28,060
+Explore a ward to discover local records without mixing social reactions with verified
+
+17
+00:01:28,060 --> 00:01:28,855
+civic outcomes.
+
+18
+00:01:38,400 --> 00:01:43,792
+A social feed alone is not enough. Open an issue to inspect its
+
+19
+00:01:43,792 --> 00:01:49,184
+timeline, evidence and current status. In the connected workflow, an officer submits repair
+
+20
+00:01:49,184 --> 00:01:54,576
+evidence, and eligible reporting or supporting citizens confirm or dispute the claim. Shared
+
+21
+00:01:54,576 --> 00:01:59,969
+application rules determine whether the issue is verified or reopened. Silence never closes
+
+22
+00:01:59,969 --> 00:02:05,361
+it. The ledger distinguishes claimed fixes from verified outcomes. The example histories and
+
+23
+00:02:05,361 --> 00:02:07,849
+their totals are fictional demonstration data.
+
+24
+00:02:11,400 --> 00:02:16,624
+Our connected implementation is designed around Google Cloud and Firebase. Firebase Authentication identifies
+
+25
+00:02:16,624 --> 00:02:21,848
+sessions. The Hono API is packaged for Cloud Run and owns every mutation.
+
+26
+00:02:21,848 --> 00:02:27,072
+Firestore stores shared civic records, and Cloud Storage holds sanitized photos and private
+
+27
+00:02:27,072 --> 00:02:32,296
+voice media. Firebase Hosting is the target for serving the web application. Gemini
+
+28
+00:02:32,296 --> 00:02:37,520
+through Vertex AI assists with transcription, wording, issue categories, duplicate comparison and photo
+
+29
+00:02:37,520 --> 00:02:42,744
+observations. Each AI result is checked against a schema and task rules. One
+
+30
+00:02:42,744 --> 00:02:47,968
+repair is allowed, followed by a deterministic fallback. Application code computes ward assignment,
+
+31
+00:02:47,968 --> 00:02:53,192
+priority, service targets, verification and every public metric. This diagram describes the implemented
+
+32
+00:02:53,192 --> 00:02:58,417
+integrations; live cloud deployment and live model quality are not verified in this
+
+33
+00:02:58,417 --> 00:02:58,818
+recording.
+
+34
+00:03:03,400 --> 00:03:09,167
+This is a focused demonstration, not a full-scale government deployment. Next, we will
+
+35
+00:03:09,167 --> 00:03:14,934
+verify the connected services, involve one ward’s residents and officials, and measure real
+
+36
+00:03:14,934 --> 00:03:20,701
+outcomes. When outreach is configured, messages require the citizen’s final confirmation. The app
+
+37
+00:03:20,701 --> 00:03:22,920
+does not promise a response.
+
+38
+00:03:24,400 --> 00:03:29,604
+Tri-Fusion is Vudumula Naga sai Rahul, Mohammed Mudasser and Abubakr Siddique M. Namma
+
+39
+00:03:29,604 --> 00:03:34,007
+Civic: report the problem, build the conversation, and verify the fix.

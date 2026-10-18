@@ -1,0 +1,104 @@
+{
+  "sourcePlan": "../video-notes/scene-plan.json",
+  "sourceSha256": "b5bf3012d4e915b2f0cb98540b1aac801c9953d13d10b71ac1cabb1296b92e39",
+  "provider": "Offline Windows System.Speech; no network TTS",
+  "voice": "Microsoft Mark",
+  "scenes": [
+    {
+      "id": "01-problem",
+      "src": "assets/narration/01-problem.wav",
+      "start": 0.4,
+      "duration": 15.2795,
+      "sceneStart": 0.0,
+      "sceneEnd": 18.0,
+      "voice": "Microsoft Mark",
+      "rate": 0,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "02-introduction",
+      "src": "assets/narration/02-introduction.wav",
+      "start": 18.4,
+      "duration": 12.9471,
+      "sceneStart": 18.0,
+      "sceneEnd": 32.0,
+      "voice": "Microsoft Mark",
+      "rate": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "03-capture",
+      "src": "assets/narration/03-capture.wav",
+      "start": 32.4,
+      "duration": 27.9945,
+      "sceneStart": 32.0,
+      "sceneEnd": 67.0,
+      "voice": "Microsoft Mark",
+      "rate": 0,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "04-community",
+      "src": "assets/narration/04-community.wav",
+      "start": 67.4,
+      "duration": 21.4545,
+      "sceneStart": 67.0,
+      "sceneEnd": 98.0,
+      "voice": "Microsoft Mark",
+      "rate": 0,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "05-accountability",
+      "src": "assets/narration/05-accountability.wav",
+      "start": 98.4,
+      "duration": 29.4495,
+      "sceneStart": 98.0,
+      "sceneEnd": 131.0,
+      "voice": "Microsoft Mark",
+      "rate": 0,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "06-google",
+      "src": "assets/narration/06-google.wav",
+      "start": 131.4,
+      "duration": 47.4184,
+      "sceneStart": 131.0,
+      "sceneEnd": 183.0,
+      "voice": "Microsoft Mark",
+      "rate": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "07-next",
+      "src": "assets/narration/07-next.wav",
+      "start": 183.4,
+      "duration": 19.5195,
+      "sceneStart": 183.0,
+      "sceneEnd": 204.0,
+      "voice": "Microsoft Mark",
+      "rate": 0,
+      "sampleRate": 48000,
+      "channels": 1
+    },
+    {
+      "id": "08-team",
+      "src": "assets/narration/08-team.wav",
+      "start": 204.4,
+      "duration": 9.6068,
+      "sceneStart": 204.0,
+      "sceneEnd": 215.0,
+      "voice": "Microsoft Mark",
+      "rate": 1,
+      "sampleRate": 48000,
+      "channels": 1
+    }
+  ]
+}

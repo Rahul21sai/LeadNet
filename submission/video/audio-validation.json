@@ -1,0 +1,56 @@
+{
+  "offlineVoice": "Microsoft Mark",
+  "allSceneWindowsFit": true,
+  "clippedSamples": 0,
+  "manualListeningReview": "Pending owner playback in Studio",
+  "scenes": [
+    {
+      "id": "01-problem",
+      "durationSeconds": 15.2795,
+      "peakDbfs": -3.16,
+      "rmsDbfs": -21.11
+    },
+    {
+      "id": "02-introduction",
+      "durationSeconds": 12.9471,
+      "peakDbfs": -2.48,
+      "rmsDbfs": -20.69
+    },
+    {
+      "id": "03-capture",
+      "durationSeconds": 27.9945,
+      "peakDbfs": -2.35,
+      "rmsDbfs": -20.74
+    },
+    {
+      "id": "04-community",
+      "durationSeconds": 21.4545,
+      "peakDbfs": -2.32,
+      "rmsDbfs": -20.66
+    },
+    {
+      "id": "05-accountability",
+      "durationSeconds": 29.4495,
+      "peakDbfs": -4.23,
+      "rmsDbfs": -20.69
+    },
+    {
+      "id": "06-google",
+      "durationSeconds": 47.4184,
+      "peakDbfs": -2.76,
+      "rmsDbfs": -20.55
+    },
+    {
+      "id": "07-next",
+      "durationSeconds": 19.5195,
+      "peakDbfs": -3.41,
+      "rmsDbfs": -20.81
+    },
+    {
+      "id": "08-team",
+      "durationSeconds": 9.6068,
+      "peakDbfs": -2.88,
+      "rmsDbfs": -20.62
+    }
+  ]
+}

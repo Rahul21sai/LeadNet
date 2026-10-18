@@ -33,4 +33,5 @@ submission/.build/
 submission/.finalized/
 submission/.codex-finalizer/
 submission/renders/
+submission/video-capture/
 submission/*.pdf.validation.json

@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" role="img" aria-labelledby="title desc">
+  <title id="title">Namma Civic system architecture with official Google Cloud and Firebase product icons</title>
+  <desc id="desc">Connected target: React SPA on Firebase Hosting calls the Hono API on Cloud Run, which uses Firebase Authentication, Firestore, Cloud Storage and bounded Vertex AI Gemini. Application code determines civic and connection outcomes. A separate configured Vercel demonstration uses fictional records and device storage. Deployment and video runtime are unverified.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8" />
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6368" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#188038" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="2560" height="1440" rx="0" fill="#ffffff" stroke="none" stroke-width="2" />
+  <text x="80" y="86" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="700" fill="#202124" text-anchor="start">Namma Civic</text>
+  <text x="540" y="86" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400" fill="#5f6368" text-anchor="start">System architecture</text>
+  <text x="80" y="127" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#5f6368" text-anchor="start">Civic accountability, local community and consent-based connections</text>
+  <text x="2470" y="77" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#5f6368" text-anchor="end">18 OCT 2026</text>
+  <text x="2470" y="111" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="end">Source architecture • deployment unverified</text>
+  <rect x="640" y="165" width="1840" height="895" rx="18" fill="#f8fafd" stroke="#c6dafc" stroke-width="2" />
+  <text x="680" y="216" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600" fill="#1a73e8" text-anchor="start">Google Cloud + Firebase</text>
+  <text x="2440" y="216" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600" fill="#5f6368" text-anchor="end">CONNECTED TARGET</text>
+  <rect x="1140" y="335" width="580" height="675" rx="14" fill="#ffffff" stroke="#b8c9e6" stroke-width="2" />
+  <svg id="cloud-run-1172-360-standard_product_icon" version="1.1" viewBox="0 0 512 512" x="1172" y="360" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <style>
+      .cloud-run-1172-360-st0 {
+        fill: none;
+      }
+
+      .cloud-run-1172-360-st1 {
+        fill: #4285f4;
+      }
+
+      .cloud-run-1172-360-st2 {
+        fill: #34a853;
+      }
+
+      .cloud-run-1172-360-st3 {
+        fill: #fbbc04;
+      }
+
+      .cloud-run-1172-360-st4 {
+        fill: #ea4335;
+      }
+    </style>
+    </defs>
+    <g id="cloud-run-1172-360-bounding_box">
+      <rect class="cloud-run-1172-360-st0" width="512" height="512" />
+    </g>
+    <g id="cloud-run-1172-360-art">
+      <path class="cloud-run-1172-360-st3" d="M144.4,272c-6.4,0-12.4-3.8-14.9-10.1L55.4,75.9c-3.3-8.2.7-17.5,8.9-20.8,8.2-3.3,17.5.7,20.8,8.9l74.2,186c3.3,8.2-.7,17.5-8.9,20.8-1.9.8-3.9,1.1-5.9,1.1h-.1Z" />
+      <g id="cloud-run-1172-360-b">
+        <path class="cloud-run-1172-360-st4" d="M256,272c-6.4,0-12.4-3.8-14.9-10.1l-74.1-186c-2.6-6.6-.6-14.1,5-18.5s13.4-4.5,19.2-.4l260.1,186c7.2,5.1,8.9,15.1,3.7,22.3s-15.1,8.9-22.3,3.7L216.9,114.7l54,135.3c3.3,8.2-.7,17.5-8.9,20.8-1.9.8-4,1.1-5.9,1.1h-.1Z" />
+      </g>
+      <path class="cloud-run-1172-360-st2" d="M127.2,256l-72,180c-3.3,8.2.7,17.5,8.9,20.8,3.1,1.2,4,1.1,5.9,1.1,6.3,0,12.4-3.8,14.9-10.1l74.4-186c.8-2,1.1-4,1.1-5.9h-33.2Z" />
+      <path class="cloud-run-1172-360-st1" d="M414.5,256l-197.7,141.2,54.1-135.3c.8-2,1.1-4,1.1-5.9h-33.2l-72,180c-2.6,6.6-.6,14.1,5,18.5,2.9,2.3,6.4,3.4,9.9,3.4s6.5-1,9.3-3l260.4-186c4.4-3.1,6.7-8,6.7-13h-43.6Z" />
+    </g>
+  </svg>
+  <text x="1260" y="394" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600" fill="#202124" text-anchor="start">Cloud Run</text>
+  <text x="1260" y="429" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#5f6368" text-anchor="start">Hono API • Node.js 22</text>
+  <polyline points="300,295 300,365" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <polyline points="520,470 720,470" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="620" y="450" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1a73e8" text-anchor="middle">HTTPS</text>
+  <polyline points="1020,455 1080,455 1080,520 1175,520" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1078" y="434" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1a73e8" text-anchor="middle">/api/v1</text>
+  <polyline points="520,400 590,400 590,265 2190,265 2190,300" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1960" y="247" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1a73e8" text-anchor="end">Rules-scoped realtime reads</text>
+  <polyline points="520,660 600,660 600,746 720,746" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" marker-start="url(#arrow-blue)" />
+  <text x="610" y="783" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="start">Sign-in</text>
+  <polyline points="1175,565 1090,565 1090,744 1020,744" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1084" y="702" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="end">Token</text>
+  <text x="1084" y="725" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="end">checks</text>
+  <polyline points="1685,500 1840,500 1840,400 1970,400" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" marker-start="url(#arrow-blue)" />
+  <text x="1823" y="380" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#1a73e8" text-anchor="middle">Transactions</text>
+  <polyline points="1685,545 1810,545 1810,660 1970,660" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1880" y="638" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="middle">Processed media</text>
+  <polyline points="1685,570 1780,570 1780,880 1970,880" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1875" y="857" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="middle">Bounded AI call</text>
+  <polyline points="1970,960 1685,960" fill="none" stroke="#1a73e8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)" />
+  <text x="1830" y="990" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#1a73e8" text-anchor="middle">Proposed output</text>
+  <polyline points="1685,900 1740,900 1740,590 1685,590" fill="none" stroke="#188038" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-green)" />
+  <text x="1705" y="817" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#188038" text-anchor="end">Verified /</text>
+  <text x="1705" y="840" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#188038" text-anchor="end">fallback</text>
+  <polyline points="1020,945 1150,945 1150,745 1175,745" fill="none" stroke="#5f6368" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-gray)" stroke-dasharray="8 7" />
+  <rect x="80" y="195" width="440" height="100" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <g transform="translate(108 215)" fill="none" stroke="#5f6368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="19" cy="16" r="10" />
+    <circle cx="49" cy="19" r="8" />
+    <path d="M2 57 V48 C2 28 36 28 36 48 V57 M39 37 C56 31 65 42 63 55" />
+  </g>
+  <text x="199" y="238" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" fill="#202124" text-anchor="start">Citizens &amp; leaders</text>
+  <text x="199" y="272" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">Authorized roles and ward scope</text>
+  <rect x="80" y="365" width="440" height="340" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <g transform="translate(112 397)" fill="none" stroke="#5f6368" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="68" height="48" rx="5" />
+    <path d="M0 12 H68 M24 60 H46 M35 48 V60" />
+    <circle cx="8" cy="6" r="1" />
+  </g>
+  <text x="112" y="507" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600" fill="#202124" text-anchor="start">React 19 + Vite</text>
+  <text x="112" y="549" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#5f6368" text-anchor="start">Community • capture • People</text>
+  <text x="112" y="582" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#5f6368" text-anchor="start">Leaders • map • public ledger</text>
+  <text x="112" y="631" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Camera / voice / location</text>
+  <text x="112" y="671" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">Review before publishing or connecting</text>
+  <rect x="720" y="365" width="300" height="180" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <svg width="64" height="64" viewBox="0 0 132 123" fill="none" x="838" y="384" preserveAspectRatio="xMidYMid meet">
+    <path d="M31.6581 118.567C36.7104 120.601 42.1915 121.807 47.9467 122.008C55.7355 122.28 63.1422 120.67 69.7635 117.611C61.8234 114.491 54.6322 109.929 48.4949 104.257C44.5166 110.627 38.6325 115.658 31.6581 118.567Z" fill="#FF9100" />
+    <path d="M48.4923 104.259C34.4827 91.302 25.9838 72.5484 26.7021 51.979C26.7254 51.311 26.7607 50.6435 26.8019 49.9762C24.2928 49.3273 21.6734 48.9313 18.9777 48.8371C15.1191 48.7024 11.3823 49.181 7.85452 50.1744C4.11472 56.7255 1.85787 64.242 1.57672 72.2932C0.851127 93.0713 13.4253 111.227 31.6556 118.569C38.63 115.66 44.5139 110.635 48.4923 104.259Z" fill="#FFC400" />
+    <path d="M48.4937 104.258C51.7509 99.0459 53.7258 92.9348 53.9557 86.3506C54.5605 69.0316 42.9175 54.133 26.8033 49.9757C26.762 50.643 26.7268 51.3105 26.7035 51.9785C25.9852 72.5479 34.484 91.3015 48.4937 104.258Z" fill="#FF9100" />
+    <path d="M52.1543 1.29291C42.9766 8.64534 35.7294 18.3402 31.3447 29.5084C28.8344 35.9054 27.2569 42.7768 26.7964 49.9798C42.9106 54.1372 54.5536 69.0358 53.9488 86.3548C53.7189 92.939 51.7382 99.044 48.4868 104.263C54.6239 109.941 61.8153 114.497 69.7555 117.616C85.693 110.249 97.0006 94.3967 97.6554 75.6462C98.0796 63.4978 93.4121 52.6704 86.8167 43.5311C79.8515 33.8654 52.1543 1.29291 52.1543 1.29291Z" fill="#DD2C00" />
+    <g filter="url(#firebase-hosting-838-384-filter0_d_47_3685)">
+      <circle cx="100" cy="90" r="30" fill="white" />
+      <path d="M100 75C91.72 75 85 81.72 85 90C85 98.28 91.72 105 100 105C108.28 105 115 98.28 115 90C115 81.72 108.28 75 100 75ZM98.5 101.895C92.575 101.16 88 96.12 88 90C88 89.07 88.12 88.185 88.315 87.315L95.5 94.5V96C95.5 97.65 96.85 99 98.5 99V101.895ZM108.85 98.085C108.46 96.87 107.35 96 106 96H104.5V91.5C104.5 90.675 103.825 90 103 90H94V87H97C97.825 87 98.5 86.325 98.5 85.5V82.5H101.5C103.15 82.5 104.5 81.15 104.5 79.5V78.885C108.895 80.67 112 84.975 112 90C112 93.12 110.8 95.955 108.85 98.085Z" fill="#1F1F1F" />
+    </g>
+    <defs>
+      <filter id="firebase-hosting-838-384-filter0_d_47_3685" x="68" y="58.6704" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+        <feOffset dy="0.670408" />
+        <feGaussianBlur stdDeviation="1" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_47_3685" />
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_47_3685" result="shape" />
+      </filter>
+    </defs>
+  </svg>
+  <text x="870" y="483" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="middle">Firebase Hosting</text>
+  <text x="870" y="518" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="middle">SPA + API rewrite</text>
+  <rect x="720" y="655" width="300" height="180" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <svg width="64" height="64" viewBox="0 0 132 124" fill="none" x="838" y="674" preserveAspectRatio="xMidYMid meet">
+    <path d="M31.6562 118.1C36.7084 120.133 42.1896 121.34 47.9447 121.541C55.7335 121.813 63.1403 120.202 69.7616 117.143C61.8214 114.024 54.6303 109.461 48.4929 103.79C44.5147 110.159 38.6305 115.19 31.6562 118.1Z" fill="#FF9100" />
+    <path d="M48.4943 103.791C34.4847 90.8342 25.9858 72.0806 26.7041 51.5112C26.7274 50.8433 26.7626 50.1757 26.8039 49.5084C24.2948 48.8595 21.6753 48.4635 18.9796 48.3694C15.121 48.2346 11.3843 48.7132 7.85647 49.7066C4.11667 56.2577 1.85982 63.7742 1.57867 71.8254C0.85308 92.6036 13.4273 110.759 31.6575 118.101C38.6319 115.192 44.5158 110.167 48.4943 103.791Z" fill="#FFC400" />
+    <path d="M48.4937 103.791C51.7509 98.5782 53.7258 92.4671 53.9557 85.8829C54.5605 68.5638 42.9175 53.6653 26.8033 49.5079C26.762 50.1753 26.7268 50.8428 26.7035 51.5108C25.9852 72.0802 34.484 90.8338 48.4937 103.791Z" fill="#FF9100" />
+    <path d="M52.1523 0.825138C42.9747 8.17757 35.7275 17.8724 31.3428 29.0406C28.8325 35.4376 27.255 42.309 26.7944 49.5121C42.9087 53.6694 54.5517 68.568 53.9469 85.8871C53.7169 92.4712 51.7363 98.5762 48.4849 103.795C54.622 109.473 61.8134 114.029 69.7535 117.149C85.691 109.781 96.9986 93.9289 97.6534 75.1785C98.0777 63.0301 93.4101 52.2026 86.8147 43.0633C79.8495 33.3976 52.1523 0.825138 52.1523 0.825138Z" fill="#DD2C00" />
+    <g filter="url(#firebase-auth-838-674-filter0_d_47_3676)">
+      <circle cx="100" cy="90.4678" r="30" fill="white" />
+      <path d="M83.5 102.468V98.2678C83.5 97.4178 83.7188 96.6365 84.1562 95.924C84.5938 95.2115 85.175 94.6678 85.9 94.2928C87.45 93.5178 89.025 92.9365 90.625 92.549C92.225 92.1615 93.85 91.9678 95.5 91.9678C97.15 91.9678 98.775 92.1615 100.375 92.549C101.975 92.9365 103.55 93.5178 105.1 94.2928C105.825 94.6678 106.406 95.2115 106.844 95.924C107.281 96.6365 107.5 97.4178 107.5 98.2678V102.468H83.5ZM110.5 102.468V97.9678C110.5 96.8678 110.194 95.8115 109.581 94.799C108.969 93.7865 108.1 92.9178 106.975 92.1928C108.25 92.3428 109.45 92.599 110.575 92.9615C111.7 93.324 112.75 93.7678 113.725 94.2928C114.625 94.7928 115.313 95.349 115.788 95.9615C116.263 96.574 116.5 97.2428 116.5 97.9678V102.468H110.5ZM95.5 90.4678C93.85 90.4678 92.4375 89.8803 91.2625 88.7053C90.0875 87.5303 89.5 86.1178 89.5 84.4678C89.5 82.8178 90.0875 81.4053 91.2625 80.2303C92.4375 79.0553 93.85 78.4678 95.5 78.4678C97.15 78.4678 98.5625 79.0553 99.7375 80.2303C100.913 81.4053 101.5 82.8178 101.5 84.4678C101.5 86.1178 100.913 87.5303 99.7375 88.7053C98.5625 89.8803 97.15 90.4678 95.5 90.4678ZM110.5 84.4678C110.5 86.1178 109.913 87.5303 108.738 88.7053C107.562 89.8803 106.15 90.4678 104.5 90.4678C104.225 90.4678 103.875 90.4365 103.45 90.374C103.025 90.3115 102.675 90.2428 102.4 90.1678C103.075 89.3678 103.594 88.4803 103.956 87.5053C104.319 86.5303 104.5 85.5178 104.5 84.4678C104.5 83.4178 104.319 82.4053 103.956 81.4303C103.594 80.4553 103.075 79.5678 102.4 78.7678C102.75 78.6428 103.1 78.5615 103.45 78.524C103.8 78.4865 104.15 78.4678 104.5 78.4678C106.15 78.4678 107.562 79.0553 108.738 80.2303C109.913 81.4053 110.5 82.8178 110.5 84.4678Z" fill="#1F1F1F" />
+    </g>
+    <defs>
+      <filter id="firebase-auth-838-674-filter0_d_47_3676" x="68" y="59.1382" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+        <feOffset dy="0.670408" />
+        <feGaussianBlur stdDeviation="1" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_47_3676" />
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_47_3676" result="shape" />
+      </filter>
+    </defs>
+  </svg>
+  <text x="870" y="775" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="middle">Firebase Auth</text>
+  <text x="870" y="810" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="middle">Anonymous / Google</text>
+  <rect x="720" y="880" width="300" height="130" rx="10" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <text x="744" y="920" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#202124" text-anchor="start">Routing &amp; contacts</text>
+  <text x="744" y="956" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Ward GeoJSON</text>
+  <text x="744" y="987" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Sourced MLA / MP JSON</text>
+  <rect x="1175" y="465" width="510" height="135" rx="9" fill="#f8fafd" stroke="#d2e3fc" stroke-width="2" />
+  <text x="1200" y="503" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="start">Application API</text>
+  <text x="1200" y="541" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Reports • evidence • citizen verification</text>
+  <text x="1200" y="573" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Creators • People • connection requests</text>
+  <polyline points="1430,600 1430,655" fill="none" stroke="#5f6368" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-gray)" stroke-dasharray="8 7" />
+  <text x="1450" y="637" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#5f6368" text-anchor="start">Imports code</text>
+  <rect x="1175" y="655" width="510" height="140" rx="9" fill="#f8f9fa" stroke="#dadce0" stroke-width="2" />
+  <text x="1200" y="691" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#202124" text-anchor="start">Deterministic application logic</text>
+  <text x="1200" y="725" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">API: ward routing, privacy, limits, transactions</text>
+  <text x="1200" y="754" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">Shared: priority, SLA, state, quorum, ledger</text>
+  <text x="1200" y="782" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">Shared: connection consent and revisions</text>
+  <rect x="1175" y="850" width="510" height="125" rx="9" fill="#f1f8f2" stroke="#b7dfc3" stroke-width="2" />
+  <text x="1200" y="889" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="600" fill="#188038" text-anchor="start">AI response checks</text>
+  <text x="1200" y="926" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Schema + task checks → one repair retry</text>
+  <text x="1200" y="957" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Validated output or deterministic fallback</text>
+  <rect x="1970" y="300" width="440" height="195" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <svg width="70" height="70" viewBox="0 0 24 24" x="1994" y="321" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <style>.firestore-1994-321-cls-1{fill:#669df6;}.firestore-1994-321-cls-2{fill:#aecbfa;}.firestore-1994-321-cls-3{fill:#4285f4;}</style>
+    </defs>
+    <title>Icon_24px_Firestore_Color</title>
+    <g data-name="Product Icons">
+      <g data-name="colored-32/firestore">
+        <g>
+          <path class="firestore-1994-321-cls-1" d="M21,13,12,9v4l9,4Zm0-7L12,2V6l9,4Z" />
+          <polygon id="firestore-1994-321-Rectangle-7" class="firestore-1994-321-cls-2" points="3 6 12 2 12 6 3 10 3 6" />
+          <polygon id="firestore-1994-321-Rectangle-7-2" data-name="Rectangle-7" class="firestore-1994-321-cls-2" points="3 13 12 9 12 13 3 17 3 13" />
+          <polygon id="firestore-1994-321-Rectangle-7-3" data-name="Rectangle-7" class="firestore-1994-321-cls-3" points="12 18 15.37 16.5 19.88 18.5 12 22 12 18" />
+        </g>
+      </g>
+    </g>
+  </svg>
+  <text x="2090" y="366" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" fill="#202124" text-anchor="start">Firestore</text>
+  <text x="1994" y="420" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Public issues / posts / wards / ledger</text>
+  <text x="1994" y="450" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Private ownership / connections / drafts</text>
+  <text x="1994" y="479" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#5f6368" text-anchor="start">Private AI audits + approved public trails</text>
+  <rect x="1970" y="570" width="440" height="180" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <svg id="cloud-storage-1994-590-standard_product_icon" version="1.1" viewBox="0 0 512 512" x="1994" y="590" width="70" height="70" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <style>
+      .cloud-storage-1994-590-st0 {
+        fill: none;
+      }
+
+      .cloud-storage-1994-590-st1 {
+        fill: #4285f4;
+      }
+
+      .cloud-storage-1994-590-st2 {
+        fill: #34a853;
+      }
+
+      .cloud-storage-1994-590-st3 {
+        fill: #fbbc04;
+      }
+
+      .cloud-storage-1994-590-st4 {
+        fill: #ea4335;
+      }
+    </style>
+    </defs>
+    <g id="cloud-storage-1994-590-bounding_box">
+      <rect class="cloud-storage-1994-590-st0" width="512" height="512" />
+    </g>
+    <g id="cloud-storage-1994-590-art">
+      <path class="cloud-storage-1994-590-st2" d="M442,277.9H70c-8.8,0-16,7.2-16,16v148.1c0,8.8,7.2,16,16,16h107.2c1.5.5,3.1.7,4.8.7s3.3-.3,4.8-.7h255.2c8.8,0,16-7.2,16-16v-148.1c0-8.8-7.2-16-16-16ZM86,309.9h80v116.1h-80v-116.1ZM426,425.9h-228v-116.1h228v116.1Z" />
+      <path class="cloud-storage-1994-590-st3" d="M442,54H70c-8.8,0-16,7.2-16,16v148.8c0,8.8,7.2,16,16,16h372c8.8,0,16-7.2,16-16V70c0-8.8-7.2-16-16-16ZM86,86h80v116.8h-80v-116.8ZM426,202.8h-228v-116.8h228v116.8Z" />
+      <path class="cloud-storage-1994-590-st4" d="M442,234.8h-16V86H54v-16c0-8.8,7.2-16,16-16h372c8.8,0,16,7.2,16,16v148.8c0,8.8-7.2,16-16,16Z" />
+      <path class="cloud-storage-1994-590-st1" d="M442,457.9h-16v-148.1H54v-16c0-8.8,7.2-16,16-16h372c8.8,0,16,7.2,16,16v148.1c0,8.8-7.2,16-16,16Z" />
+      <circle class="cloud-storage-1994-590-st4" cx="349" cy="144.4" r="37" />
+      <circle class="cloud-storage-1994-590-st1" cx="349" cy="367.9" r="37" />
+    </g>
+  </svg>
+  <text x="2090" y="635" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" fill="#202124" text-anchor="start">Cloud Storage</text>
+  <text x="1994" y="696" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Sanitized photos • private voice</text>
+  <text x="1994" y="725" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Video: FFmpeg runtime unverified</text>
+  <rect x="1970" y="835" width="440" height="175" rx="12" fill="#ffffff" stroke="#dadce0" stroke-width="2" />
+  <svg id="vertex-ai-1994-855-standard_product_icon" version="1.1" viewBox="0 0 512 512" x="1994" y="855" width="70" height="70" preserveAspectRatio="xMidYMid meet">
+    <g id="vertex-ai-1994-855-bounding_box">
+      <rect width="512" height="512" fill="none" />
+    </g>
+    <g id="vertex-ai-1994-855-art">
+      <path d="M128,244.99c-8.84,0-16-7.16-16-16v-95.97c0-8.84,7.16-16,16-16s16,7.16,16,16v95.97c0,8.84-7.16,16-16,16Z" fill="#ea4335" />
+      <path d="M256,458c-2.98,0-5.97-.83-8.59-2.5l-186-122c-7.46-4.74-9.65-14.63-4.91-22.09,4.75-7.46,14.64-9.65,22.09-4.91l177.41,116.53,177.41-116.53c7.45-4.74,17.34-2.55,22.09,4.91,4.74,7.46,2.55,17.34-4.91,22.09l-186,122c-2.62,1.67-5.61,2.5-8.59,2.5Z" fill="#fbbc04" />
+      <path d="M256,388.03c-8.84,0-16-7.16-16-16v-73.06c0-8.84,7.16-16,16-16s16,7.16,16,16v73.06c0,8.84-7.16,16-16,16Z" fill="#34a853" />
+      <circle cx="128" cy="70" r="16" fill="#ea4335" />
+      <circle cx="128" cy="292" r="16" fill="#ea4335" />
+      <path d="M384.23,308.01c-8.82,0-15.98-7.14-16-15.97l-.23-94.01c-.02-8.84,7.13-16.02,15.97-16.03h.04c8.82,0,15.98,7.14,16,15.97l.23,94.01c.02,8.84-7.13,16.02-15.97,16.03h-.04Z" fill="#4285f4" />
+      <circle cx="384" cy="70" r="16" fill="#4285f4" />
+      <circle cx="384" cy="134" r="16" fill="#4285f4" />
+      <path d="M320,220.36c-8.84,0-16-7.16-16-16v-103.02c0-8.84,7.16-16,16-16s16,7.16,16,16v103.02c0,8.84-7.16,16-16,16Z" fill="#fbbc04" />
+      <circle cx="256" cy="171" r="16" fill="#34a853" />
+      <circle cx="256" cy="235" r="16" fill="#34a853" />
+      <circle cx="320" cy="265" r="16" fill="#fbbc04" />
+      <circle cx="320" cy="329" r="16" fill="#fbbc04" />
+      <path d="M192,217.36c-8.84,0-16-7.16-16-16v-100.02c0-8.84,7.16-16,16-16s16,7.16,16,16v100.02c0,8.84-7.16,16-16,16Z" fill="#fbbc04" />
+      <circle cx="192" cy="265" r="16" fill="#fbbc04" />
+      <circle cx="192" cy="329" r="16" fill="#fbbc04" />
+    </g>
+  </svg>
+  <text x="2090" y="900" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="600" fill="#202124" text-anchor="start">Vertex AI / Gemini</text>
+  <text x="1994" y="956" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Classify • transcribe • compose</text>
+  <text x="1994" y="986" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Compare duplicates and evidence</text>
+  <text x="680" y="1039" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">All mutations and private connection reads pass through the API. Code determines civic outcomes.</text>
+  <text x="680" y="1102" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#5f6368" text-anchor="start">Optional user-reviewed outreach: API → Resend email  |  Browser → X composer</text>
+  <rect x="80" y="1160" width="2400" height="180" rx="14" fill="#f8f9fa" stroke="#c9cdd3" stroke-width="2" stroke-dasharray="9 7" />
+  <text x="112" y="1206" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="600" fill="#202124" text-anchor="start">Vercel static demo configuration</text>
+  <text x="112" y="1244" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">VITE_DEMO_MODE=1</text>
+  <text x="112" y="1280" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#5f6368" text-anchor="start">Browser-only activity; no deployed Cloud API</text>
+  <line x1="750" y1="1190" x2="750" y2="1307" stroke="#dadce0" stroke-width="2" />
+  <text x="795" y="1208" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="start">Bundled assets</text>
+  <text x="795" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Real ward geometry + fictional city records</text>
+  <text x="795" y="1282" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">Fictional People profiles and incoming requests</text>
+  <line x1="1600" y1="1190" x2="1600" y2="1307" stroke="#dadce0" stroke-width="2" />
+  <text x="1645" y="1208" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#202124" text-anchor="start">Device storage</text>
+  <text x="1645" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">IndexedDB: captured media and community posts</text>
+  <text x="1645" y="1282" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#5f6368" text-anchor="start">localStorage: connection requests and preferences</text>
+  <text x="80" y="1393" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#5f6368" text-anchor="start">Product artwork: official Google Cloud icon library + Firebase brand assets. Diagram reflects implemented source, not verified deployment.</text>
+  <text x="2480" y="1393" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#5f6368" text-anchor="end">Namma Civic</text>
+</svg>

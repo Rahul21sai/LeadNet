@@ -1,0 +1,7 @@
+{
+  "scene": "07-next",
+  "duration_s": 21,
+  "rules": ["waterfall-entry", "svg-path-draw"],
+  "exit": { "vector": "left 0.667 px/s on inner camera", "still_moving": true },
+  "entry": { "vector": "left 0.667 px/s on inner camera", "from_rest": false }
+}

@@ -1,8 +1,8 @@
 {
-  "featureStatus": "Local source implemented and checked; cloud work deferred by owner. Browser review pending.",
+  "featureStatus": "Public Vercel device-only demonstration is accessible. Connected source is implemented; live Google Cloud integration remains unverified.",
   "testStatus": "Automated contract tests pass; all-workspace typecheck and web/API builds pass; 11 offline AI safety checks pass",
-  "cloudStatus": "Cloud deployment and live model evaluation deferred by owner",
+  "cloudStatus": "Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified.",
   "repositoryUrl": "https://github.com/Rahul21sai/LeadNet",
   "videoUrl": null,
-  "productUrl": null
+  "productUrl": "https://lead-net-6639-eta.vercel.app/"
 }

@@ -1,0 +1,83 @@
+{
+  "product": "Namma Civic",
+  "team": "Tri-Fusion",
+  "durationSeconds": 215,
+  "aspect": "16:9",
+  "language": "English",
+  "status": "Animated narrated preview checked; final owner preview approval and MP4 encoding pending",
+  "scenes": [
+    {
+      "id": "01-problem",
+      "start": 0,
+      "end": 18,
+      "title": "A post should become a public record.",
+      "visual": "Licensed issue photo with an explicitly illustrative label; problem headline. No invented impact numbers.",
+      "footage": "none",
+      "narration": "A broken footpath. An overflowing drain. A streetlight that stays dark. People share these problems, but the post often disappears before anyone knows what happened. And a complaint marked resolved does not always mean the problem is fixed."
+    },
+    {
+      "id": "02-introduction",
+      "start": 18,
+      "end": 32,
+      "title": "Namma Civic, by Tri-Fusion",
+      "visual": "Product title, a clearly labelled schematic ward illustration, and the Report / Discuss / Act / Verify sequence.",
+      "footage": "none",
+      "narration": "We are Tri-Fusion, and this is Namma Civic: a community platform that connects local observations, public discussion and evidence of action. Our Bengaluru prototype keeps the issue visible from the first report to a citizen-verified outcome."
+    },
+    {
+      "id": "03-capture",
+      "start": 32,
+      "end": 67,
+      "title": "Capture. Review. Share.",
+      "visual": "Genuine deployed composer capture. Show the actual media, voice, category, language and location controls, with the device-only banner and disabled AI control visible. No saved-post result or live model response is claimed.",
+      "footage": "required: capture-and-save.mp4",
+      "narration": "Start with New issue. A resident can take a photo, add a written observation, or record a private voice note. With permission, the app captures a fresh device location. The citizen reviews the description and media before sharing. The deployed preview provides a device sandbox: posts stay in that browser. Live AI rewriting and sharing across citizens require the connected service. The controls shown here are captured from the actual deployed prototype."
+    },
+    {
+      "id": "04-community",
+      "start": 67,
+      "end": 98,
+      "title": "Build a neighbourhood conversation.",
+      "visual": "Genuine deployed People opt-in and fictional directory screen. No outgoing request, comment, reaction or saved-post mutation is shown as verified.",
+      "footage": "required: community-and-people.mp4",
+      "narration": "Reporting becomes a conversation. People can react, comment and save an issue. The People page lets citizens opt in to discovery and choose whether to connect. In this demonstration, the profiles are fictional and requests stay in this browser. Explore a ward to discover local records without mixing social reactions with verified civic outcomes."
+    },
+    {
+      "id": "05-accountability",
+      "start": 98,
+      "end": 131,
+      "title": "Claimed is different from verified.",
+      "visual": "Genuine /issue/demo-issue-007 illustrative evidence comparison, fictional verification history and public demonstration ledger. Read-only record inspection; no live vote or transition is performed.",
+      "footage": "required: evidence-and-ledger.mp4",
+      "narration": "A social feed alone is not enough. Open an issue to inspect its timeline, evidence and current status. In the connected workflow, an officer submits repair evidence, and eligible reporting or supporting citizens confirm or dispute the claim. Shared application rules determine whether the issue is verified or reopened. Silence never closes it. The ledger distinguishes claimed fixes from verified outcomes. The example histories and their totals are fictional demonstration data."
+    },
+    {
+      "id": "06-google",
+      "start": 131,
+      "end": 183,
+      "title": "A Google Cloud architecture with checked AI.",
+      "visual": "Official Google Cloud/Firebase icon architecture, focused service highlights one by one. Persistent badge: Implemented integration architecture; live cloud deployment not verified in this recording. Show schema → repair → fallback.",
+      "footage": "none",
+      "narration": "Our connected implementation is designed around Google Cloud and Firebase. Firebase Authentication identifies sessions. The Hono API is packaged for Cloud Run and owns every mutation. Firestore stores shared civic records, and Cloud Storage holds sanitized photos and private voice media. Firebase Hosting is the target for serving the web application. Gemini through Vertex AI assists with transcription, wording, issue categories, duplicate comparison and photo observations. Each AI result is checked against a schema and task rules. One repair is allowed, followed by a deterministic fallback. Application code computes ward assignment, priority, service targets, verification and every public metric. This diagram describes the implemented integrations; live cloud deployment and live model quality are not verified in this recording."
+    },
+    {
+      "id": "07-next",
+      "start": 183,
+      "end": 204,
+      "title": "A focused prototype. A measurable next step.",
+      "visual": "Current demo capabilities beside next pilot steps: connect and verify services; one ward pilot; moderation and official onboarding. No full-scale availability claims.",
+      "footage": "none",
+      "narration": "This is a focused demonstration, not a full-scale government deployment. Next, we will verify the connected services, involve one ward’s residents and officials, and measure real outcomes. When outreach is configured, messages require the citizen’s final confirmation. The app does not promise a response."
+    },
+    {
+      "id": "08-team",
+      "start": 204,
+      "end": 215,
+      "title": "Namma Civic • Tri-Fusion",
+      "visual": "Vudumula Naga sai Rahul — Leader; Mohammed Mudasser; Abubakr Siddique M. Closing line and product URL only when verified. No emails.",
+      "footage": "none",
+      "narration": "Tri-Fusion is Vudumula Naga sai Rahul, Mohammed Mudasser and Abubakr Siddique M. Namma Civic: report the problem, build the conversation, and verify the fix."
+    }
+  ],
+  "prototypeUrl": "https://lead-net-6639-eta.vercel.app/"
+}

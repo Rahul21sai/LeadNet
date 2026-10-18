@@ -1,0 +1,13 @@
+node_modules/
+runtime/
+output/
+renders/
+snapshots/
+.hyperframes/
+.waveform-cache/
+*.mp4
+*.webm
+assets/narration/*.wav
+assets/captures/*/
+assets/captures/*.log
+*.log

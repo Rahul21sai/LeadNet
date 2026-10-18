@@ -1,0 +1,7 @@
+{
+  "scene": "01-problem",
+  "duration_s": 18,
+  "rules": ["waterfall-entry", "svg-path-draw"],
+  "exit": { "vector": "left 0.556 px/s on inner camera", "still_moving": true },
+  "entry": { "vector": "left 0.556 px/s on inner camera", "from_rest": false }
+}

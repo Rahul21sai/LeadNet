@@ -1,0 +1,27 @@
+{
+  "note": "Crops of a successful genuine public prototype capture; no UI content changed.",
+  "images": [
+    {
+      "file": "02a-composer-top.png",
+      "source": "02-new-issue.png",
+      "crop": [
+        580,
+        24,
+        1340,
+        704
+      ],
+      "sha256": "09f7e7e80270e3515a57d3a249d7422d86b6931066576295d64acf098ead032f"
+    },
+    {
+      "file": "02b-composer-location.png",
+      "source": "02-new-issue.png",
+      "crop": [
+        580,
+        600,
+        1340,
+        1056
+      ],
+      "sha256": "39a2aea739b4c92886f85a5e28384289b7e9a44b9de48da146bcaff4d7195012"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "hyperframes": {
+    "package": "hyperframes",
+    "version": "0.8.171",
+    "registry": "https://registry.npmjs.org/",
+    "repository": "https://github.com/heygen-com/hyperframes",
+    "license": "Apache-2.0",
+    "integrity": "sha512-v7E4Jss18eTU02jBgXkzoAdNXq2faHt2+J1gG+pliWB/5u5qeBImmtMsP+kFAHwdKzdaCG7AJ5G+2+COn/XgvQ=="
+  },
+  "browser": {
+    "product": "Chrome Headless Shell",
+    "version": "152.0.7977.30",
+    "installer": "Hyperframes browser ensure",
+    "path": "~/.cache/hyperframes/chrome/chrome-headless-shell/win64-152.0.7977.30/chrome-headless-shell-win64/chrome-headless-shell.exe"
+  },
+  "ffmpeg": {
+    "version": "9.0.2-essentials_build-www.gyan.dev",
+    "source": "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip",
+    "sourceLinkedBy": "https://ffmpeg.org/download.html",
+    "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+    "checksumVerified": true,
+    "bytes": 114768076,
+    "localBin": "runtime/ffmpeg-9.0.2-essentials_build/bin",
+    "h264Encoder": "libx264",
+    "audioEncoder": "aac"
+  },
+  "narration": {
+    "provider": "Windows System.Speech (offline)",
+    "voice": "Microsoft Mark",
+    "sampleRate": 48000,
+    "channels": 1,
+    "source": "../video-notes/scene-plan.json",
+    "timings": "narration-timings.json"
+  },
+  "telemetry": "Disabled by hf.mjs: HYPERFRAMES_NO_TELEMETRY=1, DO_NOT_TRACK=1",
+  "doctor": {
+    "ok": false,
+    "requiredToolChecks": "CLI, Node, FFmpeg, FFprobe, Chrome passed",
+    "resourceConcern": "Only 1.3 GB memory was available during the initial doctor run",
+    "optionalMissing": [
+      "whisper-cpp",
+      "Kokoro",
+      "MusicGen",
+      "Docker"
+    ],
+    "recommendedRenderWorkers": 1
+  },
+  "skillUpdate": "hyperframes skills update general-video succeeded; installed 11 skills"
+}

@@ -1,0 +1,126 @@
+{
+  "verifiedAtUtc": "2026-10-18T13:41:50.448095+00:00",
+  "sourceOrigin": "https://lead-net-6639-eta.vercel.app",
+  "captureTool": "Official Hyperframes 0.8.171",
+  "successfulSourceGates": "JSON ok:true, HTTP200, no BLOCKED.md, visually inspected",
+  "images": [
+    {
+      "file": "01-community.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/",
+      "capturedAtUtc": "2026-10-18T13:38:30Z",
+      "captureDirectory": "home-logging-fix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 377955,
+      "sha256": "f5eef2e1462e7f80b9afabb50a92990bca1bb92c5db2307b819631e688e12e92"
+    },
+    {
+      "file": "02-new-issue.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/?compose=1",
+      "capturedAtUtc": "2026-10-18T13:39:33Z",
+      "captureDirectory": "compose-logging-fix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 218171,
+      "sha256": "009d659eec9b246f1d5da67f9ce31dd605845fe04f8a01ccb24f2644bbbfa0a3"
+    },
+    {
+      "file": "03-issue-evidence.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/issue/demo-issue-007",
+      "capturedAtUtc": "2026-10-18T13:31:31Z",
+      "captureDirectory": "issue-evidence",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 596407,
+      "sha256": "7c5b758ba65487809e7ef4451a44a325ce27abf1792e80d4fc79d377b7fdc0ac"
+    },
+    {
+      "file": "03b-before-after.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/issue/demo-issue-007",
+      "capturedAtUtc": "2026-10-18T13:31:33Z",
+      "captureDirectory": "issue-evidence",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1014354,
+      "sha256": "35e2f9ef30440dc87b2d7c0f6b65e0e993675d56264462b53956bc02c82dcac1",
+      "cropFromFullPage": {
+        "x": 0,
+        "y": 650,
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "file": "04a-citizen-check.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/issue/demo-issue-007",
+      "capturedAtUtc": "2026-10-18T13:31:33Z",
+      "captureDirectory": "issue-evidence",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 89129,
+      "sha256": "74ca6174a117059a33146d2111647c85fb386c62086d906fbcaf5141ce2c7884",
+      "cropFromFullPage": {
+        "x": 0,
+        "y": 1580,
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "file": "04-citizen-verification.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/issue/demo-issue-007",
+      "capturedAtUtc": "2026-10-18T13:31:31Z",
+      "captureDirectory": "issue-evidence",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 148163,
+      "sha256": "1a3d946c192870d5822dd6c69c0a9fa3fe8fdde5d27776bf4871cccd6cfce816"
+    },
+    {
+      "file": "05-ledger.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/ledger",
+      "capturedAtUtc": "2026-10-18T13:30:54Z",
+      "captureDirectory": "ledger",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 116274,
+      "sha256": "deae99eaa272deba07e02ddff907ab6a5ed40725e66af14ead52d6f47591e434"
+    },
+    {
+      "file": "06-people-opt-in.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/people",
+      "capturedAtUtc": "2026-10-18T13:31:29Z",
+      "captureDirectory": "people",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 169365,
+      "sha256": "74d53d5d4f21d50c9348ddb759255beed918bb293e695ddd28ba99123e9c2989"
+    },
+    {
+      "file": "06b-people-directory.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/people",
+      "capturedAtUtc": "2026-10-18T13:31:30Z",
+      "captureDirectory": "people",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 144244,
+      "sha256": "e4805fb65228a3c05e099dca277db8a320b0719b40fcf25d7e6e4ba53d6d9549",
+      "cropFromFullPage": {
+        "x": 0,
+        "y": 700,
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
+      "file": "07-city-explore.png",
+      "sourceUrl": "https://lead-net-6639-eta.vercel.app/city",
+      "capturedAtUtc": "2026-10-18T13:40:38Z",
+      "captureDirectory": "city-logging-fix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 292086,
+      "sha256": "aed2a222fa7a4766b63112b833cad3b9ac0e8cf64fab8c19e1bcbbe476c84c77"
+    }
+  ]
+}

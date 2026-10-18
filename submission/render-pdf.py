@@ -18,8 +18,8 @@ for page in pages:
 
 pdf = canvas.Canvas(str(output), pagesize=(720, 405), pageCompression=1)
 pdf.setTitle("Namma Civic - AI Builder Cup - Review snapshot")
-pdf.setAuthor("Namma Civic")
-pdf.setSubject("Template-based review deck. Team details, screenshots, public links and live evaluation remain pending.")
+pdf.setAuthor("Tri-Fusion")
+pdf.setSubject("Namma Civic by Tri-Fusion. Public Vercel device-only demo available; exact problem statement, screenshots, video URL and live Google Cloud evaluation remain pending.")
 for page in pages:
     image = Image.open(page).convert("RGB")
     encoded = io.BytesIO()

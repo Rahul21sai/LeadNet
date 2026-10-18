@@ -1,0 +1,9 @@
+{
+  "duration": 215,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#film-brand", "bySec": 0.1 },
+    { "kind": "staysInFrame", "selector": "#film-header" },
+    { "kind": "staysInFrame", "selector": "#caption-rail" },
+    { "kind": "keepsMoving", "withinSelector": "#main", "maxStaticSec": 10 }
+  ]
+}

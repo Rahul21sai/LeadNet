@@ -1,0 +1,21 @@
+{
+  "durationSeconds": 215,
+  "scenes": 8,
+  "voiceProvider": "Offline Windows System.Speech; no network TTS",
+  "captions": "Phrase timing estimated from measured per-scene speech duration; review in preview.",
+  "captureFiles": {
+    "issue": "03-issue-evidence.png",
+    "beforeAfter": "03b-before-after.png",
+    "verification": "04-citizen-verification.png",
+    "ledger": "05-ledger.png",
+    "people": "06-people-opt-in.png",
+    "home": "01-community.png",
+    "compose": "02-new-issue.png",
+    "city": "07-city-explore.png",
+    "composeTop": "02a-composer-top.png",
+    "composeLocation": "02b-composer-location.png"
+  },
+  "finalRenderApproved": true,
+  "finalMp4": "output/Namma-Civic-Tri-Fusion-Demo.mp4",
+  "finalDurationSeconds": 215
+}

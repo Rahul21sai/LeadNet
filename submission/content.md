@@ -1,6 +1,6 @@
 # Namma Civic submission deck
 
-Local review snapshot. Cloud deployment and live model evaluation are deferred by owner. Team details, public links, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.
+Review snapshot. Registered team: Tri-Fusion. The roster is confirmed from the owner-supplied portal screenshot. Public prototype: https://lead-net-6639-eta.vercel.app/ (managed-browser access verified; device-only demo mode). Public repository: https://github.com/Rahul21sai/LeadNet. Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified. The exact problem-statement selection, public video URL, genuine screenshots and measured live results remain incomplete. Final 14 slides preserve the required content hierarchy and branding. Original source slide 2 (download instructions) and source slide 15 (blank) are omitted; neither contains required pitch content or a retention instruction. The owner/orchestrator approved this cleanup.
 
 ## Slide 1 (source 1)
 
@@ -8,15 +8,17 @@ Local review snapshot. Cloud deployment and live model evaluation are deferred b
 
 Team Details
 
-Team name: [Owner to fill]
-Team leader name: [Owner to fill]
+Team name: Tri-Fusion
+Team leader name: Vudumula Naga sai Rahul
 Problem Statement: [Owner to fill]
+
+Team members: Mohammed Mudasser; Abubakr Siddique M
 
 ### Presenter notes and sources
 
-Team details remain placeholders at the owner's explicit request. Product: Namma Civic. Proposed challenge: Sustainability & Social Impact. Confirm registered team roster before submission.
+Registered team: Tri-Fusion. Product: Namma Civic. Vudumula Naga sai Rahul (Leader); Mohammed Mudasser (Member); Abubakr Siddique M (Member). Names match the owner-supplied portal screenshot exactly; email addresses are omitted. Proposed challenge: Sustainability & Social Impact. The exact problem-statement selection remains the owner's placeholder.
 
-Source: explicit owner approval in the recovered session, 17 October 2026.
+Source: owner-supplied Hack2Skill portal roster screenshot and owner confirmation of the registered team name, 18 October 2026; submission/team.json.
 
 ## Slide 2 (source 3)
 
@@ -101,11 +103,12 @@ Outcome ledger
 
 Claimed versus verified, SLA and reopen metrics with definitions.
 
-Local source implemented and checked; cloud work deferred by owner. Browser review pending.
+Public Vercel device-only demonstration is accessible.
+Connected source is implemented; live Google Cloud integration remains unverified.
 
 ### Presenter notes and sources
 
-Local source implemented and checked; cloud work deferred by owner. Browser review pending.
+Public Vercel device-only demonstration is accessible. Connected source is implemented; live Google Cloud integration remains unverified.
 
 Feature architecture and source are implemented. A rendered UI review and live cloud/AI verification remain separate checks. Fictional leaders and projects are labelled demonstration records.
 
@@ -215,7 +218,7 @@ API owns all writes. Browser reads are read-only. Schema checks, one repair retr
 
 ### Presenter notes and sources
 
-This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. Cloud deployment and live model evaluation are deferred by owner; the current review continues locally.
+This is the implemented target architecture. Firebase Hosting would serve the SPA; /api would route to Cloud Run. Admin SDK owns mutations. Vertex uses a service account, not browser API keys. The public Vercel prototype is accessible in device-only demo mode. The owner plans Google Cloud deployment separately; live cloud services and model evaluation remain unverified.
 
 For Ask Namma Civic, Gemini selects closed fact keys; code renders complete labelled bilingual values, units and sample sizes. Public AI projections exclude citizen transcripts and unapproved pre-edit prose. The deterministic core is inside the API, not another cloud service.
 
@@ -285,7 +288,7 @@ Cloud spending and alert setup are deferred. A $25 alert is planned; it is not a
 
 ### Presenter notes and sources
 
-No cloud invoice, capacity benchmark or pricing estimate is claimed. The owner chose to continue locally, deferring cloud spending and alert configuration. Cost drivers are architecture facts, not quoted prices.
+No cloud invoice, capacity benchmark or pricing estimate is claimed. The owner plans Google Cloud deployment separately; cloud spending and alert configuration are unverified. Cost drivers are architecture facts, not quoted prices.
 
 Sources: repository docs/PRD.md; docs/ARCHITECTURE.md; packages/shared/src/stateMachine.ts; priority.ts; sla.ts; verification.ts; metrics.ts. These are implemented contracts, not evidence of a deployed pilot.
 
@@ -311,7 +314,7 @@ Use the verified deployed build
 
 ### Presenter notes and sources
 
-This template section remains an explicit readiness gap. Managed browser access was blocked in the current authoring environment. No fake screenshot was substituted. Add genuine product captures and rerender this deck before submitting.
+This template section remains an explicit readiness gap. Genuine product screenshots are not included in this revision. No fake screenshot was substituted. Add verified product captures from the public prototype and rerender this deck before submitting.
 
 Source: docs/research/media.md and apps/web/public/samples/CREDITS.md. Licensed photographs are illustrations; synthetic audio is labelled. No generated screenshot is presented as the product.
 
@@ -337,12 +340,12 @@ Code checks
 
 Automated contract tests pass; all-workspace typecheck and web/API builds pass; 11 offline AI safety checks pass
 
-Cloud deployment and live model evaluation deferred by owner
+Owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified.
 No live quality or latency results
 
 ### Presenter notes and sources
 
-The figures on this slide are local integrity checks, not live model benchmarks. Cloud deployment and live model evaluation are deferred by owner. No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is fabricated. A future live evaluation requires owner-directed resumption.
+The figures on this slide are local integrity checks, not live model benchmarks. The owner plans Google Cloud deployment separately; current live cloud services and model evaluation are unverified. No Gemini category accuracy, duplicate precision/recall, evidence detection rate or latency is fabricated.
 
 Source: apps/api/data/demo-seed-summary.json and apps/web/public/data/demo-city.json, generated by a deterministic dry run at 2026-10-17T08:00Z. Every issue, person, vote, budget and outcome is fictional demo data. No civic performance claim is made.
 Source: docs/research/wards.md; apps/api/data/validation.json. GBA December 2025 final delimitation via https://data.opencity.in/dataset/gba-wards-delimitation-2025 (metadata licence: Other (Public Domain)), official GBA GeoServer Kannada cross-check. 369 cleaned polygons, 5 corporations; source differences documented.
@@ -355,9 +358,9 @@ Status: submission/status.json
 
 Additional Details/Future Development (if any)
 
-Deferred cloud work
+Google Cloud deployment
 
-Owner chose to continue locally. Deployment, live model evaluation and public-link checks resume only when requested.
+Deploy Google Cloud separately, then verify connected services and live model behavior. The public Vercel build currently runs in device-only demo mode.
 
 First pilot
 
@@ -383,21 +386,21 @@ GitHub public repository
 
 https://github.com/Rahul21sai/LeadNet
 
-Demo video (under 3 minutes)
+Demo video (3-4 minutes)
 
 [Owner: record, upload and paste public video URL]
 
-Final product
+Public prototype (device-only demo)
 
-[Cloud deployment deferred by owner; public URL pending]
+https://lead-net-6639-eta.vercel.app/
 
 All three links must open without account access during evaluation.
 
 ### Presenter notes and sources
 
-Links remain explicit placeholders until published and checked. No repository push/publication, video upload, contest submission or live deployment is implied by this deck.
+The public repository link is retained. The Vercel product URL https://lead-net-6639-eta.vercel.app/ was opened successfully in the managed browser and showed Namma Civic in local device-only demo mode. This access check does not establish connected Google Cloud integration. Only the public video URL remains pending. The owner-supplied current submission requirement is a 3-4 minute video. No video upload or contest submission is implied by this deck.
 
-Source: prescribed template; current status in submission/status.json.
+Source: prescribed template; owner-supplied prototype URL, managed-browser access check and current video requirement, 18 October 2026; current status in submission/status.json.
 
 ## Slide 14 (source 16)
 
