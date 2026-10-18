@@ -1,8 +1,14 @@
 # LeadNet
 
-**Bengaluru, on the record.** Citizens report civic issues, officials attach repair evidence, and the people affected verify the outcome. The public ledger measures the gap between claimed and citizen-verified fixes.
+**Bengaluru, on the record.** Citizens share local issues, discuss nearby problems, and prepare reviewed messages to their elected representatives. Civic reports retain their evidence trail and citizen-verified outcomes; social reactions do not decide whether a fix is verified.
 
-This is an AI Builder Cup prototype. Demonstration issues, people, projects, votes and outcomes are fictional. Ward geography is real, attributed GBA reference data. Licensed photographs are illustrations and do not prove that a particular incident occurred at a demo pin.
+This is an AI Builder Cup prototype. Demonstration issues, leader personas, projects, votes and outcomes are fictional. The separate representative contact directory contains 28 real MLAs and five MPs with officially published contact addresses, checked on 18 October 2026. Ward geography is real, attributed GBA reference data. Licensed photographs are illustrations and do not prove that a particular incident occurred at a demo pin.
+
+## Community capture and outreach
+
+The home screen now provides a photo/video feed, City/Nearby/Saved views, camera capture with fresh device location, private voice recording, reviewed multilingual Gemini drafts, comments, reactions and official MLA/MP lookup. Direct email uses an optional configured Resend service and an explicit final review. X opens a reviewed composer that the user publishes from; images are not attached automatically.
+
+The previous spatial presentation remains at `/city`. See [community setup](docs/COMMUNITY_SETUP.md) for configuration, source methodology and integration limits. Video transcoding is included in the approved Docker runtime definition; the Windows host has no FFmpeg binary. Exact Anthropic font assets are not redistributed; the typography uses an inspired Georgia/Inter/Kannada treatment.
 
 ## Run locally
 
@@ -16,14 +22,14 @@ npm run dev
 
 The web app serves on `http://localhost:5173` and proxies `/api` to the API on port 8080. The normal application reads Firestore and sends all writes through authenticated API routes. The API needs Google application-default credentials and a configured `leadnet-blr` Firebase project. No service-account key belongs in this repository.
 
-For an explicitly labelled, read-only preview with 200 seeded issues:
+For a labelled preview with 200 seeded issues and a private device-only community sandbox:
 
 ```powershell
 $env:VITE_DEMO_MODE='1'
-npm run dev -w @leadnet/web
+npm run dev
 ```
 
-This mode reads the public demonstration snapshot through the same UI data hooks. Publishing, officer actions, voting and generated answers are disabled. Remove `VITE_DEMO_MODE` from the environment before building or deploying the connected version.
+This mode reads the demonstration snapshot through the same UI data hooks. Community posts/media, comments, bookmarks and reactions stay on this device; no cloud publication, external email or live AI is simulated. The local API can still serve its static official contact directory and capability flags without Google credentials. Officer actions, citizen verification and generated answers remain disabled. Remove `VITE_DEMO_MODE` from the environment before building or deploying the connected version.
 
 Set `AI_MOCK=1` on the API to exercise deterministic fallbacks without paid model calls. This does not replace Firestore, authentication or Storage with fake services.
 
@@ -52,7 +58,7 @@ Authentication uses Firebase ID tokens. Officer actions are scoped to assigned w
 
 ## Configuration and deployment
 
-The API accepts `GOOGLE_CLOUD_PROJECT`, `STORAGE_BUCKET`, `VERTEX_LOCATION`, `MODEL_TRIAGE`, `MODEL_DEDUPE`, `MODEL_EVIDENCE`, `MODEL_BRIEF`, `AI_MOCK`, `DEMO_MODE`, `ALLOWED_ORIGINS` and `PORT`. Model IDs are configurable. Verify availability with a live evaluation before claiming model quality or deploying a judging build.
+The API accepts `GOOGLE_CLOUD_PROJECT`, `STORAGE_BUCKET`, `VERTEX_LOCATION`, `MODEL_TRIAGE`, `MODEL_DEDUPE`, `MODEL_EVIDENCE`, `MODEL_BRIEF`, `MODEL_COMPOSE`, `AI_MOCK`, `DEMO_MODE`, `ALLOWED_ORIGINS` and `PORT`. Optional outreach/video settings are `RESEND_API_KEY`, `EMAIL_FROM`, `PUBLIC_APP_URL` and `FFMPEG_PATH`; keep keys server-side. Model IDs are configurable. Verify availability with a live evaluation before claiming model quality or deploying a judging build.
 
 The intended deployment is Firebase Hosting plus a Node.js Cloud Run service in `asia-south1`, with Firestore, Firebase Auth, Storage and Vertex AI. The container runs as an unprivileged user. Follow [the deployment runbook](docs/DEPLOYMENT.md). Creating the Firebase project alone does not establish that billing, database, Storage, Vertex or Cloud Run is ready.
 
@@ -63,6 +69,8 @@ The intended deployment is Firebase Hosting plus a Node.js Cloud Run service in 
 - [Visual system](docs/DESIGN_SYSTEM.md)
 - [Spatial city interface direction](docs/SPATIAL_DESIGN.md)
 - [Screenshot-led design refinement](docs/DESIGN_REFRESH.md)
+- [Community feature and setup](docs/COMMUNITY_SETUP.md)
+- [Official representative provenance](docs/research/representatives.md)
 - [Ward provenance and geometry validation](docs/research/wards.md)
 - [Media provenance](apps/web/public/samples/CREDITS.md)
 - [Recovered handoff and implementation scope](docs/CONTINUATION.md)

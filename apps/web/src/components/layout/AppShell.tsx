@@ -15,7 +15,7 @@ export function AppShell() {
         Skip to content
       </a>
       <TopNav />
-      {isOfflineDemo && <div role="status" className="civic-demo-notice"><div><span className="civic-demo-label"><Info size={13} aria-hidden="true" />Read-only demo</span><span>Fictional records. Explore the workflow; posting and voting require the connected service.</span></div></div>}
+      {isOfflineDemo && <div role="status" className="civic-demo-notice"><div><span className="civic-demo-label"><Info size={13} aria-hidden="true" />Local demo</span><span>City examples are fictional. Your community posts and reactions stay on this device. Live publishing, AI and email require the connected service.</span></div></div>}
       <main id="main">
         <motion.div key={location.pathname} className="min-w-0" initial={{ opacity: reducedMotion ? 1 : 0.6 }} animate={{ opacity: 1 }} transition={{ duration: reducedMotion ? 0 : 0.2, ease: 'easeOut' }}><Outlet /></motion.div>
       </main>

@@ -8,14 +8,17 @@
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
-  --font-sans: 'Inter Variable', 'Noto Sans Kannada Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Anthropic Sans', 'Inter Variable', 'Noto Sans Kannada Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Anthropic Serif', Georgia, 'Noto Sans Kannada Variable', serif;
+  --color-community-accent: #a8492d;
+  --color-community-accent-tint: #f7e9e1;
   --font-kn: 'Noto Sans Kannada Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
 
   /* Surfaces & ink (light) */
-  --color-canvas: #f2f4f7;
+  --color-canvas: #f7f5f1;
   --color-surface: #ffffff;
-  --color-surface-2: #e9eef4;
+  --color-surface-2: #eeebe5;
   --color-fill: rgb(118 118 128 / 0.12);
   --color-fill-strong: rgb(118 118 128 / 0.2);
   --color-ink: #17212b;
@@ -66,9 +69,11 @@
 
 /* Dark theme overrides — same names */
 :root[data-theme='dark'] {
-  --color-canvas: #101419;
-  --color-surface: #191f26;
-  --color-surface-2: #222a33;
+  --color-canvas: #191816;
+  --color-surface: #23211e;
+  --color-surface-2: #2d2a25;
+  --color-community-accent: #eca783;
+  --color-community-accent-tint: rgb(236 167 131 / 0.12);
   --color-fill: rgb(118 118 128 / 0.24);
   --color-fill-strong: rgb(118 118 128 / 0.36);
   --color-ink: #f2f5f8;

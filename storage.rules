@@ -12,6 +12,10 @@ service firebase.storage {
     match /drafts/{allPaths=**} {
       allow read, write: if false;
     }
+    match /community/{postId}/{file} {
+      allow read: if resource.metadata.published == 'true';
+      allow write: if false;
+    }
     match /{allPaths=**} {
       allow read, write: if false;
     }

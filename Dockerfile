@@ -21,6 +21,10 @@ RUN npm ci --workspace @leadnet/api --omit=dev
 
 FROM node:22-slim
 ENV NODE_ENV=production
+ENV FFMPEG_PATH=/usr/bin/ffmpeg
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ffmpeg \
+ && rm -rf /var/lib/apt/lists/*
 WORKDIR /srv
 COPY --from=deps /repo/node_modules ./node_modules
 COPY --from=build /repo/apps/api/dist ./dist

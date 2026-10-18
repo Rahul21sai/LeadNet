@@ -1,0 +1,666 @@
+{
+  "checkedAt": "2026-10-18",
+  "method": "ward-assembly-attribute",
+  "coverageNotice": "Reference contacts for Bengaluru source wards only. A ward polygon supplies its assembly label; the Election Commission table maps that assembly to Parliament. This is not a constituency boundary survey. Check the constituency and official contact before sending; GPS accuracy and boundary edges can affect the match. A published address does not guarantee delivery or a response.",
+  "sources": [
+    {
+      "title": "Karnataka Legislative Assembly: Sixteenth Assembly member list",
+      "url": "https://kla.kar.nic.in/assembly/member/16assemblymemberslist.htm",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "title": "Karnataka Legislative Assembly: Sixteenth Assembly Who's Who",
+      "url": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "title": "Election Commission: Delimitation Order 2008, Karnataka Schedule XIV, Table B, printed pages 207-208",
+      "url": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "title": "Digital Sansad: sitting 18th Lok Sabha members",
+      "url": "https://sansad.in/api_ls/member?loksabha=18&size=543&page=1",
+      "checkedAt": "2026-10-18"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "mla-150",
+      "role": "mla",
+      "name": "S R Vishwanath",
+      "constituency": "Yelahanka",
+      "email": "yelhanka.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=434",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-151",
+      "role": "mla",
+      "name": "B A Basavaraja",
+      "constituency": "K.R. Pura",
+      "email": "k.r.pura.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=136",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-152",
+      "role": "mla",
+      "name": "C B Krishna Byregowda",
+      "constituency": "Byatarayanapura",
+      "email": "byatarayanapura.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=50",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-153",
+      "role": "mla",
+      "name": "S T Somashekar",
+      "constituency": "Yeshvanthapura",
+      "email": "yeshvanthpura.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=382",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-154",
+      "role": "mla",
+      "name": "Munirathna",
+      "constituency": "Rajarajeshwarinagar",
+      "email": "rrnagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=283",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-155",
+      "role": "mla",
+      "name": "S Muniraju",
+      "constituency": "Dasarahalli",
+      "email": "dasarahalli.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=285",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-156",
+      "role": "mla",
+      "name": "K Gopalaiah",
+      "constituency": "Mahalakshmi Layout",
+      "email": "mllayout.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=195",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-157",
+      "role": "mla",
+      "name": "Dr C N Ashwath Narayana",
+      "constituency": "Malleshwaram",
+      "email": "malleshwaram.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=119",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-158",
+      "role": "mla",
+      "name": "Suresh B S",
+      "constituency": "Hebbal",
+      "email": "hebbal.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=84",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-159",
+      "role": "mla",
+      "name": "A C Srinivasa",
+      "constituency": "Pulakeshinagar",
+      "email": "pulakeshinagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=384",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-160",
+      "role": "mla",
+      "name": "K J George",
+      "constituency": "Sarvagnanagar",
+      "email": "sarvagnanagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=42",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-161",
+      "role": "mla",
+      "name": "S Raghu",
+      "constituency": "C.V Raman Nagar",
+      "email": "c.v.ramannagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=319",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-162",
+      "role": "mla",
+      "name": "Rizwan Arshad",
+      "constituency": "Shivajinagar",
+      "email": "shivajinagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=345",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-163",
+      "role": "mla",
+      "name": "N A Haris",
+      "constituency": "Shantinagar",
+      "email": "shantinagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=220",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-164",
+      "role": "mla",
+      "name": "Dinesh Gundurao",
+      "constituency": "Gandhinagar",
+      "email": "gandhinagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=44",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-165",
+      "role": "mla",
+      "name": "S Suresh Kumar",
+      "constituency": "Rajajinagar",
+      "email": "rajajinagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=406",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-166",
+      "role": "mla",
+      "name": "Priyakrishna",
+      "constituency": "Govindraj Nagar",
+      "email": "govindrajnagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=314",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-167",
+      "role": "mla",
+      "name": "M Krishnappa",
+      "constituency": "Vijayanagar",
+      "email": "vijaynagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=251",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-168",
+      "role": "mla",
+      "name": "Jameer Ahmed Khan",
+      "constituency": "Chamarajpet",
+      "email": "chamrajpet.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=56",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-169",
+      "role": "mla",
+      "name": "Uday B Garudachar",
+      "constituency": "Chickpet",
+      "email": "chickpet.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=416",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-170",
+      "role": "mla",
+      "name": "L A Ravisubramanya",
+      "constituency": "Basavanagudi",
+      "email": "basavanagudi.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=341",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-171",
+      "role": "mla",
+      "name": "R Ashoka",
+      "constituency": "Padmanaba Nagar",
+      "email": "padmanabhanagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=25",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-172",
+      "role": "mla",
+      "name": "Ramalinga Reddy",
+      "constituency": "B.T.M Layout",
+      "email": "b.t.m.layout.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=38",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-173",
+      "role": "mla",
+      "name": "C K Ramamurthy",
+      "constituency": "Jayanagar",
+      "email": "jayanagar.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=330",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-174",
+      "role": "mla",
+      "name": "Manjula S",
+      "constituency": "Mahadevapura",
+      "email": "mahadevapura.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=271",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-175",
+      "role": "mla",
+      "name": "M Satish Reddy",
+      "constituency": "Bommanahalli",
+      "email": "bommanahalli.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=355",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-176",
+      "role": "mla",
+      "name": "M Krishnappa",
+      "constituency": "Bangalore South",
+      "email": "bangaloresouth.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=253",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mla-177",
+      "role": "mla",
+      "name": "B Shivanna",
+      "constituency": "Anekal",
+      "email": "anekal.mla@karnataka.gov.in",
+      "sourceUrl": "https://kla.kar.nic.in/assembly/member/16thWhosWho.pdf#page=380",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mp-4321",
+      "role": "mp",
+      "name": "P C Mohan",
+      "constituency": "Bangalore Central",
+      "email": "pc.mohan@mpls.sansad.in",
+      "sourceUrl": "https://sansad.in/ls/members/biographyM/4321?from=members",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mp-4616",
+      "role": "mp",
+      "name": "Shobha Karandlaje",
+      "constituency": "Bangalore North",
+      "email": "karandlaje.shobha@mpls.sansad.in",
+      "sourceUrl": "https://sansad.in/ls/members/biographyM/4616?from=members",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mp-5590",
+      "role": "mp",
+      "name": "C N Manjunath",
+      "constituency": "Bangalore Rural",
+      "email": "drcnmanjunath.mp@mpls.sansad.in",
+      "sourceUrl": "https://sansad.in/ls/members/biographyM/5590?from=members",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mp-5182",
+      "role": "mp",
+      "name": "Tejasvi Surya",
+      "constituency": "Bangalore South",
+      "email": "tejasvi.surya@mpls.sansad.in",
+      "sourceUrl": "https://sansad.in/ls/members/biographyM/5182?from=members",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "mp-5602",
+      "role": "mp",
+      "name": "K Sudhakar",
+      "constituency": "Chikkballapur",
+      "email": "keshava.sudhakar@mpls.sansad.in",
+      "sourceUrl": "https://sansad.in/ls/members/biographyM/5602?from=members",
+      "checkedAt": "2026-10-18"
+    }
+  ],
+  "assemblyToContacts": {
+    "Yelahanka": [
+      "mla-150",
+      "mp-5602"
+    ],
+    "K.R. Pura": [
+      "mla-151",
+      "mp-4616"
+    ],
+    "Byatarayanapura": [
+      "mla-152",
+      "mp-4616"
+    ],
+    "Yeshwanthapura": [
+      "mla-153",
+      "mp-4616"
+    ],
+    "Rajarajeshwarinagar": [
+      "mla-154",
+      "mp-5590"
+    ],
+    "Dasarahalli": [
+      "mla-155",
+      "mp-4616"
+    ],
+    "Mahalakshmi Layout": [
+      "mla-156",
+      "mp-4616"
+    ],
+    "Malleshwaram": [
+      "mla-157",
+      "mp-4616"
+    ],
+    "Hebbal": [
+      "mla-158",
+      "mp-4616"
+    ],
+    "Pulakeshinagar": [
+      "mla-159",
+      "mp-4616"
+    ],
+    "Sarvagnanagar": [
+      "mla-160",
+      "mp-4321"
+    ],
+    "C.V. Raman Nagar": [
+      "mla-161",
+      "mp-4321"
+    ],
+    "Shivajinagar": [
+      "mla-162",
+      "mp-4321"
+    ],
+    "Shanthinagar": [
+      "mla-163",
+      "mp-4321"
+    ],
+    "Gandhinagara": [
+      "mla-164",
+      "mp-4321"
+    ],
+    "Rajajinagar": [
+      "mla-165",
+      "mp-4321"
+    ],
+    "Govindraj Nagar": [
+      "mla-166",
+      "mp-5182"
+    ],
+    "Vijayanagar": [
+      "mla-167",
+      "mp-5182"
+    ],
+    "Chamrajapet": [
+      "mla-168",
+      "mp-4321"
+    ],
+    "Chickpet": [
+      "mla-169",
+      "mp-5182"
+    ],
+    "Basavanagudi": [
+      "mla-170",
+      "mp-5182"
+    ],
+    "Padmanabanagar": [
+      "mla-171",
+      "mp-5182"
+    ],
+    "B.T.M Layout": [
+      "mla-172",
+      "mp-5182"
+    ],
+    "Jayanagar": [
+      "mla-173",
+      "mp-5182"
+    ],
+    "Mahadevapura": [
+      "mla-174",
+      "mp-4321"
+    ],
+    "Bommanahalli": [
+      "mla-175",
+      "mp-5182"
+    ],
+    "Bangalore South": [
+      "mla-176",
+      "mp-5590"
+    ],
+    "Anekal": [
+      "mla-177",
+      "mp-5590"
+    ]
+  },
+  "assemblyMapping": [
+    {
+      "wardAssembly": "Yelahanka",
+      "assemblyNumber": 150,
+      "assemblyConstituency": "Yelahanka",
+      "parliamentaryConstituency": "Chikkballapur",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "K.R. Pura",
+      "assemblyNumber": 151,
+      "assemblyConstituency": "K.R. Pura",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Byatarayanapura",
+      "assemblyNumber": 152,
+      "assemblyConstituency": "Byatarayanapura",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Yeshwanthapura",
+      "assemblyNumber": 153,
+      "assemblyConstituency": "Yeshvanthapura",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Rajarajeshwarinagar",
+      "assemblyNumber": 154,
+      "assemblyConstituency": "Rajarajeshwarinagar",
+      "parliamentaryConstituency": "Bangalore Rural",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Dasarahalli",
+      "assemblyNumber": 155,
+      "assemblyConstituency": "Dasarahalli",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Mahalakshmi Layout",
+      "assemblyNumber": 156,
+      "assemblyConstituency": "Mahalakshmi Layout",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Malleshwaram",
+      "assemblyNumber": 157,
+      "assemblyConstituency": "Malleshwaram",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Hebbal",
+      "assemblyNumber": 158,
+      "assemblyConstituency": "Hebbal",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Pulakeshinagar",
+      "assemblyNumber": 159,
+      "assemblyConstituency": "Pulakeshinagar",
+      "parliamentaryConstituency": "Bangalore North",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Sarvagnanagar",
+      "assemblyNumber": 160,
+      "assemblyConstituency": "Sarvagnanagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "C.V. Raman Nagar",
+      "assemblyNumber": 161,
+      "assemblyConstituency": "C.V Raman Nagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Shivajinagar",
+      "assemblyNumber": 162,
+      "assemblyConstituency": "Shivajinagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Shanthinagar",
+      "assemblyNumber": 163,
+      "assemblyConstituency": "Shantinagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Gandhinagara",
+      "assemblyNumber": 164,
+      "assemblyConstituency": "Gandhinagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Rajajinagar",
+      "assemblyNumber": 165,
+      "assemblyConstituency": "Rajajinagar",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Govindraj Nagar",
+      "assemblyNumber": 166,
+      "assemblyConstituency": "Govindraj Nagar",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Vijayanagar",
+      "assemblyNumber": 167,
+      "assemblyConstituency": "Vijayanagar",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Chamrajapet",
+      "assemblyNumber": 168,
+      "assemblyConstituency": "Chamarajpet",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Chickpet",
+      "assemblyNumber": 169,
+      "assemblyConstituency": "Chickpet",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Basavanagudi",
+      "assemblyNumber": 170,
+      "assemblyConstituency": "Basavanagudi",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Padmanabanagar",
+      "assemblyNumber": 171,
+      "assemblyConstituency": "Padmanaba Nagar",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "B.T.M Layout",
+      "assemblyNumber": 172,
+      "assemblyConstituency": "B.T.M Layout",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Jayanagar",
+      "assemblyNumber": 173,
+      "assemblyConstituency": "Jayanagar",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Mahadevapura",
+      "assemblyNumber": 174,
+      "assemblyConstituency": "Mahadevapura",
+      "parliamentaryConstituency": "Bangalore Central",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Bommanahalli",
+      "assemblyNumber": 175,
+      "assemblyConstituency": "Bommanahalli",
+      "parliamentaryConstituency": "Bangalore South",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Bangalore South",
+      "assemblyNumber": 176,
+      "assemblyConstituency": "Bangalore South",
+      "parliamentaryConstituency": "Bangalore Rural",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "wardAssembly": "Anekal",
+      "assemblyNumber": 177,
+      "assemblyConstituency": "Anekal",
+      "parliamentaryConstituency": "Bangalore Rural",
+      "sourceUrl": "https://www.eci.gov.in/Documents/Delimitation/DelimitationofParliamentaryAssemblyConstituenciesOrder-2008(English).pdf",
+      "checkedAt": "2026-10-18"
+    }
+  ]
+}

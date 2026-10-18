@@ -67,6 +67,8 @@ Aadhaar/face-scan identity (never in a prototype); real leader verification; mul
   p50/p95 latency per AI task; end-to-end report time.
 
 ## Locked decisions (2026-10-17)
+
+The owner's 18 October community request extends the civic prototype with a social home feed, direct camera/location capture, video/photo posts, nearby/saved discovery, reactions, comments, reviewed voice/text/photo composition and source-backed MLA/MP outreach. This supersedes the prior anti-social-experience direction. Existing fictional leader personas remain demo-only; the separate real contact directory carries source URLs and check dates, never invented politician scores. Social engagement does not count as an official fix or voting eligibility. See `COMMUNITY_PLAN.md` and `COMMUNITY_SETUP.md` for implemented boundaries and integration requirements.
 | Decision | Choice | Rejected |
 |---|---|---|
 | Accountability scoring | Outcome ledger (rates with n) | Star ratings / medals leaderboard |

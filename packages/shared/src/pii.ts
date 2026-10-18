@@ -20,11 +20,15 @@ export function scrubPII(input: string): ScrubResult {
   let text = input;
   const removed: ScrubResult['removed'] = [];
   for (const p of PATTERNS) {
-    const next = text.replace(p.re, p.mask);
-    if (next !== text) removed.push(p.kind);
-    text = next;
+    const matches = [...normalizeDigits(text).matchAll(p.re)];
+    if (matches.length) removed.push(p.kind);
+    for (const match of matches.reverse()) text = text.slice(0, match.index) + p.mask + text.slice(match.index + match[0].length);
   }
   return { text, removed };
+}
+
+function normalizeDigits(text: string): string {
+  return text.replace(/[೦-೯०-९]/g, (digit) => String(digit.charCodeAt(0) - (digit >= '೦' && digit <= '೯' ? 0x0ce6 : 0x0966)));
 }
 
 const KANNADA = /[ಀ-೿]/g;
@@ -43,7 +47,7 @@ export function isKannada(text: string, threshold = 0.6): boolean {
 
 /** Every number appearing in `text` (used to check a narrative only cites computed facts). */
 export function extractNumbers(text: string): number[] {
-  const normalized = text.replace(/[೦-೯]/g, (digit) => String(digit.charCodeAt(0) - 0x0ce6));
+  const normalized = normalizeDigits(text);
   return (normalized.match(/-?\d+(?:,\d{2,3})*(?:\.\d+)?/g) ?? [])
     .map((n) => Number(n.replaceAll(',', ''))).filter(Number.isFinite);
 }

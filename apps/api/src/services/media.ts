@@ -26,17 +26,23 @@ export async function isKnownSample(file: File | undefined): Promise<boolean> {
 export const storageMedia: MediaStore = {
   async save(path, upload) {
     const target = bucket();
-    await target.file(path).save(upload.bytes, { resumable: false, contentType: upload.mimeType, metadata: { cacheControl: path.startsWith('evidence/') ? 'public,max-age=31536000,immutable' : 'private,no-store', metadata: { published: 'false' } } });
+    const community = /^community\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+\.(jpg|webm)$/.test(path);
+    try {
+      await target.file(path).save(upload.bytes, { resumable: false, contentType: upload.mimeType, ...(community ? { preconditionOpts: { ifGenerationMatch: 0 } } : {}), metadata: { cacheControl: path.startsWith('evidence/') ? 'public,max-age=31536000,immutable' : 'private,no-store', metadata: { published: 'false' } } });
+    } catch (error) {
+      // Community retry paths are immutable: a delayed upload must never unpublish committed media.
+      if (!community || !error || typeof error !== 'object' || !('code' in error) || Number(error.code) !== 412) throw error;
+    }
     return { path, url: `https://firebasestorage.googleapis.com/v0/b/${target.name}/o/${encodeURIComponent(path)}?alt=media` };
   },
   async read(path) {
-    if (!/^(drafts|evidence)\/[^/]+\/[^/]+$/.test(path)) throw new ApiFault(400, 'invalid_media_path', 'Invalid evidence path');
+    if (!/^(drafts|evidence)\/[^/]+\/[^/]+$/.test(path) && !/^community\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+\.(jpg|webm)$/.test(path)) throw new ApiFault(400, 'invalid_media_path', 'Invalid evidence path');
     const file = bucket().file(path);
     const [[bytes], [metadata]] = await Promise.all([file.download(), file.getMetadata()]);
     return { bytes, mimeType: metadata.contentType ?? 'image/jpeg' };
   },
   async publish(path) {
-    if (!/^evidence\/[^/]+\/[^/]+\.jpg$/.test(path)) throw new ApiFault(400, 'invalid_media_path', 'Only committed photo evidence can be published.');
+    if (!/^evidence\/[^/]+\/[^/]+\.jpg$/.test(path) && !/^community\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+\.(jpg|webm)$/.test(path)) throw new ApiFault(400, 'invalid_media_path', 'Only committed evidence or community media can be published.');
     await bucket().file(path).setMetadata({ metadata: { published: 'true' } });
   },
 };

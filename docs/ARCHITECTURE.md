@@ -73,3 +73,11 @@ or merge into existing (support +1, report count +1, priority recomputed) → ev
 ## Scaling path (deck)
 Firestore → BigQuery export for analytics; PostGIS when spatial queries outgrow geohash; Pub/Sub for async evidence
 checks; per-corporation deployments; Sahaaya/1533 integration adapters.
+
+## Community extension (18 October 2026)
+
+The owner requested a social capture/discussion/outreach experience. `packages/shared/src/community.ts` defines its contracts. Public `posts` and nested `comments` are read-only from browsers. Private `postOwners`, `communityRequests`, `communityLimits`, `postReactions` and `communityOutbox` separate identity, original capture location, limits and delivery state from public content. Social support never grants issue-verification eligibility or changes the outcome ledger.
+
+The compose task uses the same Vertex adapter and verifier/repair/fallback runner for sanitized photos, private audio transcription and wording. Numeric detail and explicit negation are checked; cross-language semantics require human review. Raw audio is not published. Community photos are EXIF/GPS-stripped; public coordinates are rounded while the private original determines representative matching. Video is optionally transcoded with the approved FFmpeg Docker runtime.
+
+Representative lookup reuses real ward assignment and a dated, source-backed assembly/MP contact map. It is not LLM output or a precise constituency polygon overlay. Resend is an optional server-side mail adapter with matched recipients, ownership checks, limits and provider idempotency. Final review is required; no provider credentials means sending is unavailable. X sharing is a reviewed intent handoff. See `COMMUNITY_SETUP.md` for runtime settings, exact sources and limitations.

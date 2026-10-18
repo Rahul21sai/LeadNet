@@ -5,6 +5,7 @@ import { ArrowUpRight, MapPin, Menu, Moon, Sun, X } from 'lucide-react';
 import { getTheme, setTheme } from '../../lib/theme.ts';
 
 const LINKS = [
+  { to: '/', label: 'Community' },
   { to: '/map', label: 'Explore' },
   { to: '/ledger', label: 'Public ledger' },
   { to: '/how-it-works', label: 'How it works' },
@@ -42,7 +43,7 @@ export function TopNav() {
         </NavLink>
         <div className="hidden flex-1 items-center justify-center gap-1 text-ink-3 lg:flex">
           {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} className={({ isActive }) => `civic-nav-link relative flex min-h-11 items-center rounded-pill px-3.5 ${isActive ? 'font-medium text-ink' : 'hover:text-ink'}`}>
+            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={({ isActive }) => `civic-nav-link relative flex min-h-11 items-center rounded-pill px-3.5 ${isActive ? 'font-medium text-ink' : 'hover:text-ink'}`}>
               {({ isActive }) => <>{isActive && <motion.span layoutId="desktop-active-route" className="civic-nav-link__indicator absolute inset-0 rounded-pill bg-fill" transition={spring} />}<span className="relative">{l.label}</span></>}
             </NavLink>
           ))}
@@ -53,7 +54,7 @@ export function TopNav() {
         </NavLink>
         <button ref={menuButton} type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'} className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-fill lg:hidden">{open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}</button></div>
       </nav>
-      <div className="lg:hidden" aria-hidden={!open} inert={!open}><AnimatePresence initial={false}>{open && <motion.nav id="mobile-nav" key="mobile-nav" aria-label="Mobile" className="overflow-hidden border-t border-hairline" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: spring, opacity: { duration: reducedMotion ? 0 : 0.16 } }}><div className="px-5 pb-4 pt-2">{LINKS.map((l) => <NavLink key={l.to} to={l.to} onClick={() => setOpen(false)} className={({ isActive }) => `relative flex min-h-12 items-center justify-between rounded-md px-3 text-sm ${isActive ? 'font-semibold text-ink' : 'text-ink-3'}`}>{({ isActive }) => <>{isActive && <motion.span layoutId="mobile-active-route" className="civic-nav-link__indicator absolute inset-0 rounded-md bg-fill" transition={spring} />}<span className="relative">{l.label}</span><ArrowUpRight size={14} className="relative" aria-hidden="true" /></>}</NavLink>)}<button type="button" onClick={toggle} className="mt-2 flex min-h-11 w-full items-center justify-between border-t border-hairline px-3 pt-2 text-sm text-ink-3 min-[361px]:hidden"><span>{dark ? 'Use light theme' : 'Use dark theme'}</span>{dark ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}</button></div></motion.nav>}</AnimatePresence></div>
+      <div className="lg:hidden" aria-hidden={!open} inert={!open}><AnimatePresence initial={false}>{open && <motion.nav id="mobile-nav" key="mobile-nav" aria-label="Mobile" className="overflow-hidden border-t border-hairline" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: spring, opacity: { duration: reducedMotion ? 0 : 0.16 } }}><div className="px-5 pb-4 pt-2">{LINKS.map((l) => <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={() => setOpen(false)} className={({ isActive }) => `relative flex min-h-12 items-center justify-between rounded-md px-3 text-sm ${isActive ? 'font-semibold text-ink' : 'text-ink-3'}`}>{({ isActive }) => <>{isActive && <motion.span layoutId="mobile-active-route" className="civic-nav-link__indicator absolute inset-0 rounded-md bg-fill" transition={spring} />}<span className="relative">{l.label}</span><ArrowUpRight size={14} className="relative" aria-hidden="true" /></>}</NavLink>)}<button type="button" onClick={toggle} className="mt-2 flex min-h-11 w-full items-center justify-between border-t border-hairline px-3 pt-2 text-sm text-ink-3 min-[361px]:hidden"><span>{dark ? 'Use light theme' : 'Use dark theme'}</span>{dark ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}</button></div></motion.nav>}</AnimatePresence></div>
     </header></LayoutGroup>
   );
 }
