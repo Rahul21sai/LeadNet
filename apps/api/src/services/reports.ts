@@ -1,5 +1,5 @@
 import { distanceBetween, geohashForLocation, geohashQueryBounds } from 'geofire-common';
-import { CATEGORY_META, DEDUPE_MAX_CANDIDATES, DEDUPE_RADIUS_M, OPEN_STATUSES, computePriority, computeSla, scrubPII, verificationQuorum, type AiRunDoc, type DraftDoc, type DraftResponse, type EvidenceDoc, type IssueDoc, type ReportDoc, type SubmitReport, type SubmitReportResponse, type Triage } from '@leadnet/shared';
+import { CATEGORY_META, DEDUPE_MAX_CANDIDATES, DEDUPE_RADIUS_M, OPEN_STATUSES, computePriority, computeSla, publicCaptureLocation, scrubPII, verificationQuorum, type AiRunDoc, type CaptureLocation, type CommunityPostDoc, type DraftDoc, type DraftResponse, type EvidenceDoc, type IssueDoc, type ReportDoc, type SubmitReport, type SubmitReportResponse, type Triage } from '@leadnet/shared';
 import type { Identity } from './firebase.ts';
 import type { Runtime } from './context.ts';
 import { ApiFault, documentId, requireValue } from './errors.ts';
@@ -61,6 +61,8 @@ export async function submitReport(r: Runtime, identity: Identity, body: SubmitR
     if (current.consumedBy) return current.consumedBy;
     if (now - current.createdAt > 3_600_000) throw new ApiFault(409, 'draft_expired', 'This draft expired.');
     const existing = body.joinIssueId ? requireValue(await tx.get<IssueDoc>(`issues/${issueId}`)) : null;
+    const communityPostId = `issue-${issueId}`;
+    const existingPost = !existing ? await tx.get<CommunityPostDoc>(`posts/${communityPostId}`) : null;
     const member = existing ? await tx.get<Membership>(supportPath(issueId, identity.uid)) : null;
     const ward = current.wardId ? r.wards.get(current.wardId) : null;
     const storedWard = ward ? await tx.get(`wards/${ward.id}`) : null;
@@ -75,6 +77,14 @@ export async function submitReport(r: Runtime, identity: Identity, body: SubmitR
     const report: ReportDoc = { id: reportId, uid: identity.uid, issueId, merged: !!existing, anonymous: clean.anonymous, lang: (current.triage as Triage).detectedLang, text: current.text, transcript: (current.triage as Triage).transcript, photoUrl: publishedPhoto?.url ?? null, hasAudio: !!current.audioPath, location: current.location, createdAt: now, triageRunId: current.triageRunId, dedupeRunId: current.dedupeRunId };
     const result: SubmitReportResponse = { reportId, issueId, merged: !!existing, passCode: issue.passCode };
     tx.set(`issues/${issueId}`, issue); tx.set(`reports/${reportId}`, report); tx.set(draftPath, { ...current, consumedBy: result });
+    if (!existing && !existingPost) {
+      const language = issue.lang === 'kn' ? 'kn' : 'en';
+      const location: CaptureLocation = { lat: issue.location.lat, lng: issue.location.lng, accuracyM: null, capturedAt: issue.reportedAt, source: 'manual' };
+      const post: CommunityPostDoc = { id: communityPostId, authorLabel: 'Citizen', text: scrubPII(`${issue.title[language]}\n\n${issue.summary[language]}`).text, media: publishedPhoto ? { kind: 'photo', url: publishedPhoto.url, mimeType: 'image/jpeg', ...(current.photoSize ?? {}) } : null, location: publicCaptureLocation(location), ward: ward ? { id: ward.id, name: ward.name.en, assembly: ward.assembly } : null, issueId: issue.id, category: issue.category, createdAt: issue.reportedAt, updatedAt: issue.reportedAt, likeCount: 0, commentCount: 0, isDemo: issue.isDemo };
+      // Publish the feed projection with the issue so neither confirmation retries nor duplicate joins reset discussion.
+      tx.set(`posts/${communityPostId}`, post);
+      tx.set(`postOwners/${communityPostId}`, { uid: identity.uid, rawLocation: location, mediaPath: publishedPhoto ? `evidence/${issueId}/${evidenceId}.jpg` : null, createdAt: issue.reportedAt });
+    }
     if (!member) tx.set(supportPath(issueId, identity.uid), { issueId, uid: identity.uid, createdAt: now, eligibleFromClaim: issue.claimCount + 1 } satisfies Membership);
     if (ward && !storedWard) tx.set(`wards/${ward.id}`, ward);
     const eventId = r.id(); tx.set(`issues/${issueId}/events/${eventId}`, { id: eventId, type: existing ? 'merged' : 'reported', at: now, actorType: 'citizen', actorLabel: 'Citizen', ...(existing ? {} : { toStatus: 'reported' }), ...(publishedPhoto ? { evidenceIds: [evidenceId] } : {}), aiRunId: current.triageRunId });

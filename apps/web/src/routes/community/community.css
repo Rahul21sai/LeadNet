@@ -10,20 +10,32 @@
 .community-left nav .is-active { color: var(--color-community-accent); background: var(--color-community-accent-tint); font-weight: 600; }
 .community-left nav small { margin-left: auto; font-size: 11px; }
 .community-primary, .community-tool { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font-size: 13px; line-height: 1.35; padding: 10px 17px; border-radius: 9px; transition: background 160ms, opacity 160ms; text-decoration: none; }
-.community-primary { background: var(--color-community-accent); color: var(--color-on-primary); font-weight: 550; }
+.community-primary { background: var(--color-community-accent, var(--color-primary, CanvasText)); color: var(--color-on-primary, Canvas); font-weight: 550; transition: background 160ms, opacity 160ms, transform 160ms; }
 .community-primary:hover { opacity: .9; }
+.community-primary:active:not(:disabled) { transform: translateY(1px) scale(.98); }
+.community-feed-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--color-hairline); }
+.community-feed-heading h2 { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+.community-feed-heading p { margin-top: 3px; font-size: 12px; color: var(--color-ink-3); }
+.community-feed-heading .community-primary { min-width: 126px; }
+.community-feed > [data-new='true'] { scroll-margin-top: 120px; }
+.community-feed > [data-new='true'] .community-post { border-color: var(--color-community-accent, var(--color-primary)); animation: community-post-saved 1400ms ease-out; }
+.community-feed > [data-new='true']:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 5px; border-radius: 16px; }
+@keyframes community-post-saved { from { box-shadow: 0 0 0 5px var(--color-community-accent-tint, var(--color-fill)); } to { box-shadow: 0 0 0 0 transparent; } }
+.community-dialog[open] { animation: community-compose-open 180ms var(--ease-standard); }
+@keyframes community-compose-open { from { opacity: .6; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .community-primary:active:not(:disabled) { transform: none; } .community-feed > [data-new='true'] .community-post, .community-dialog[open] { animation: none; } }
 .community-primary:disabled, .community-tool:disabled, .community-social-action:disabled, .community-shutter:disabled, .community-primary.is-disabled, .community-tool.is-disabled { opacity: .45; cursor: not-allowed; }
 .community-tool { background: var(--color-fill); color: var(--color-ink-2); }
 .community-tool:hover { background: var(--color-fill-strong); }
 .community-rail-create { width: 100%; margin-top: 27px; }
 .community-rail-note { margin: 33px 12px 0; padding-top: 25px; border-top: 1px solid var(--color-hairline); color: var(--color-ink-3); }
 .community-rail-note > svg { color: var(--color-community-accent); margin-bottom: 12px; }
-.community-rail-note p { font-family: var(--font-display); font-size: 19px; line-height: 1.4; color: var(--color-ink-2); }
+.community-rail-note p { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 19px; line-height: 1.4; color: var(--color-ink-2); }
 .community-rail-note a { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; min-height: 44px; margin-top: 9px; }
 .community-feed-column { min-width: 0; }
 .community-intro { display: grid; grid-template-columns: minmax(0, 1fr) 145px; gap: 20px; align-items: center; padding: 5px 2px 26px; }
 .community-intro > div > p:first-child { display: flex; align-items: center; gap: 6px; color: var(--color-community-accent); font-size: 12px; margin-bottom: 17px; }
-.community-intro h1 { font-family: var(--font-display); font-size: clamp(36px, 3.8vw, 49px); font-weight: 400; letter-spacing: -.045em; line-height: 1.04; }
+.community-intro h1 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: clamp(36px, 3.8vw, 49px); font-weight: 400; letter-spacing: -.045em; line-height: 1.04; }
 .community-intro-copy { font-size: 13px; color: var(--color-ink-2); max-width: 36ch; line-height: 1.55; margin-top: 16px; }
 .community-intro-kn { color: var(--color-ink-3); font-size: 11px; margin-top: 8px; }
 .community-intro-camera { display: flex; align-items: center; flex-direction: column; text-align: center; padding: 19px 3px 7px; }
@@ -31,7 +43,7 @@
 .community-intro-camera strong { font-size: 12px; font-weight: 550; margin-top: 19px; }
 .community-intro-camera > span:last-child { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--color-ink-3); margin-top: 5px; }
 .community-start { border: 1px solid var(--color-hairline); background: var(--color-surface); border-radius: 16px; overflow: hidden; }
-.community-start-prompt { padding: 18px 20px; min-height: 80px; display: flex; align-items: center; gap: 13px; width: 100%; text-align: left; font-family: var(--font-display); font-size: 19px; letter-spacing: -.025em; }
+.community-start-prompt { padding: 18px 20px; min-height: 80px; display: flex; align-items: center; gap: 13px; width: 100%; text-align: left; font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 19px; letter-spacing: -.025em; }
 .community-start-prompt > svg { margin-left: auto; color: var(--color-ink-3); flex-shrink: 0; }
 .community-avatar { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: var(--color-ink-2); background: var(--color-surface-2); border: 1px solid var(--color-hairline); border-radius: 50%; flex-shrink: 0; }
 .community-start-tools { display: flex; align-items: center; padding: 0 15px; border-top: 1px solid var(--color-hairline); gap: 5px; background: color-mix(in srgb, var(--color-canvas) 35%, var(--color-surface)); }
@@ -45,7 +57,7 @@
 .community-feed-tabs { display: flex; gap: 18px; flex-shrink: 0; }
 .community-feed-tabs button { position: relative; font-size: 13px; color: var(--color-ink-3); min-height: 46px; }
 .community-feed-tabs .is-active { color: var(--color-ink); font-weight: 600; }
-.community-feed-tabs button > span { position: absolute; height: 2px; left: 0; right: 0; bottom: -1px; background: var(--color-community-accent); border-radius: 2px; }
+.community-feed-tabs button > span { position: absolute; height: 2px; left: 0; right: 0; bottom: -1px; background: var(--color-community-accent, var(--color-primary, CanvasText)); border-radius: 2px; }
 .community-search { display: flex; align-items: center; gap: 7px; color: var(--color-ink-3); min-width: 0; width: 158px; }
 .community-search input { width: 100%; min-width: 0; background: transparent; min-height: 44px; font-size: 11px; outline-offset: 2px; }
 .community-feed-context { display: flex; align-items: center; gap: 8px; color: var(--color-ink-3); font-size: 11px; line-height: 1.5; padding: 15px 2px 0; }
@@ -82,7 +94,7 @@
 .community-post-footer button { display: inline-flex; align-items: center; justify-content: flex-end; gap: 5px; min-height: 44px; font-size: 11px; color: var(--color-community-accent); }
 .community-post-feedback { display: flex; align-items: center; gap: 5px; color: var(--color-st-verified); font-size: 11px; margin: 0 20px 9px; }
 .community-comments { background: color-mix(in srgb, var(--color-canvas) 55%, var(--color-surface)); border-top: 1px solid var(--color-hairline); padding: 20px; }
-.community-comments h3 { font-family: var(--font-display); font-size: 19px; margin-bottom: 13px; }
+.community-comments h3 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 19px; margin-bottom: 13px; }
 .community-comments ul { display: flex; flex-direction: column; gap: 17px; margin-bottom: 20px; }
 .community-comments li { display: flex; align-items: flex-start; gap: 9px; }
 .community-comment-avatar { display: flex; justify-content: center; align-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--color-surface-2); flex-shrink: 0; }
@@ -95,7 +107,7 @@
 .community-comment-actions .community-primary { margin-left: auto; }
 .community-empty { text-align: center; padding: 55px 25px; border: 1px dashed var(--color-hairline); border-radius: 16px; }
 .community-empty > svg { color: var(--color-community-accent); margin: 0 auto 18px; }
-.community-empty h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; }
+.community-empty h2 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-weight: 400; font-size: 26px; }
 .community-empty p { font-size: 13px; color: var(--color-ink-3); line-height: 1.6; margin: 12px auto 19px; max-width: 38ch; }
 .community-load-more { display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 48px; width: 100%; margin-top: 20px; border: 1px solid var(--color-hairline); border-radius: 10px; background: var(--color-surface); font-size: 12px; }
 .community-feed-end { text-align: center; color: var(--color-ink-3); font-size: 11px; margin: 25px 0 5px; }
@@ -103,7 +115,7 @@
 .community-right-card { padding: 24px; border-radius: 14px; border: 1px solid var(--color-hairline); background: var(--color-surface); }
 .community-action-card { background: var(--color-community-accent-tint); border-color: color-mix(in srgb, var(--color-community-accent) 15%, transparent); }
 .community-action-card .community-mini-icon { border-radius: 0; background: transparent; justify-content: start; height: 25px; }
-.community-action-card h2 { font-family: var(--font-display); font-weight: 400; font-size: 30px; letter-spacing: -.04em; line-height: 1.1; margin-top: 14px; }
+.community-action-card h2 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-weight: 400; font-size: 30px; letter-spacing: -.04em; line-height: 1.1; margin-top: 14px; }
 .community-action-card p { margin-top: 16px; font-size: 12px; line-height: 1.7; color: var(--color-ink-2); }
 .community-action-card button { display: flex; align-items: center; gap: 15px; min-height: 44px; font-size: 12px; color: var(--color-community-accent); margin-top: 9px; font-weight: 550; }
 .community-action-card small { display: block; font-size: 11px; color: var(--color-ink-3); margin-top: 6px; }
@@ -125,7 +137,7 @@
 .community-dialog-wide { width: min(760px, calc(100% - 32px)); }
 .community-dialog::backdrop { background: color-mix(in srgb, var(--color-ink) 40%, transparent); backdrop-filter: blur(5px); }
 .community-dialog-content > header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px 28px 17px; background: var(--color-surface); border-bottom: 1px solid var(--color-hairline); }
-.community-dialog-content > header h2 { font-family: var(--font-display); font-size: 29px; font-weight: 400; letter-spacing: -.04em; }
+.community-dialog-content > header h2 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 29px; font-weight: 400; letter-spacing: -.04em; }
 .community-composer, .community-outreach { padding: 22px 28px 28px; }
 .community-dialog-intro { font-size: 13px; color: var(--color-ink-3); line-height: 1.65; max-width: 62ch; margin-bottom: 19px; }
 .community-private-note { display: flex; align-items: center; gap: 8px; padding: 11px 13px; border-radius: 9px; background: var(--color-community-accent-tint); color: var(--color-community-accent); font-size: 11px; line-height: 1.6; margin-bottom: 19px; }
@@ -133,7 +145,7 @@
 .community-upload-zone { margin-bottom: 23px; }
 .community-empty-media { min-height: 155px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 19px; border: 1px dashed var(--color-hairline); border-radius: 12px; background: var(--color-canvas); text-align: center; color: var(--color-ink-3); }
 .community-empty-media svg { color: var(--color-community-accent); }
-.community-empty-media p { font-family: var(--font-display); font-size: 22px; color: var(--color-ink); margin-top: 12px; }
+.community-empty-media p { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 22px; color: var(--color-ink); margin-top: 12px; }
 .community-empty-media span { font-size: 11px; margin-top: 7px; }
 .community-upload-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .community-media-preview { position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: var(--color-surface-2); }
@@ -186,7 +198,7 @@
 .community-camera video { width: 100%; min-height: 190px; max-height: 360px; border-radius: 8px; background: var(--color-surface-2); object-fit: contain; }
 .community-camera-bottom { display: flex; align-items: center; flex-direction: column; gap: 9px; padding-top: 14px; }
 .community-camera-bottom p { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--color-ink-3); text-align: center; }
-.community-shutter { width: 62px; height: 62px; display: flex; align-items: center; justify-content: center; color: var(--color-on-primary); background: var(--color-community-accent); border: 3px solid var(--color-surface); box-shadow: 0 0 0 1px var(--color-community-accent); border-radius: 50%; margin-top: 3px; }
+.community-shutter { width: 62px; height: 62px; display: flex; align-items: center; justify-content: center; color: var(--color-on-primary); background: var(--color-community-accent, var(--color-primary, CanvasText)); border: 3px solid var(--color-surface); box-shadow: 0 0 0 1px var(--color-community-accent); border-radius: 50%; margin-top: 3px; }
 .community-camera-bottom > span { font-size: 11px; color: var(--color-ink-3); }
 .community-outreach-record { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; border: 1px solid var(--color-hairline); padding: 13px; border-radius: 11px; }
 .community-outreach-record > img { width: 95px; height: 100px; border-radius: 7px; object-fit: cover; flex-shrink: 0; }
@@ -195,7 +207,7 @@
 .community-outreach-record span { display: flex; align-items: center; gap: 5px; font-size: 11px; margin-top: 8px; color: var(--color-ink-3); }
 .community-outreach-record small { display: block; font-size: 11px; color: var(--color-ink-3); line-height: 1.6; margin-top: 7px; }
 .community-contact-list { padding: 17px; background: var(--color-canvas); border: 1px solid var(--color-hairline); border-radius: 11px; margin: 17px 0; }
-.community-contact-list > h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin-bottom: 15px; }
+.community-contact-list > h3 { font-family: var(--font-display, Georgia, 'Noto Sans Kannada Variable', serif); font-size: 22px; font-weight: 400; margin-bottom: 15px; }
 .community-contact-list > p { color: var(--color-ink-3); font-size: 11px; line-height: 1.65; }
 .community-contact { display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid var(--color-hairline); padding: 13px 0; }
 .community-contact:first-of-type { padding-top: 0; }

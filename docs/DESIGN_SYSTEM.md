@@ -4,7 +4,7 @@ Art direction: **warm editorial community × spatial civic record**. The owner e
 Neutral surfaces and ink actions; a clay accent identifies community actions and the **civic status palette retains its own meanings**. The signature element is
 **bilingual typography** — every primary heading pairs English with ಕನ್ನಡ, set as equals, not as a subtitle afterthought.
 
-Tokens live in `apps/web/src/styles/tokens.css` (Tailwind v4 `@theme`). **Token names are a contract**; values may be
+Tokens live in `apps/web/src/styles/tokens.css` (Tailwind v4 `@theme static`, including tokens consumed by lazy-route CSS). **Token names are a contract**; values may be
 refined by the design-system owner. Components never use raw hex.
 
 ## Colour

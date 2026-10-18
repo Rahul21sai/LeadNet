@@ -6,7 +6,7 @@ The owner chose to continue locally. Cloud setup, live model evaluation, deploym
 
 | Check | Result |
 |---|---|
-| `npm test` | 129 tests pass in 15 files, including community trust boundaries, compose guards, contact matching, immutable uploads and existing civic workflows |
+| `npm test` | 140 tests pass in 17 files, including feed visibility, report-to-post publication, community trust boundaries, compose guards, contact matching, immutable uploads and existing civic workflows |
 | `npm run typecheck` | Shared, API and web pass |
 | `npm run build` | Web and API production builds pass |
 | `node --test scripts/geo/geo.test.mjs` | 3 tests pass |
@@ -50,6 +50,18 @@ The directory contains 28 MLAs and five MPs with official published emails. All 
 Final full tests pass 129 cases across 15 files. They cover numeric/PII handling in English/Kannada/Hindi, fresh capture metadata, private sandbox state, safe links and deep links, current-claim evidence, post/comment/reaction limits and idempotency, authenticated ownership and matched email recipients, AI repair/fallback and photo-only drafts. An independent reviewer reproduced a delayed concurrent upload overwriting a published photo's access marker; the fix uses atomic GCS create-only preconditions and two production-adapter regressions now pass. API production build and all-workspace typechecks pass. Provider receipt retries are tested with fake adapters, not a real mail service.
 
 Changed community action/text pairings were calculated at >=4.5:1 on the intended materials. Source review covers responsive structure, sensor cleanup, draft confirmation separation and reduced motion. Actual device/browser rendering remains unverified under the existing explicit browser-service denial.
+
+## Issue visibility and theme recovery, 18 October
+
+The owner supplied a screenshot showing white “Share an issue” text without its intended background. Both the fresh development compiler and production CSS contained the community colour/font tokens before this fix, and no service worker or source cascade conflict was found. Stale runtime transforms remain a hypothesis, not a confirmed root cause. Theme tokens now emit unconditionally with `@theme static`; community primary actions and display headings also include explicit colour/font fallbacks. The top navigation opens `/?compose=1` through “New issue”, and a second New issue action sits in the feed. The supplied screenshot is the before state; no rendered after state is claimed.
+
+Three confirmed data problems were corrected: fictional examples could outrank actual posts when their timestamps were ahead of the device clock; delayed IndexedDB hydration could replace posts added during loading; and canonical report publication wrote issues without creating community feed posts. Feed merging now preserves new/deleted device entries, places fictional examples after actual posts, and pins the just-saved post while resetting filters. After the composer closes, the new card receives keyboard focus and scrolls into view. Query navigation opens/closes the composer, while closing preserves unrelated query parameters and the hash.
+
+New canonical issues atomically create one privacy-scrubbed community post with rounded public location and private ownership. Duplicate joins and consumed-draft retries preserve social counts and ownership. Existing canonical reports are not backfilled. Seven feed regressions and four report-projection regressions bring the full suite to 140 passing tests in 17 files. All-workspace typecheck passes. Motion added here is limited to action press, dialog entry and saved-post feedback, with reduced-motion handling. Exact Anthropic font files remain unbundled; Georgia, Inter and Noto Sans Kannada provide the documented inspired treatment.
+
+Both production builds pass, including a fresh web build after the final mobile header spacing adjustment. Static production-asset checks confirm emitted tokens, colour/font fallbacks, reduced-motion feedback and the final New issue header link. Calculated community-button contrast is 5.74:1 in light and 8.09:1 in dark. These checks do not measure rendered behavior.
+
+The existing Vite process was verified against this repository's executable and restarted on `127.0.0.1:5173` in the same device-only demo mode; both the web and API TCP listeners are present. Browser-service access remains denied; responsive rendering, actual focus timing, camera/GPS and console-error checks remain unverified. No alternate browser or permission bypass was used.
 
 ## Current limits and remaining work
 
